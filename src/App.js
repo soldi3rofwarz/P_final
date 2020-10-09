@@ -31,7 +31,7 @@ function App() {
   return(
     
    <div>
-     <h1><span role="img" aria-label="tent">🏠</span></h1>
+     
      <GoogleMap
       mapContainerStyle={mapContainerStyle}
       zoom={12}  
