@@ -1,5 +1,5 @@
 import React from 'react';
-import Principal from './../src/components/main/principal'
+import Principal from './components/main/principal'
 import {
   GoogleMap,
   useLoadScript,
@@ -29,16 +29,17 @@ function App() {
   if (loadError) return "Error alcargar el mapa"
   if (!isLoaded) return "Cargando"
   return(
+    
    <div>
      <h1><span role="img" aria-label="tent">🏠</span></h1>
      <GoogleMap
       mapContainerStyle={mapContainerStyle}
-      zoom={12} 
+      zoom={12}  
       center={center}
       options={options}
      />
-   </div>
+   </div> 
+   
   )
 }
-
 export default App;
