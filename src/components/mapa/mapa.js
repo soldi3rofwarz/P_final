@@ -1,4 +1,4 @@
-import React,{useState} from 'react'
+import React,{useState,useCallback, useRef} from 'react'
 import "./mapa.css"
 import {
     GoogleMap,
@@ -29,7 +29,21 @@ const Mapa = () => {
         libraries,
       })
 
-      const[markers, setMarkers]= useState([])
+      const[markers, setMarkers]= useState([]);
+      const[select, setSelect]= useState(null)
+
+      const onMapClick = useCallback((event)=>{
+        setMarkers((current)=>[...current,{
+            lat: event.latLng.lat(),
+            lng: event.latLng.lng(),
+            time: new Date(), 
+        }])
+      },[])
+
+      const mapRef= useRef()
+      const onMapLoad= useCallback((map)=>{
+          mapRef.current =map;
+      },[])
 
       if (loadError) return "Error alcargar el mapa"
       if (!isLoaded) return "Cargando"
@@ -41,14 +55,8 @@ const Mapa = () => {
                 zoom={12}  
                 center={center}
                 options={options}
-                onClick={(event)=>{
-                    setMarkers((current)=>[...current,{
-                        lat: event.latLng.lat(),
-                        lng: event.latLng.lng(),
-                        time: new Date(), 
-                    }])
-                    
-                }}
+                onClick={onMapClick}
+                onLoad={onMapLoad}
             >
                 {markers.map((marker)=>(
                     <Marker
@@ -59,6 +67,9 @@ const Mapa = () => {
                             scaledSize: new window.google.maps.Size(30, 30),
                             origin: new window.google.maps.Point(0,0),
                             anchor: new window.google.maps.Point(15,15)
+                        }}
+                        onClick={()=>{
+                            setSelect(Marker)
                         }}
                     />
                 ))}
