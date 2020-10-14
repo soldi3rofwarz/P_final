@@ -1,5 +1,6 @@
 import React from 'react';
-import './main.css'
+import './main.css';
+import Pie from './../footer/foot';
 
 
 const Index = () => {
@@ -21,6 +22,7 @@ const Index = () => {
         
     }
     return ( 
+        <>
     <section className="main"
         onMouseMove={move}
     >
@@ -42,6 +44,9 @@ const Index = () => {
         </ul>
 
     </section>
+
+    <Pie/>
+    </>
 );
 }
  
