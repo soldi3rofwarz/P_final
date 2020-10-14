@@ -3,6 +3,7 @@ import Title from './titulo';
 import UploadForm from './UploadForm';
 import ImageGrid from './ImageGrid';
 import Modal from './modal';
+import './galeria.css';
 
 
 const Galeria =()=>{
