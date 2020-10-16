@@ -11,6 +11,7 @@ const UploadForm = () => {
     let selected = e.target.files[0];
 
     if (selected && types.includes(selected.type)) {
+
       setFile(selected);
       setError('');
     } else {

@@ -1,26 +1,30 @@
 import { useState, useEffect } from 'react';
-import { projectFirestore } from './config';
+import { projectStorage, projectFirestore, timestamp } from '../gallery/config';
 
-const useFirestore = (collection) => {
-  const [docs, setDocs] = useState([]);
+const useStorage = (file) => {
+  const [progress, setProgress] = useState(0);
+  const [error, setError] = useState(null);
+  const [url, setUrl] = useState(null);
 
   useEffect(() => {
-    const unsub = projectFirestore.collection(collection)
-      .orderBy('createdAt', 'desc')
-      .onSnapshot(snap => {
-        let documents = [];
-        snap.forEach(doc => {
-          documents.push({...doc.data(), id: doc.id});
-        });
-        setDocs(documents);
-      });
+    // references
+    const storageRef = projectStorage.ref(file.name);
+    const collectionRef = projectFirestore.collection('images');
+    
+    storageRef.put(file).on('state_changed', (snap) => {
+      let percentage = (snap.bytesTransferred / snap.totalBytes) * 100;
+      setProgress(percentage);
+    }, (err) => {
+      setError(err);
+    }, async () => {
+      const url = await storageRef.getDownloadURL();
+      const createdAt = timestamp();
+      await collectionRef.add({ url, createdAt });
+      setUrl(url);
+    });
+  }, [file]);
 
-    return () => unsub();
-    // this is a cleanup function that react will run when
-    // a component using the hook unmounts
-  }, [collection]);
-
-  return { docs };
+  return { progress, url, error };
 }
 
-export default useFirestore;
+export default useStorage;
