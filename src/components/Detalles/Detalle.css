@@ -1,0 +1,19 @@
+.container{
+    margin-left: 140px;
+    margin-top: 20px;
+    width: 1000px;
+    height: 700px;
+    background-color: aqua;
+}
+
+.mapa{
+    margin-left: 10px;
+    width: 450px;
+    height: 400px;
+    background-color: black;
+    overflow: hidden;
+    border-radius: 10px;
+    border: solid 1px white;
+}
+
+
