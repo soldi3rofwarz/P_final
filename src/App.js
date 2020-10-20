@@ -4,6 +4,7 @@ import React from 'react';
 import Detalle from './components/Detalles/Detalles'
 //import Galeria from './components/gallery/galeria'
 // import Pie from './components/footer/foot'
+import  'bootstrap/dist/css/bootstrap.min.css' ;
 
 function App() {
   
