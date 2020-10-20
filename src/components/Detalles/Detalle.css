@@ -1,19 +1,25 @@
 .container{
     margin-left: 140px;
     margin-top: 20px;
-    width: 1000px;
-    height: 700px;
-    background-color: #fff5ee;
+    background-color: #DEDFE3;
+}
+h1{
+    text-align: center;
 }
 
 .mapa{
-    margin-left: 10px;
+    padding-left: -10px;
+    margin-left: 20px;
     width: 450px;
     height: 400px;
     background-color: black;
     overflow: hidden;
     border-radius: 10px;
-    border: solid 1px #fff5ee;
+    border: solid 1px white;
+    
 }
-
-
+.det{
+    border-left: 1px solid rgb(27, 26, 26);
+    text-align: center;
+    margin-left: 10px;
+}
