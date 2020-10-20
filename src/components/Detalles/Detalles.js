@@ -46,7 +46,8 @@ const Detalle = () => {
                 <hr className="my-4"/>
                 <h2>Descripcion</h2>
                 <p>Aqui se colocara la descripcion de lugar que se visitara</p>
-                <a className="btn btn-primary btn-lg" href="#!" role="button" onClick={Limite}>Apuntarse</a>
+                <a className="btn btn-primary btn-lg" href="#!" role="button" onClick={Limite}>
+                    g</a>
                 <Button variant="outline-success" >{value}</Button>{' '}
                 
             </Col>
