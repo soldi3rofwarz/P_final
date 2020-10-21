@@ -3,8 +3,9 @@ import React from 'react';
 //import Mapa from './components/mapa/mapa'
 //import Detalle from './components/Detalles/Detalles'
 //import Galeria from './components/gallery/galeria'
-// import Pie from './components/footer/foot'
-import Form from './components/Actividades/agregar-actividades'
+//import Pie from './components/footer/foot'
+//import Actividades from './components/Actividades/mostrar-actividades'
+import Form from './components/Actividades/form-actividades'
 import  'bootstrap/dist/css/bootstrap.min.css' ;
 
 function App() {
