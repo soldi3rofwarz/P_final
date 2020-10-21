@@ -1,12 +1,14 @@
 import React from 'react';
 import Form from 'react-bootstrap/Form'
 import Button from 'react-bootstrap/Button'
+import './../Actividades/style.css';
+
 
 
 const AgregarActividades = () => {
     return ( 
     <>
-        <Form>
+        <Form className="g">
         
             <Form.Group controlId="formActividad">
                 <Form.Label>Actividad</Form.Label>
@@ -21,6 +23,18 @@ const AgregarActividades = () => {
             <Form.Group controlId="formOrganizacion">
                 <Form.Label>Organización</Form.Label>
                 <Form.Control type="text" placeholder="Organizacion" />
+            </Form.Group>
+            <Form.Group controlId="formOrganizacion">
+                <Form.Label>Precio</Form.Label>
+                <Form.Control type="text" placeholder="Precio" />
+            </Form.Group>
+            <Form.Group controlId="formOrganizacion">
+                <Form.Label>Lugar de salida</Form.Label>
+                <Form.Control type="text" placeholder="Lugar de salida" />
+            </Form.Group>
+            <Form.Group controlId="formOrganizacion">
+                <Form.Label>Hora de salida</Form.Label>
+                <Form.Control type="time" placeholder="Hora de salida" />
             </Form.Group>
 
             <Form.Group controlId="formDescripcion">
