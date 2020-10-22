@@ -8,7 +8,10 @@ import {
 
 const AgregarActividades = () => {
 
-    const [actividad, setActividad]  = useState('');
+    const [actividad, setActividad]  = useState({
+        tipo: "",
+        fecha:""
+    });
 
     const handleActividadChange = (e) => setActividad(e.target.value);
 
@@ -31,12 +34,12 @@ const AgregarActividades = () => {
         
             <Form.Group controlId="formActividad">
                 <Form.Label>Actividad</Form.Label>
-                <Form.Control type="text" placeholder="Actividad" onChange={handleActividadChange} />
+                <Form.Control type="text" value="tipo" placeholder="Actividad" onChange={handleActividadChange} />
             </Form.Group>
 
             <Form.Group controlId="formFecha">
                 <Form.Label>Fecha</Form.Label>
-                <Form.Control type="date" placeholder="Fecha" />
+                <Form.Control type="date" value="fecha" placeholder="Fecha" />
             </Form.Group>
 
             <Form.Group controlId="formOrganizacion">
