@@ -36,16 +36,16 @@ const AgregarActividades = () => {
 
             <Form.Group controlId="formFecha">
                 <Form.Label>Fecha</Form.Label>
-                <Form.Control type="date" placeholder="Fecha" />
+                <Form.Control type="date" placeholder="Fecha" onChange={handleActividadChange}/>
             </Form.Group>
 
             <Form.Group controlId="formOrganizacion">
                 <Form.Label>Organización</Form.Label>
-                <Form.Control type="text" placeholder="Organizacion" />
+                <Form.Control type="text" placeholder="Organizacion" onChange={handleActividadChange}/>
             </Form.Group>
             <Form.Group controlId="formOrganizacion">
                 <Form.Label>Precio</Form.Label>
-                <Form.Control type="text" placeholder="Precio" />
+                <Form.Control type="text" placeholder="Precio" onChange={handleActividadChange}/>
             </Form.Group>
             <Form.Group controlId="formOrganizacion">
                 <Form.Label>Lugar de salida</Form.Label>
