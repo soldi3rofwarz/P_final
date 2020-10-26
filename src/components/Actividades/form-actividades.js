@@ -25,6 +25,8 @@ const AgregarActividades = () => {
 
     const [hora, setHora] = useState('');
     const handleHoraChange = (e) => setHora(e.target.value);
+    const [cupos, setCupos] = useState('');
+    const handleCuposChange = (e) => setCupos(e.target.value);
 
     const [descripcion, setDescripcion] = useState('');
     const handleDescripcionChange = (e) => setDescripcion(e.target.value);
@@ -61,6 +63,7 @@ const AgregarActividades = () => {
             precio,
             salida,
             hora,
+            cupos,
             descripcion,
             fileUrl,
         }).then(() => {
@@ -100,6 +103,11 @@ const AgregarActividades = () => {
             <Form.Group controlId="formHora">
                 <Form.Label>Hora de salida</Form.Label>
                 <Form.Control type="time" value = {hora} placeholder="Hora de salida" onChange={handleHoraChange}/>
+            </Form.Group>
+
+            <Form.Group controlId="formCupos">
+                <Form.Label>Cupos</Form.Label>
+                <Form.Control type="text" value = {cupos} placeholder="Cupos" onChange={handleCuposChange}/>
             </Form.Group>
 
             <Form.Group controlId="formDescripcion">
