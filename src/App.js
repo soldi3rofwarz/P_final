@@ -5,15 +5,16 @@ import React from 'react';
 //import Galeria from './components/gallery/galeria'
 //import Pie from './components/footer/foot'
 //import Actividades from './components/Actividades/mostrar-actividades'
-import Form from './components/Actividades/form-actividades'
+//import Form from './components/Actividades/form-actividades'
 import  'bootstrap/dist/css/bootstrap.min.css' ;
+import Listar from './components/Actividades/mostrar-actividades'
 
 function App() {
   
   return(
     
    <div>
-     <Form/>
+     <Listar/>
      
    </div> 
    
