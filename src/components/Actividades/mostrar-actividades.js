@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import Card from 'react-bootstrap/Card';
 import Button from 'react-bootstrap/Button';
-import './style.css';
+import './acti.css'
 import {
     projectFirestore,
 } from '../../Firebase/config';
@@ -26,39 +26,38 @@ const Actividades = () => {
     }, []);
 
     return ( 
-        <Card className = 'cards'>
-            <Card.Body>
-                <Card.Text>
-                <div>
-                    {listActividades ?
-                        listActividades.map ((item, id) => <p>
-                        <Card.Img variant="top" src={item.fileUrl} />
-                            <Card.Title>{item.actividad}</Card.Title>
-                            <br />
-                            {item.cupos}
-                            <br />
-                            {/* {item.descripcion}
-                            <br />
-                            {item.fecha}
-                            <br />  */}
-                            {/* <br />
-                            {item.hora}
-                            <br />
-                            {item.organizacion}
-                            <br /> */}
-                            {item.precio}
-                            <br />
-                            {/* {item.salida} */}
-                            
-                        </p>)
-                        :
-                        'No hay datos'
-                    }
-                </div>
-                </Card.Text>
+        <>
+        {listActividades ?
+        listActividades.map ((item, id) => 
+        <p>
+            <Card className = "cards">
+                <Card.Body>
+                    <Card.Img variant="top" src={item.fileUrl} />
+                    <Card.Title>{item.actividad}</Card.Title>
+                    <br />
+                    {item.cupos}
+                    <br />
+                    {/* {item.descripcion}
+                    <br />
+                    {item.fecha}
+                    <br />  */}
+                    {/* <br />
+                    {item.hora}
+                    <br />
+                    {item.organizacion}
+                    <br /> */}
+                    {item.precio}
+                    <br />
+                    {/* {item.salida} */}
+                </Card.Body>
                 <Button variant="primary">VER MÁS</Button>
-            </Card.Body>
-        </Card>
+            </Card>
+        </p>)
+        :
+        'No hay datos'
+    }
+         
+        </>
      );
 }
  
