@@ -5,6 +5,7 @@ import './style.css';
 import {
     projectFirestore,
 } from '../../Firebase/config';
+import Head from './../../components/header/Head';
 
 const Actividades = () => {
 
@@ -26,6 +27,8 @@ const Actividades = () => {
     }, []);
 
     return ( 
+        <>
+    <Head/>
         <Card className = 'cards'>
             <Card.Body>
                 <Card.Text>
@@ -59,7 +62,9 @@ const Actividades = () => {
                 <Button variant="primary">VER MÁS</Button>
             </Card.Body>
         </Card>
-     );
+    </>
+
+    );
 }
  
 export default Actividades;
