@@ -5,8 +5,6 @@ import './../Actividades/style.css';
 import {
     projectFirestore,
 } from '../../Firebase/config';
-import Listar from './../Actividades/crear-actividades';
-
 
 const Actividades = () => {
 
@@ -28,37 +26,42 @@ const Actividades = () => {
     }, []);
 
     return ( 
-
-        <div>
-            {listActividades ?
-                listActividades.map ((item, id) => <p>
-                    {item.actividad}
-                    <br />
-                    {item.cupos}
-                    <br />
-                    {item.cupos}
-                    <br />
-                    {item.descripcion}
-                    <br />
-                    {item.fecha}
-                    <br />
-                    <img
-                        src={item.fileUrl}
-                    />
-                    <br />
-                    {item.hora}
-                    <br />
-                    {item.organizacion}
-                    <br />
-                    {item.precio}
-                    <br />
-                    {item.salida}
-                </p>)
-                :
-                'No hay datos'
-            }
-        </div>
-        
+        <Card className = 'cards'>
+            <Card.Img variant="top" src="holder.js/100px180" />
+            <Card.Body>
+                
+                <Card.Text>
+                <div>
+                    {listActividades ?
+                        listActividades.map ((item, id) => <p>
+                            <Card.Title>{item.actividad}</Card.Title>
+                            <br />
+                            {item.cupos}
+                            <br />
+                            {item.descripcion}
+                            <br />
+                            {item.fecha}
+                            <br />
+                            <img
+                                src={item.fileUrl}
+                            />
+                            <br />
+                            {item.hora}
+                            <br />
+                            {item.organizacion}
+                            <br />
+                            {item.precio}
+                            <br />
+                            {item.salida}
+                        </p>)
+                        :
+                        'No hay datos'
+                    }
+                </div>
+                </Card.Text>
+                <Button variant="primary">VER MÁS</Button>
+            </Card.Body>
+        </Card>
      );
 }
  

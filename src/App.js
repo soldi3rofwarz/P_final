@@ -4,17 +4,17 @@ import React from 'react';
 //import Detalle from './components/Detalles/Detalles'
 //import Galeria from './components/gallery/galeria'
 //import Pie from './components/footer/foot'
-//import Actividades from './components/Actividades/mostrar-actividades'
+import Actividades from './components/Actividades/mostrar-actividades'
 //import Form from './components/Actividades/form-actividades'
 import  'bootstrap/dist/css/bootstrap.min.css' ;
-import Listar from './components/Actividades/mostrar-actividades'
+//import Galeria from './components/Detalles/Detalles'
 
 function App() {
   
   return(
     
    <div>
-     <Listar/>
+     <Actividades/>
      
    </div> 
    
