@@ -1,11 +1,11 @@
 import React, { useState, useEffect } from 'react';
 import Card from 'react-bootstrap/Card';
 import Button from 'react-bootstrap/Button';
-import './style.css';
 import {
     projectFirestore,
 } from '../../Firebase/config';
 import Head from './../../components/header/Head';
+import './card.css'
 
 const Actividades = () => {
 
@@ -35,7 +35,7 @@ const Actividades = () => {
                 <div>
                     {listActividades ?
                         listActividades.map ((item, id) => <p>
-                        <Card.Img variant="top" src={item.fileUrl} />
+                        <Card.Img variant="top" src={item.fileUrl}/>
                             <Card.Title>{item.actividad}</Card.Title>
                             <br />
                             {item.cupos}
@@ -63,7 +63,6 @@ const Actividades = () => {
             </Card.Body>
         </Card>
     </>
-
     );
 }
  
