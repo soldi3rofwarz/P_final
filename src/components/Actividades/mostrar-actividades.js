@@ -35,23 +35,10 @@ const Actividades = () => {
         <p>
             <Card className = "cards">
                 <Card.Body>
-                    <Card.Img variant="top" src={item.fileUrl} />
-                    <Card.Title>{item.actividad}</Card.Title>
-                    <br />
-                    {item.cupos}
-                    <br />
-                    {/* {item.descripcion}
-                    <br />
-                    {item.fecha}
-                    <br />  */}
-                    {/* <br />
-                    {item.hora}
-                    <br />
-                    {item.organizacion}
-                    <br /> */}
-                    {item.precio}
-                    <br />
-                    {/* {item.salida} */}
+                    <Card.Title className='titulo' >{item.actividad}</Card.Title>
+                    <Card.Img className='imag' variant="top" src={item.fileUrl}/>
+                    <Card.Text className='texto'>{item.descripcion}</Card.Text>
+                    <Card.Text className='texto'>{item.precio}</Card.Text>
                 </Card.Body>
                 <Button variant="primary">VER MÁS</Button>
             </Card>

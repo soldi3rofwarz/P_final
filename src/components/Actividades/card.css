@@ -1,16 +1,25 @@
-.g{
+/* .g{
     width:500px;
     margin-top: 30px;
     margin-left: 30%;
     border: 2px solid rgb(77, 77, 77);
     border-radius: 10px;
     text-align: center;
-}
-
+} */
 .cards{
-    width: 200px;
+    display: inline;
+    width: 800px;
     margin-top: 30px;
     margin-bottom: 30px;
     background-color: aquamarine;
+    height: 350px;
 }
-
+.imag{
+    width: 200px!important;
+}
+.titulo{
+    text-align: center;
+}
+.texto{
+    margin-left: 350px;
+}
