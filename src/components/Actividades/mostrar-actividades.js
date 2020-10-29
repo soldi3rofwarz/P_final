@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import Card from 'react-bootstrap/Card';
 import Button from 'react-bootstrap/Button';
-import './../Actividades/style.css';
+import './style.css';
 import {
     projectFirestore,
 } from '../../Firebase/config';
@@ -27,32 +27,29 @@ const Actividades = () => {
 
     return ( 
         <Card className = 'cards'>
-            <Card.Img variant="top" src="holder.js/100px180" />
             <Card.Body>
-                
                 <Card.Text>
                 <div>
                     {listActividades ?
                         listActividades.map ((item, id) => <p>
+                        <Card.Img variant="top" src={item.fileUrl} />
                             <Card.Title>{item.actividad}</Card.Title>
                             <br />
                             {item.cupos}
                             <br />
-                            {item.descripcion}
+                            {/* {item.descripcion}
                             <br />
                             {item.fecha}
-                            <br />
-                            <img
-                                src={item.fileUrl}
-                            />
-                            <br />
+                            <br />  */}
+                            {/* <br />
                             {item.hora}
                             <br />
                             {item.organizacion}
-                            <br />
+                            <br /> */}
                             {item.precio}
                             <br />
-                            {item.salida}
+                            {/* {item.salida} */}
+                            
                         </p>)
                         :
                         'No hay datos'
