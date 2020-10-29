@@ -1,11 +1,31 @@
-import React ,{useState}from 'react';
+import React ,{useState,useEffect}from 'react';
 import './Detalle.css'
+import Card from 'react-bootstrap/Card';
 import Mapa from './../mapa/mapa'
 import { Container, Row} from 'react-bootstrap';
 import Col from 'react-bootstrap/Col'
 import Button from 'react-bootstrap/Button'
+import {
+    projectFirestore,
+} from '../../Firebase/config';
 
 const Detalle = () => {
+    const [listActividades, setListActividades] = useState([]);
+
+        useEffect(() => {
+        projectFirestore
+        .collection('actividades')
+        .get()
+        .then(snapshot => {
+            const actividades = [];
+            snapshot.forEach(doc => actividades.push({
+                id: doc.id,
+                ...doc.data(),
+            }));
+            setListActividades(actividades);
+        })
+        .catch(error => console.log("Error: ", error));
+    }, []);
     
         const[value, setValue]= useState(0)
 
@@ -18,11 +38,36 @@ const Detalle = () => {
         }
     
     return (  
+        <>
+        <div>
+                    {listActividades ?
+                        listActividades.map ((item, id) => <p>
+                        <Card.Img variant="top" src={item.fileUrl} />
+                            <Card.Title>{item.actividad}</Card.Title>
+                            <br />
+                            {item.cupos}
+                            <br />
+                            {/* {item.descripcion}
+                            <br />
+                            {item.fecha}
+                            <br />  */}
+                            {/* <br />
+                            {item.hora}
+                            <br />
+                            {item.organizacion}
+                            <br /> */}
+                            {item.precio}
+                            <br />
+                            {/* {item.salida} */}
+                            
+                        </p>)
+                        :
+                        'No hay datos'
+                    }
+                </div>
         
         <Container>
-            <Row>
-                <Col ><h1>Hello, world!</h1></Col>
-            </Row>
+            
             <Row className="h" cols="2"> 
                 <Col  className="mapa">
                     
@@ -54,7 +99,7 @@ const Detalle = () => {
             </Row>
             
         </Container>
-        
+        </>
     );
 }
  
