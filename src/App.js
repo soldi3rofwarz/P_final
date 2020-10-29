@@ -8,6 +8,8 @@ import Detalle from './components/Detalles/Detalles'
 //import Form from './components/Actividades/form-actividades'
 import  'bootstrap/dist/css/bootstrap.min.css' ;
 //import Galeria from './components/Detalles/Detalles'
+//import Head from './components/header/Head'
+
 
 function App() {
   
