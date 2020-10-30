@@ -1,20 +1,15 @@
 @import url('https://fonts.googleapis.com/css2?family=Roboto:wght@300&display=swap');
-body
-{
-    margin:0;
-    padding: 0;
-    font-family: sans-serif;
-
-}
 nav
 {
-    position: fixed;
+    position: absolute;
     top:0;
     left: 0;
     width: 100%;
     padding: 10px 100px;
     box-sizing: border-box;
+    background-color: rgb(0, 192, 42);
     transition: .5s;
+    z-index: 10;
 }
 nav.black
 {

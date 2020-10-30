@@ -53,8 +53,9 @@ const Actividades = () => {
                     <Card.Img className='imag' variant="top" src={item.fileUrl}/>
                     <Card.Text className='texto'>organizacion:{item.organizacion}</Card.Text>
                     <Card.Text className='texto'>Precio: {item.precio}</Card.Text>
-
-                    <Button>VER MÁS</Button>
+                    <Link to="/detalle">
+                        <Button>VER MÁS</Button>
+                    </Link>
                     <Button
                         onClick={() => {
                             deleteAct(item.id)

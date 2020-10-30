@@ -1,6 +1,7 @@
 import React from 'react';
 import './head.css';
-import Nav from 'react-bootstrap/Nav'
+//import Nav from 'react-bootstrap/Nav'
+import {Link}from 'react-router-dom'
 
 
 const Header = () => {
@@ -38,7 +39,7 @@ const Header = () => {
   </Nav> */}
 
      
-    <section>
+    
         <nav onScroll = {Scroll2}>
             
 
@@ -46,14 +47,14 @@ const Header = () => {
                 <img src='logo.png'/>
             </div>
             <ul>
-                <li><a href="#">Home</a> </li>
-                <li><a href="#">Actividades</a> </li>
-                <li><a href="#">Galería</a> </li>
-                <li><a href="#">Estadísticas</a> </li>
-                <li><a href="#">Formulario</a> </li>
+                <Link to="/"><li>Home</li></Link>
+                <Link to="/actividades"><li>Actividades</li></Link>
+                <Link to="/galeria"><li>Galería </li></Link>
+                <Link to=""><li>Estadísticas </li></Link>
+                <Link to="/form"><li>Formulario </li></Link>
             </ul>
         </nav>
-    </section> 
+
     </>
     );
 
