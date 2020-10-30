@@ -7,7 +7,6 @@ import {
 } from '../../Firebase/config';
 import Head from './../../components/header/Head';
 
-
 const Actividades = () => {
 
     const [listActividades, setListActividades] = useState([]);
@@ -49,11 +48,11 @@ const Actividades = () => {
         listActividades.map ((item) => 
         <p key={item.id}>
             <Card className = "cards">
-                <Card.Body>
+                <Card.Body className = "body">
                     <Card.Title className='titulo' >{item.actividad}</Card.Title>
                     <Card.Img className='imag' variant="top" src={item.fileUrl}/>
-                    <Card.Text className='texto'>{item.descripcion}</Card.Text>
-                    <Card.Text className='texto'>{item.precio}</Card.Text>
+                    <Card.Text className='texto'>Descripción:{item.descripcion}</Card.Text>
+                    <Card.Text className='texto'>Precio: {item.precio}</Card.Text>
                 </Card.Body>
                 <Button variant="primary">VER MÁS</Button>
             <Button
@@ -61,7 +60,7 @@ const Actividades = () => {
                     deleteAct(item.id)
 
                 }}
-                variant="primary"
+                variant="primary" 
             >
                 Eliminar
             </Button>

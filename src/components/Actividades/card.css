@@ -1,18 +1,19 @@
-/* .g{
+.g{
     width:500px;
     margin-top: 30px;
     margin-left: 30%;
     border: 2px solid rgb(77, 77, 77);
     border-radius: 10px;
-    text-align: center;
-} */
+    text-align: center;}
 .cards{
     display: inline;
     width: 800px;
     margin-top: 30px;
     margin-bottom: 30px;
-    background-color: aquamarine;
-    height: 500px;
+    height: 300px;
+    align-content: center;
+    margin-left: 350px;
+    border-radius: 15px;
 }
 .imag{
     width: 200px!important;
@@ -22,4 +23,15 @@
 }
 .texto{
     margin-left: 350px;
+    margin-top: -85px;
 }
+.btn{
+    width: 110px;
+    margin:10px;
+    align-items: center;
+    margin-left: 600px;
+    
+}
+/* .body{
+    background-color: aquamarine;
+} */

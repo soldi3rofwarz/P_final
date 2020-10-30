@@ -16,7 +16,7 @@ function App() {
   return(
     
    <div>
-     <Actividades />
+     <Actividades/>
      
    </div> 
    
