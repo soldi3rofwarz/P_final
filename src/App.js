@@ -21,7 +21,7 @@ function App(){
                 <Route exact path="/" component={Principal} />
                 <Route exact path="/actividades" component={Actividades} />
                 <Route exact path="/form" component={Form} />
-                <Route exact path="/detalle" component={Detalle} />
+                <Route exact path="/detalle " component={Detalle} />
             </Switch>
         </Router>
     );
