@@ -6,6 +6,7 @@ import {
     projectFirestore,
 } from '../../Firebase/config';
 import Head from './../../components/header/Head';
+import {Link}from 'react-router-dom'
 
 const Actividades = () => {
 
@@ -30,6 +31,7 @@ const Actividades = () => {
         
         <>
         <Head/>
+        
         {listActividades ?
         listActividades.map ((item, id) => 
         <p>
@@ -53,13 +55,15 @@ const Actividades = () => {
                     <br />
                     {/* {item.salida} */}
                 </Card.Body>
-                <Button variant="primary">VER MÁS</Button>
+               
+                    <Button to="/detalles" variant="primary">Ver mas</Button>
+                
             </Card>
         </p>)
         :
         'No hay datos'
     }
-         
+      
         </>
      );
 }

@@ -1,5 +1,6 @@
 import React from 'react';
 import './head.css';
+import Nav from 'react-bootstrap/Nav'
 
 
 const Header = () => {
@@ -16,13 +17,30 @@ const Header = () => {
         })
     }
    
-    return (  
+    return (     
     <>
     <script src="https://code.jquery.com/jquery-3.5.1.js"></script>
+    {/* <Nav className="justify-content-end" activeKey="/home" >
+    <Nav.Item>
+      <Nav.Link href="/home">Active</Nav.Link>
+    </Nav.Item>
+    <Nav.Item>
+      <Nav.Link eventKey="link-1">Link</Nav.Link>
+    </Nav.Item>
+    <Nav.Item>
+      <Nav.Link eventKey="link-2">Link</Nav.Link>
+    </Nav.Item>
+    <Nav.Item>
+      <Nav.Link eventKey="disabled" disabled>
+        Disabled
+      </Nav.Link>
+    </Nav.Item>
+  </Nav> */}
+
+     
     <section>
-    <nav 
-            onscroll = {Scroll2}
-    >
+        <nav onScroll = {Scroll2}>
+            
 
             <div className="logo">
                 <img src='logo.png'/>
@@ -35,7 +53,7 @@ const Header = () => {
                 <li><a href="#">Formulario</a> </li>
             </ul>
         </nav>
-    </section>
+    </section> 
     </>
     );
 

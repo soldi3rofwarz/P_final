@@ -39,35 +39,11 @@ const Detalle = () => {
     
     return (  
         <>
-        <div>
-                    {listActividades ?
-                        listActividades.map ((item, id) => <p>
-                        <Card.Img variant="top" src={item.fileUrl} />
-                            <Card.Title>{item.actividad}</Card.Title>
-                            <br />
-                            {item.cupos}
-                            <br />
-                            {/* {item.descripcion}
-                            <br />
-                            {item.fecha}
-                            <br />  */}
-                            {/* <br />
-                            {item.hora}
-                            <br />
-                            {item.organizacion}
-                            <br /> */}
-                            {item.precio}
-                            <br />
-                            {/* {item.salida} */}
-                            
-                        </p>)
-                        :
-                        'No hay datos'
-                    }
-                </div>
+
         
         <Container>
-            
+            {listActividades ?
+            listActividades.map ((item, id) => <p>
             <Row className="h" cols="2"> 
                 <Col  className="mapa">
                     
@@ -77,11 +53,11 @@ const Detalle = () => {
                 <Col className="det">
                     
                         <h3>Hora de salida</h3>
-                        <p>8:00 A.M</p>
+                        <p>{item.hora}</p>
                         <h3>Lugar de salida</h3>
-                        <p>lugar</p>
+                        <p>{item.salida}</p>
                         <h3>Precio</h3>
-                        <p>precio</p>
+                        <p>{item.precio}</p>
 
                     
                 </Col>
@@ -90,14 +66,17 @@ const Detalle = () => {
              <Col>
                 <hr className="my-4"/>
                 <h2>Descripcion</h2>
-                <p>Aqui se colocara la descripcion de lugar que se visitara</p>
+                <p>{item.descripcion}</p>
                 <a className="btn btn-primary btn-lg" href="#!" role="button" onClick={Limite}>
-                    g</a>
+                    participar</a>
                 <Button variant="outline-success" >{value}</Button>{' '}
                 
             </Col>
             </Row>
-            
+            </p>)
+            :
+            'No hay datos'
+        }
         </Container>
         </>
     );

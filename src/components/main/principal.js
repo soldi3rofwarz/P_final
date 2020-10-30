@@ -1,7 +1,7 @@
 import React from 'react';
 import './main.css';
 import Pie from './../footer/foot';
-
+import Header from './../header/Head'
 
 const Index = () => {
 
@@ -23,13 +23,13 @@ const Index = () => {
     }
     return ( 
         <>
+        <Header/>
     <section className="main"
         onMouseMove={move}
     >
-        <header>
-        <a href="#!" className="logo">world</a>
-            <div className="toggle"></div>
-        </header>
+        
+       
+        
         <img src={`${process.env.PUBLIC_URL}/res/bg.jpg`} alt=""  className="bg"/>
         <img src={`${process.env.PUBLIC_URL}/res/bird.png`}  className="bird" alt="" />
         <div className="content">
