@@ -7,11 +7,13 @@ import {
 } from '../../Firebase/config';
 import Head from './../../components/header/Head';
 
+
 const Actividades = () => {
 
     const [listActividades, setListActividades] = useState([]);
+    const [loading, setLoading] = useState(true);
 
-    useEffect(() => {
+    const getData = () => {
         projectFirestore
         .collection('actividades')
         .get()
@@ -22,17 +24,30 @@ const Actividades = () => {
                 ...doc.data(),
             }));
             setListActividades(actividades);
+            setLoading(false);
         })
         .catch(error => console.log("Error: ", error));
-    }, []);
+    };
+    
+    useEffect(() => {
+        if(loading) 
+        {
+            getData();
+        }
+    }, [loading]);
+
+    const deleteAct = async(id)=>{
+        await projectFirestore.collection("actividades").doc(id).delete();
+        setLoading(true);
+    }
 
     return ( 
         
         <>
         <Head/>
         {listActividades ?
-        listActividades.map ((item, id) => 
-        <p>
+        listActividades.map ((item) => 
+        <p key={item.id}>
             <Card className = "cards">
                 <Card.Body>
                     <Card.Title className='titulo' >{item.actividad}</Card.Title>
@@ -41,7 +56,16 @@ const Actividades = () => {
                     <Card.Text className='texto'>{item.precio}</Card.Text>
                 </Card.Body>
                 <Button variant="primary">VER MÁS</Button>
-            </Card>
+            <Button
+                onClick={() => {
+                    deleteAct(item.id)
+
+                }}
+                variant="primary"
+            >
+                Eliminar
+            </Button>
+        </Card>
         </p>)
         :
         'No hay datos'

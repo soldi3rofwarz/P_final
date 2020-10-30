@@ -21,7 +21,7 @@ const Header = () => {
     <script src="https://code.jquery.com/jquery-3.5.1.js"></script>
     <section>
     <nav 
-            onscroll = {Scroll2}
+            onScroll = {Scroll2}
     >
 
             <div className="logo">
