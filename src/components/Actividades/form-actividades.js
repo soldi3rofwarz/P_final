@@ -73,7 +73,6 @@ const AgregarActividades = () => {
         });
     }
 
-
     return ( 
     <>
         <Form className="g">
