@@ -39,9 +39,7 @@ const Actividades = () => {
         await projectFirestore.collection("actividades").doc(id).delete();
         setLoading(true);
     }
-
     return ( 
-        
         <>
         <Head/>
         {listActividades ?
@@ -51,25 +49,24 @@ const Actividades = () => {
                 <Card.Body className = "body">
                     <Card.Title className='titulo' >{item.actividad}</Card.Title>
                     <Card.Img className='imag' variant="top" src={item.fileUrl}/>
-                    <Card.Text className='texto'>Descripción:{item.descripcion}</Card.Text>
+                    <Card.Text className='texto'>organizacion:{item.organizacion}</Card.Text>
                     <Card.Text className='texto'>Precio: {item.precio}</Card.Text>
-                </Card.Body>
-                <Button variant="primary">VER MÁS</Button>
-            <Button
-                onClick={() => {
-                    deleteAct(item.id)
 
-                }}
-                variant="primary" 
-            >
+                    <Button>VER MÁS</Button>
+                    <Button
+                        onClick={() => {
+                            deleteAct(item.id)
+                        }}
+                    >
                 Eliminar
             </Button>
+                </Card.Body>
+                
         </Card>
         </p>)
         :
         'No hay datos'
     }
-         
         </>
      );
 }

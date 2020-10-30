@@ -1,3 +1,8 @@
+.root{
+    background-color: #fdf5e6;
+
+}
+
 .g{
     width:500px;
     margin-top: 30px;
@@ -10,7 +15,7 @@
     width: 800px;
     margin-top: 30px;
     margin-bottom: 30px;
-    height: 300px;
+    height: 250px;
     align-content: center;
     margin-left: 350px;
     border-radius: 15px;
@@ -22,7 +27,7 @@
     text-align: center;
 }
 .texto{
-    margin-left: 350px;
+    margin-left: 290px;
     margin-top: -85px;
 }
 .btn{
@@ -30,8 +35,11 @@
     margin:10px;
     align-items: center;
     margin-left: 600px;
-    
+    background-color:#fdf5e6;
+
+ 
 }
-/* .body{
-    background-color: aquamarine;
-} */
+ .body{
+    background-color:#fdf5e6;
+} 
+
