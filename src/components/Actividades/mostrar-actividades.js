@@ -11,8 +11,9 @@ import {Link}from 'react-router-dom'
 const Actividades = () => {
 
     const [listActividades, setListActividades] = useState([]);
+    const [loading, setLoading] = useState(true);
 
-    useEffect(() => {
+    const getData = () => {
         projectFirestore
         .collection('actividades')
         .get()
@@ -23,47 +24,51 @@ const Actividades = () => {
                 ...doc.data(),
             }));
             setListActividades(actividades);
+            setLoading(false);
         })
         .catch(error => console.log("Error: ", error));
-    }, []);
+    };
+    
+    useEffect(() => {
+        if(loading) 
+        {
+            getData();
+        }
+    }, [loading]);
 
+    const deleteAct = async(id)=>{
+        await projectFirestore.collection("actividades").doc(id).delete();
+        setLoading(true);
+    }
     return ( 
-        
         <>
         <Head/>
         
         {listActividades ?
-        listActividades.map ((item, id) => 
-        <p>
+        listActividades.map ((item) => 
+        <p key={item.id}>
             <Card className = "cards">
-                <Card.Body>
-                    <Card.Img variant="top" src={item.fileUrl} />
-                    <Card.Title>{item.actividad}</Card.Title>
-                    <br />
-                    {item.cupos}
-                    <br />
-                    {/* {item.descripcion}
-                    <br />
-                    {item.fecha}
-                    <br />  */}
-                    {/* <br />
-                    {item.hora}
-                    <br />
-                    {item.organizacion}
-                    <br /> */}
-                    {item.precio}
-                    <br />
-                    {/* {item.salida} */}
+                <Card.Body className = "body">
+                    <Card.Title className='titulo' >{item.actividad}</Card.Title>
+                    <Card.Img className='imag' variant="top" src={item.fileUrl}/>
+                    <Card.Text className='texto'>organizacion:{item.organizacion}</Card.Text>
+                    <Card.Text className='texto'>Precio: {item.precio}</Card.Text>
+
+                    <Button>VER MÁS</Button>
+                    <Button
+                        onClick={() => {
+                            deleteAct(item.id)
+                        }}
+                    >
+                Eliminar
+            </Button>
                 </Card.Body>
-               
-                    <Button to="/detalles" variant="primary">Ver mas</Button>
                 
-            </Card>
+        </Card>
         </p>)
         :
         'No hay datos'
     }
-      
         </>
      );
 }

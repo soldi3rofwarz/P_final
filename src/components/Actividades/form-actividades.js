@@ -1,7 +1,7 @@
 import React, {useState} from 'react';
 import Form from 'react-bootstrap/Form'
 import ProgressBar from './../gallery/ProgressBar'
-import './../Actividades/card.css';
+import './card.css';
 import {
     projectFirestore
 } from './../../Firebase/config';
