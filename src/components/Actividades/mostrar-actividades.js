@@ -8,7 +8,9 @@ import {
 import Head from './../../components/header/Head';
 import {Link}from 'react-router-dom'
 
-const Actividades = () => {
+export const Contexto = React.createElement()
+
+const Actividades = (props) => {
 
     const [listActividades, setListActividades] = useState([]);
     const [loading, setLoading] = useState(true);
@@ -47,13 +49,16 @@ const Actividades = () => {
         {listActividades ?
         listActividades.map ((item) => 
         <p key={item.id}>
+            <Contexto.provider value={item}>
+            {props.children}
             <Card className = "cards">
                 <Card.Body className = "body">
                     <Card.Title className='titulo' >{item.actividad}</Card.Title>
                     <Card.Img className='imag' variant="top" src={item.fileUrl}/>
                     <Card.Text className='texto'>organizacion:{item.organizacion}</Card.Text>
                     <Card.Text className='texto'>Precio: {item.precio}</Card.Text>
-                    <Link to="/detalle">
+
+                    <Link to={`/detalle/${item.id}`}>
                         <Button>VER MÁS</Button>
                     </Link>
                     <Button
@@ -66,10 +71,13 @@ const Actividades = () => {
                 </Card.Body>
                 
         </Card>
+        </Contexto.provider>
         </p>)
         :
         'No hay datos'
+        
     }
+    
         </>
      );
 }

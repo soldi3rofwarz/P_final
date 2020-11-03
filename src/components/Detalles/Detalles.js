@@ -1,6 +1,6 @@
 import React ,{useState,useEffect}from 'react';
 import './Detalle.css'
-import Card from 'react-bootstrap/Card';
+
 import Mapa from './../mapa/mapa'
 import { Container, Row} from 'react-bootstrap';
 import Col from 'react-bootstrap/Col'
@@ -9,23 +9,15 @@ import {
     projectFirestore,
 } from '../../Firebase/config';
 
-const Detalle = () => {
-    const [listActividades, setListActividades] = useState([]);
-
-        useEffect(() => {
-        projectFirestore
-        .collection('actividades')
-        .get()
-        .then(snapshot => {
-            const actividades = [];
-            snapshot.forEach(doc => actividades.push({
-                id: doc.id,
-                ...doc.data(),
-            }));
-            setListActividades(actividades);
-        })
-        .catch(error => console.log("Error: ", error));
-    }, []);
+const Detalle = (item) => {
+    
+    useEffect(()=>{
+        console.log(item);
+    })
+    const [band,setband]= useState(false)
+       
+    
+   
     
         const[value, setValue]= useState(0)
 
@@ -34,6 +26,7 @@ const Detalle = () => {
 
             if(value === 20){
                 setValue(value===0)
+                setband(true)
             }
         }
     
@@ -42,8 +35,7 @@ const Detalle = () => {
 
         
         <Container>
-            {listActividades ?
-            listActividades.map ((item, id) => <p>
+            
             <Row className="h" cols="2"> 
                 <Col  className="mapa">
                     
@@ -67,16 +59,17 @@ const Detalle = () => {
                 <hr className="my-4"/>
                 <h2>Descripcion</h2>
                 <p>{item.descripcion}</p>
-                <a className="btn btn-primary btn-lg" href="#!" role="button" onClick={Limite}>
-                    participar</a>
+                {(band===true)? <p>cupos llenos</p>: <a className="btn btn-primary btn-lg" href="#!" role="button" onClick={Limite}>
+                    participar</a>}
+                
                 <Button variant="outline-success" >{value}</Button>{' '}
                 
             </Col>
             </Row>
-            </p>)
+          
             :
             'No hay datos'
-        }
+        
         </Container>
         </>
     );
