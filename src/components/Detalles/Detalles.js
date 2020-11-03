@@ -1,6 +1,5 @@
 import React ,{useState,useEffect}from 'react';
 import './Detalle.css'
-import Card from 'react-bootstrap/Card';
 import Mapa from './../mapa/mapa'
 import { Container, Row} from 'react-bootstrap';
 import Col from 'react-bootstrap/Col'
@@ -8,6 +7,8 @@ import Button from 'react-bootstrap/Button'
 import {
     projectFirestore,
 } from '../../Firebase/config';
+import Head from '../header/Head'
+
 
 const Detalle = () => {
     const [listActividades, setListActividades] = useState([]);
@@ -40,7 +41,7 @@ const Detalle = () => {
     return (  
         <>
 
-        
+        <Head/>
         <Container>
             {listActividades ?
             listActividades.map ((item, id) => <p>

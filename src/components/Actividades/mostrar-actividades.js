@@ -40,6 +40,7 @@ const Actividades = () => {
         await projectFirestore.collection("actividades").doc(id).delete();
         setLoading(true);
     }
+    
     return ( 
         <>
         <Head/>
@@ -53,16 +54,26 @@ const Actividades = () => {
                     <Card.Img className='imag' variant="top" src={item.fileUrl}/>
                     <Card.Text className='texto'>organizacion:{item.organizacion}</Card.Text>
                     <Card.Text className='texto'>Precio: {item.precio}</Card.Text>
-                    <Link to="/detalle">
-                        <Button>VER MÁS</Button>
-                    </Link>
+                    
+                    
+                    <Link to ={`/form/${item.id}`}>
+                        <Button >
+                        Actualizar
+                        </Button>
+                    </Link> 
+                    
+
                     <Button
                         onClick={() => {
                             deleteAct(item.id)
                         }}
                     >
-                Eliminar
-            </Button>
+                        Eliminar
+                    </Button>
+
+                    <Link to="/detalle">
+                        <Button>VER MÁS</Button>
+                    </Link>
                 </Card.Body>
                 
         </Card>

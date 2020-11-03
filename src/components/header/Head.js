@@ -43,9 +43,9 @@ const Header = () => {
         <nav onScroll = {Scroll2}>
             
 
-            <div className="logo">
+            {/* <div className="logo">
                 <img src='logo.png'/>
-            </div>
+            </div> */}
             <ul>
                 <Link to="/"><li>Home</li></Link>
                 <Link to="/actividades"><li>Actividades</li></Link>
