@@ -7,12 +7,12 @@ const Foot = () => {
         <section >
             <footer>
             <div className="footer-left">
-                <img src="img/logo.png" alt="yyy"/>
+                <img src="img/logo.png" alt=""/>
 				    <h3>Sobre<span>Vagachontal</span></h3>
 
 				<p className="footer-links">
-					<a href="#!">Home</a>
-					|
+					{/* <a href="#!">Home</a> 
+					|*/}
 					<a href="#!">Acerca de</a>
 					|
 					<a href="#!">Contacto</a>
@@ -43,7 +43,7 @@ const Foot = () => {
             <div className="footer-right">
 				<p className="footer-company-about">
 					<span>Acerca Vagachontal</span>
-					We offer training and skill building courses across Technology, Design, Management, Science and Humanities.</p>
+				</p>
 				<div className="footer-icons">
 					<a href="#!"><i class="fa fa-facebook"></i></a>
 					<a href="#!"><i class="fa fa-instagram"></i></a>

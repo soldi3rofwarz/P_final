@@ -5,8 +5,11 @@ import './card.css';
 import {
     projectFirestore
 } from './../../Firebase/config';
+import Head from '../header/Head';
 
-const AgregarActividades = () => {
+const AgregarActividades = (props) => {
+
+    const actividadId = props.match.params.actividadId;
 
     const [actividad, setActividad] = useState('');
     const handleActividadChange = (e) => setActividad(e.target.value);
@@ -63,27 +66,51 @@ const AgregarActividades = () => {
     const handleAgregarClick = (e) => {
         e.preventDefault();
         //aquí irían las validaciones
-        projectFirestore.collection('actividades').add({
-            actividad,
-            fecha,
-            organizacion,
-            precio,
-            salida,
-            hora,
-            cupos,
-            latitud,
-            longitud,
-            descripcion,
-            fileUrl,
-        }).then(() => {
-            console.log("Guardado!!!!", fileUrl);
-        }).catch((error) => {
-            console.log("Error: ", error);
-        });
+        if(!actividadId) {
+            projectFirestore.collection('actividades').add({
+                actividad,
+                fecha,
+                organizacion,
+                precio,
+                salida,
+                hora,
+                cupos,
+                latitud,
+                longitud,
+                descripcion,
+                fileUrl,
+            }).then(() => {
+                console.log("Guardado!!!!", fileUrl);
+            }).catch((error) => {
+                console.log("Error: ", error);
+            });
+        }
+        else {
+            projectFirestore.collection('actividades').doc(actividadId).update({
+                actividad,
+                fecha,
+                organizacion,
+                precio,
+                salida,
+                hora,
+                cupos,
+                latitud,
+                longitud,
+                descripcion,
+                fileUrl,
+            }).then(() => {
+                console.log("Editado!!!!", fileUrl);
+            }).catch((error) => {
+                console.log("Error: ", error);
+            });
+        }
     }
 
     return ( 
+        
     <>
+    <header><Head/></header>
+    
         <Form className="g">
         
             <Form.Group controlId="formActividad">

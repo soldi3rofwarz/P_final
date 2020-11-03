@@ -42,6 +42,7 @@ const Actividades = (props) => {
         await projectFirestore.collection("actividades").doc(id).delete();
         setLoading(true);
     }
+    
     return ( 
         <>
         <Head/>
@@ -61,13 +62,26 @@ const Actividades = (props) => {
                     <Link to={`/detalle/${item.id}`}>
                         <Button>VER MÁS</Button>
                     </Link>
+                    
+                    
+                    <Link to ={`/form/${item.id}`}>
+                        <Button >
+                        Actualizar
+                        </Button>
+                    </Link> 
+                    
+
                     <Button
                         onClick={() => {
                             deleteAct(item.id)
                         }}
                     >
-                Eliminar
-            </Button>
+                        Eliminar
+                    </Button>
+
+                    <Link to="/detalle">
+                        <Button>VER MÁS</Button>
+                    </Link>
                 </Card.Body>
                 
         </Card>

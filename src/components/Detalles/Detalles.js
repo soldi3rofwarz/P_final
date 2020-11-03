@@ -1,6 +1,9 @@
 import React ,{useState,useEffect}from 'react';
 import './Detalle.css'
+<<<<<<< HEAD
 
+=======
+>>>>>>> ed0d60e3bc38d883b2babc72e212b2b2424bd97b
 import Mapa from './../mapa/mapa'
 import { Container, Row} from 'react-bootstrap';
 import Col from 'react-bootstrap/Col'
@@ -8,6 +11,8 @@ import Button from 'react-bootstrap/Button'
 import {
     projectFirestore,
 } from '../../Firebase/config';
+import Head from '../header/Head'
+
 
 const Detalle = (item) => {
     
@@ -33,7 +38,7 @@ const Detalle = (item) => {
     return (  
         <>
 
-        
+        <Head/>
         <Container>
             
             <Row className="h" cols="2"> 
