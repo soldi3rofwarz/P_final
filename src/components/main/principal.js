@@ -1,27 +1,30 @@
-import React from 'react';
+import React ,{useEffect, useCallback}from 'react';
 import './main.css';
 import Pie from './../footer/foot';
 import Header from './../header/Head'
 
 const Index = () => {
 
-    const move = ()=>{
-        document.addEventListener("mousemove", function(e){
-            const bg = document.querySelector('.bg')
-            const bird =document.querySelector('.bird')
-            const content = document.querySelector('.content');
-            bg.style.width = 100+e.pageX/100+ '%';
-            bg.style.height = 100+e.pageX/100+ '%';
-        
-            bird.style.right = 100+e.pageX/2+ 'px';
-            content.style.left = 100+e.pageX/2+ 'px';
-        })
-        
+    const move = function(e) {
+        const bg = document.querySelector('.bg')
+        const bird =document.querySelector('.bird')
+        const content = document.querySelector('.content');
+        bg.style.width = 100+e.pageX/100+ '%';
+        bg.style.height = 100+e.pageX/100+ '%';
+    
+        bird.style.right = 100+e.pageX/2+ 'px';
+        content.style.left = 100+e.pageX/2+ 'px';
     }
+
+    useEffect(()=>{
+        document.getElementById('main').addEventListener("mousemove", move);
+        return () => document.getElementById('main').removeEventListener('mousemove', move);
+    },[]);
+
     return ( 
         <>
         <Header/>
-    <section className="main"
+    <section id="main" className="main"
         onMouseMove={move}
     >
         

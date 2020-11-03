@@ -7,7 +7,7 @@ nav
     width: 100%;
     padding: 10px 100px;
     box-sizing: border-box;
-    background-color: rgb(0, 192, 42);
+    background-color: rgba(163, 241, 196, 0.863);
     transition: .5s;
     z-index: 10;
 }
@@ -64,7 +64,6 @@ nav ul li a:hover
 {
     color:rgb(0, 0, 0);
     background: #1EC1FA;
-
 }
 section .sec1
 {

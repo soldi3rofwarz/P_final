@@ -43,15 +43,15 @@ const Header = () => {
         <nav onScroll = {Scroll2}>
             
 
-            <div className="logo">
+            {/* <div className="logo">
                 <img src='logo.png'/>
-            </div>
+            </div> */}
             <ul>
-                <Link to="/"><li>Home</li></Link>
-                <Link to="/actividades"><li>Actividades</li></Link>
-                <Link to="/galeria"><li>Galería </li></Link>
-                <Link to=""><li>Estadísticas </li></Link>
-                <Link to="/form"><li>Formulario </li></Link>
+                <li><Link to="/">Home</Link></li>
+                <li><Link to="/actividades">Actividades</Link></li>
+                <li><Link to="/galeria">Galería</Link></li>
+                <li><Link to="">Estadísticas </Link></li>
+                <li><Link to="/form">Formulario </Link></li>
             </ul>
         </nav>
 
