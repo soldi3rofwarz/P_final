@@ -10,7 +10,10 @@ import {
   import{formatRelative} from 'date-fns';
   import mapStyles from './mapStyles';
   import "@reach/combobox/styles.css"
-  
+  import usePlaceAtocomplete,{getGeocode,getLatLng}from 'use-places-autocomplete'
+  import {Combobox,ComboboxInput,ComboboxPopover,ComboboxList,ComboboxOption} from '@reach/combobox'
+  import '@reach/combobox/styles.css'
+  //****************************************************************************************************************** */
   const libraries= ["places"]
   const mapContainerStyle={
     width: "100vw",
@@ -50,6 +53,8 @@ const Mapa = () => {
     return (
         <>
         <div className="princ">
+            <Search/>
+
             <GoogleMap
                 mapContainerStyle={mapContainerStyle}
                 zoom={12}  
@@ -69,14 +74,55 @@ const Mapa = () => {
                             anchor: new window.google.maps.Point(15,15)
                         }}
                         onClick={()=>{
-                            setSelect(Marker)
+                            setSelect(marker)
                         }}
                     />
                 ))}
+
+                {select? (<InfoWindow position={{lat: select.lat, lng: select.lng}} onCloseClick={()=>{
+                    setSelect(null)
+                }}>
+                    <div>
+                        <h2>salida</h2>
+                        <p>hora {formatRelative(select.time, new Date())}</p>
+                    </div>
+                </InfoWindow>): null}
             </GoogleMap>
       </div>
       </>
      );
+}
+function Search(){
+    const {
+        ready,
+        value,
+        suggestions:{status,data},
+        setValue,
+        clearSuggestions
+    } = usePlaceAtocomplete({
+        requestOptions:{
+            location:{lat:()=> 12.105900, lng:()=> -85.365060},
+            radius: 200* 1000,
+        }
+    })
+    return(
+    <div >
+        <Combobox onSelect={(address)=>{
+            console.log(address)
+            }}
+            >
+            <ComboboxInput value={value} onChange={(e)=>{
+                setValue(e.target.value)
+            }}
+            disable={!ready}
+            placeholder="direccion"
+            />
+            <ComboboxPopover>
+                
+            </ComboboxPopover>
+        </Combobox>
+    </div>
+    )
 }
  
 export default Mapa;

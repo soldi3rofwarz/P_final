@@ -2,11 +2,13 @@ import React, { useEffect } from 'react';
 import useStorage from './useStorage';
 import { motion } from 'framer-motion';
 
-const ProgressBar = ({ file, setFile }) => {
+const ProgressBar = ({ file, setFile, setUrl }) => {
+  console.log("ProgressBar: ", file);
   const { progress, url } = useStorage(file);
 
   useEffect(() => {
     if (url) {
+      if(setUrl) setUrl(url);
       setFile(null);
     }
   }, [url, setFile]);
