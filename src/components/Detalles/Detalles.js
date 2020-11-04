@@ -1,9 +1,6 @@
-import React ,{useState,useEffect}from 'react';
+import React ,{useState,useEffect,useContext}from 'react';
 import './Detalle.css'
-<<<<<<< HEAD
 
-=======
->>>>>>> ed0d60e3bc38d883b2babc72e212b2b2424bd97b
 import Mapa from './../mapa/mapa'
 import { Container, Row} from 'react-bootstrap';
 import Col from 'react-bootstrap/Col'
@@ -11,13 +8,13 @@ import Button from 'react-bootstrap/Button'
 import {
     projectFirestore,
 } from '../../Firebase/config';
-import Head from '../header/Head'
+import {Contexto} from './../Actividades/mostrar-actividades'
 
+const Detalle = () => {
+    const {hora,salida,precio,descripcion}= useContext(Contexto)
 
-const Detalle = (item) => {
-    
     useEffect(()=>{
-        console.log(item);
+        console.log();
     })
     const [band,setband]= useState(false)
        
@@ -38,7 +35,7 @@ const Detalle = (item) => {
     return (  
         <>
 
-        <Head/>
+        
         <Container>
             
             <Row className="h" cols="2"> 
@@ -50,11 +47,11 @@ const Detalle = (item) => {
                 <Col className="det">
                     
                         <h3>Hora de salida</h3>
-                        <p>{item.hora}</p>
+                        <p>{hora}</p>
                         <h3>Lugar de salida</h3>
-                        <p>{item.salida}</p>
+                        <p>{salida}</p>
                         <h3>Precio</h3>
-                        <p>{item.precio}</p>
+                        <p>{precio}</p>
 
                     
                 </Col>
@@ -63,7 +60,7 @@ const Detalle = (item) => {
              <Col>
                 <hr className="my-4"/>
                 <h2>Descripcion</h2>
-                <p>{item.descripcion}</p>
+                <p>{descripcion}</p>
                 {(band===true)? <p>cupos llenos</p>: <a className="btn btn-primary btn-lg" href="#!" role="button" onClick={Limite}>
                     participar</a>}
                 

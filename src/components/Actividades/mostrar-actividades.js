@@ -7,6 +7,7 @@ import {
 } from '../../Firebase/config';
 import Head from './../../components/header/Head';
 import {Link}from 'react-router-dom'
+import Contextg from './../../contexto/Context'
 
 export const Contexto = React.createElement()
 
@@ -27,6 +28,7 @@ const Actividades = (props) => {
             }));
             setListActividades(actividades);
             setLoading(false);
+            console.log(actividades)
         })
         .catch(error => console.log("Error: ", error));
     };
@@ -35,6 +37,7 @@ const Actividades = (props) => {
         if(loading) 
         {
             getData();
+           
         }
     }, [loading]);
 
@@ -49,9 +52,9 @@ const Actividades = (props) => {
         
         {listActividades ?
         listActividades.map ((item) => 
+        
         <p key={item.id}>
-            <Contexto.provider value={item}>
-            {props.children}
+
             <Card className = "cards">
                 <Card.Body className = "body">
                     <Card.Title className='titulo' >{item.actividad}</Card.Title>
@@ -85,13 +88,16 @@ const Actividades = (props) => {
                 </Card.Body>
                 
         </Card>
-        </Contexto.provider>
+       
         </p>)
         :
         'No hay datos'
         
     }
-    
+    <Contextg
+        data={listActividades}
+
+    />
         </>
      );
 }
