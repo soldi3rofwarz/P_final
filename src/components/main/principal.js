@@ -33,9 +33,9 @@ const Index = () => {
         <img src={`${process.env.PUBLIC_URL}/res/bg.jpg`} alt=""  className="bg"/>
         <img src={`${process.env.PUBLIC_URL}/res/bird.png`}  className="bird" alt="" />
         <div className="content">
-            <h2><br/><span>Vagachontal</span></h2>
+            <h2><br/><span>VagaChontal</span></h2>
            
-            <a href="#!">Unite</a>
+            <a href="#!">Unete</a>
         </div>
         <ul className="sci">
             <li><a href="#!"><img src={`${process.env.PUBLIC_URL}/res/facebook.png`} alt="" /></a></li>

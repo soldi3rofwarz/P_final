@@ -82,9 +82,7 @@ const Actividades = (props) => {
                         Eliminar
                     </Button>
 
-                    <Link to="/detalle">
-                        <Button>VER MÁS</Button>
-                    </Link>
+                    
                 </Card.Body>
                 
         </Card>
