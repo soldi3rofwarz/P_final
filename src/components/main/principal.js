@@ -2,6 +2,7 @@ import React ,{useEffect, useCallback}from 'react';
 import './main.css';
 import Pie from './../footer/foot';
 import Header from './../header/Head'
+import {Link} from 'react-router-dom'
 
 const Index = () => {
 
@@ -35,7 +36,9 @@ const Index = () => {
         <div className="content">
             <h2><br/><span>VagaChontal</span></h2>
            
-            <a href="#!">Unete</a>
+           <Link to = {'/login'}>
+            <button>Unete</button>
+            </Link>
         </div>
         <ul className="sci">
             <li><a href="#!"><img src={`${process.env.PUBLIC_URL}/res/facebook.png`} alt="" /></a></li>
