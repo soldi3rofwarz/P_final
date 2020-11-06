@@ -1,5 +1,6 @@
 import React, {useState} from 'react';
 import Form from 'react-bootstrap/Form'
+
 import ProgressBar from './../gallery/ProgressBar'
 import './card.css';
 import {
@@ -125,6 +126,7 @@ const AgregarActividades = (props) => {
             onSubmit={Validar}
         >
             {error? alert("debe ser numero"): null}
+            
             <Form.Group controlId="formActividad">
                 <Form.Label>Actividad</Form.Label>
                 <Form.Control type="text" value= {actividad} placeholder="Actividad" onChange={handleActividadChange} />
