@@ -8,6 +8,7 @@ import Form from './components/Actividades/form-actividades'
 import  'bootstrap/dist/css/bootstrap.min.css' ;
 //import Galeria from './components/Detalles/Detalles'
 //import Head from './components/header/Head'
+import Login from './components/login/loginGoogle'
 import Mapa from './components/mapa/mapa'
 import {
     BrowserRouter as Router,
@@ -22,6 +23,7 @@ function App(){
         <Router>
             <Switch>
                 <Route exact path="/" component={Principal} />
+                <Route exact path="/login" component={Login} />
                 <Route exact path="/actividades" component={Actividades} />
                 <Route  path="/actividades/:id" component={Detalle} />
                 <Route  exact path="/form" component={Form} /> 
