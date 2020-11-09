@@ -14,7 +14,7 @@ const Detalle = () => {
     
     const [band,setband]= useState(false)
        
-    const detalle = listActividade.filter((actividad,index)=>{
+    const detalle = listActividade && listActividade.filter ((actividad,index)=>{
         return actividad.id === index
     })
    
@@ -29,16 +29,12 @@ const Detalle = () => {
                 setband(true)
             }
         }
-    
-        useEffect(()=>  {
-            getData()
-        })
-
+   
     return (  
         <>
-
-        {detalle.map ((item) => 
-        
+        {
+        detalle&&detalle.map (item =>
+        (
         <p key={item.id}>
         <Container>
             
@@ -77,7 +73,9 @@ const Detalle = () => {
             'No hay datos'
         
         </Container>
-        </p>)
+        </p>
+        )
+        )
         }
         </>
        

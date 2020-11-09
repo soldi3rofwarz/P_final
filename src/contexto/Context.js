@@ -10,7 +10,7 @@ export default (props) => {
     const [loading, setLoading] = useState(true);
 
     const getData = () => {
-        setLoading(true);
+    
         projectFirestore
         .collection('actividades')
         .get()
