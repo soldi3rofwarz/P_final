@@ -17,7 +17,7 @@ import {
 }from 'react-router-dom'
 import ContextG from './contexto/Context'
 
-function App(){
+/*function App(){
     return (  
         <ContextG>
         <Router>
@@ -30,10 +30,18 @@ function App(){
                 <Route  path="/form/:actividadId" component={Form} />
                 <Route  path="/mapa" component={Mapa} />
                 <Route exact path="/detalle" component={Detalle} />
-                {/* <Route exact path="/detalle" component={Detalle} /> */}
             </Switch>
         </Router>
         </ContextG>
     );
+}*/
+
+import {ClientsRoute} from './routes/clients';
+
+function App() {
+    return (
+        <ClientsRoute />
+    );
 }
+
 export default App;

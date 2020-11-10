@@ -6,8 +6,8 @@ import {
     projectFirestore,
 } from '../../Firebase/config';
 import Head from './../../components/header/Head';
-import {Link}from 'react-router-dom'
-import {Contexto} from './../../contexto/Context'
+import {Link}from 'react-router-dom';
+import {Contexto} from './../../contexto/Context';
 
 
 
