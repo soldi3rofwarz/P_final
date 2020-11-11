@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import firebase from './../../Firebase/config'
+import firebase from '../../Firebase/config'
 
 class GoogleLogin extends Component{
 constructor(){
