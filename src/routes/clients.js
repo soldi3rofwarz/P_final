@@ -4,13 +4,13 @@ import {
     Switch,
     Route,
 }from 'react-router-dom';
-import {ActividadesPage} from './../pages/actividades';
+import Index from './../components/main/principal';
 
 export const ClientsRoute = () => {
     return (
         <Router>
             <Switch>
-                <Route exact path="/" component={ActividadesPage} />
+                <Route exact path="/" component={Index} />
             </Switch>
         </Router>
     );

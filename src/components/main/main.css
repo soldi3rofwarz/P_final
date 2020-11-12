@@ -76,7 +76,7 @@ section header .toggle:active{
     position: absolute;
     bottom: 0;
     right: 100px;
-    max-height: 80%;
+    max-height: 20%;
     z-index: 100;
 }
 .content{
@@ -84,13 +84,14 @@ section header .toggle:active{
     left: 100px;
     max-width: 600px;
     z-index: 10;
-
+    background: rgba(red, green, blue, alpha);
 }
 .content h2{
     font-size: 3.5em;
     color: #fff;
     font-weight: 400;
     line-height: 2em;
+    background: rgba(red, green, rgb(45, 45, 100), alpha);
 }
 .content span{
     font-weight: 800;
@@ -165,4 +166,15 @@ section header .toggle:active{
 
 .txtblock .block p{
     color: #fff;
+}
+.buton{
+    background: rgba(85, 121, 51, 0.863);
+    width: 30%;
+    height: 50px;
+    color:rgba(255, 255, 255, 0.863);
+    transition: .5s;
+    position: absolute;
+    float: left;
+    
+
 }
