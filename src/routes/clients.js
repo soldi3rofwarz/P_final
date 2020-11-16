@@ -4,13 +4,18 @@ import {
     Switch,
     Route,
 }from 'react-router-dom';
-import Login  from '../components/login/Cliente/Singup';
+import {ActividadesPage }from './../pages/actividades' 
+import Index from './../components/main/principal';
+import DetallePage from './../pages/detallePage'
 
 export const ClientsRoute = () => {
     return (
         <Router>
             <Switch>
-                <Route exact path="/" component={ Login } />
+                <Route exact path="/" component={Index}sx />
+                <Route exact path="/actividades" component={ActividadesPage}/>
+                <Route path="/Detalle/actividades:id" component={DetallePage}/>
+
             </Switch>
         </Router>
     );
