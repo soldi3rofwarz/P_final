@@ -7,7 +7,7 @@ export const ListContainer = () => {
     useEffect(() => {
         GetData()
             .then(actividades => setActividades(actividades))
-            .catch(error => console.log("Error hp:", error));
+            .catch(error => console.log("Error:", error));
     }, []);
     return (
         <List

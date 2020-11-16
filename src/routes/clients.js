@@ -4,13 +4,13 @@ import {
     Switch,
     Route,
 }from 'react-router-dom';
-import Index from './../components/main/principal';
+import Login  from '../components/login/Cliente/Singup';
 
 export const ClientsRoute = () => {
     return (
         <Router>
             <Switch>
-                <Route exact path="/" component={Index} />
+                <Route exact path="/" component={ Login } />
             </Switch>
         </Router>
     );

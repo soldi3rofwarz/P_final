@@ -4,11 +4,14 @@ import UploadForm from './UploadForm';
 import ImageGrid from './ImageGrid';
 import Modal from './modal';
 import './galeria.css';
+import Header from './../header/Head'
 
 
 const Galeria =()=>{
     const [selectedImg, setSelectedImg] = useState(null);
     return(
+      <>
+      <Header/>
         <div className="App">
       <Title/>
       <UploadForm />
@@ -17,7 +20,7 @@ const Galeria =()=>{
         <Modal selectedImg={selectedImg} setSelectedImg={setSelectedImg} />
       )}
     </div>
+    </>
     )
 }
-
 export default Galeria;
