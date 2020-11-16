@@ -1,0 +1,18 @@
+import React, {useState, useEffect,} from 'react';
+import {Delete,GetData,} from './../../../api/data/actividades';
+import {List} from './../components/list';
+
+export const ListContainer = () => {
+    const [actividades, setActividades] = useState([]);
+    useEffect(() => {
+        GetData()
+            .then(actividades => setActividades(actividades))
+            .catch(error => console.log("Error hp:", error));
+    }, []);
+    return (
+        <List
+            listActividades={actividades}
+            onDelete={(actividadId) => Delete(actividadId)}
+        />
+    );
+};

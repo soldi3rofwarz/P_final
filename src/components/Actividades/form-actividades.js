@@ -1,5 +1,6 @@
 import React, {useState} from 'react';
 import Form from 'react-bootstrap/Form'
+
 import ProgressBar from './../gallery/ProgressBar'
 import './card.css';
 import {
@@ -21,7 +22,7 @@ const AgregarActividades = (props) => {
     const handleOrganizacionChange = (e) => setOrganizacion(e.target.value);
 
     const [precio, setPrecio] = useState('');
-    const handlePrecioChange = (e) => setPrecio(e.target.value);
+    const handlePrecioChange = (e) => setPrecio(parseInt(e.target.value));
 
     const [salida, setSalida] = useState('');
     const handleSalidaChange = (e) => setSalida(e.target.value);
@@ -30,13 +31,13 @@ const AgregarActividades = (props) => {
     const handleHoraChange = (e) => setHora(e.target.value);
 
     const [cupos, setCupos] = useState('');
-    const handleCuposChange = (e) => setCupos(e.target.value);
+    const handleCuposChange = (e) => setCupos(parseInt(e.target.value));
 
     const [latitud, setLatitud] = useState('');
-    const handlelatitudChange = (e) => setLatitud(e.target.value);
+    const handlelatitudChange = (e) => setLatitud(parseInt(e.target.value));
 
     const [longitud, setLongitud] = useState('');
-    const handlelongitudChange = (e) => setLongitud(e.target.value);
+    const handlelongitudChange = (e) => setLongitud(parseInt(e.target.value));
 
     const [descripcion, setDescripcion] = useState('');
     const handleDescripcionChange = (e) => setDescripcion(e.target.value);
@@ -62,6 +63,16 @@ const AgregarActividades = (props) => {
             setError('Please select an image file (png or jpg)');
         }
     }
+
+    const Validar=e=>{
+        e.preventDefault();
+
+        if (isNaN(precio,cupos,latitud,longitud)){
+            setError("debe ser un numero")
+        }
+        
+        }
+    
 
     const handleAgregarClick = (e) => {
         e.preventDefault();
@@ -111,8 +122,11 @@ const AgregarActividades = (props) => {
     <>
     <header><Head/></header>
     
-        <Form className="g">
-        
+        <Form className="g"
+            onSubmit={Validar}
+        >
+            {error? alert("debe ser numero"): null}
+            
             <Form.Group controlId="formActividad">
                 <Form.Label>Actividad</Form.Label>
                 <Form.Control type="text" value= {actividad} placeholder="Actividad" onChange={handleActividadChange} />
@@ -129,7 +143,7 @@ const AgregarActividades = (props) => {
             </Form.Group>
             <Form.Group controlId="formPrecio">
                 <Form.Label>Precio</Form.Label>
-                <Form.Control type="text" value = {precio} placeholder="Precio" onChange={handlePrecioChange}/>
+                <Form.Control type="number" value = {precio} placeholder="Precio" onChange={handlePrecioChange}/>
             </Form.Group>
             <Form.Group controlId="formSalida">
                 <Form.Label>Lugar de salida</Form.Label>
@@ -142,17 +156,17 @@ const AgregarActividades = (props) => {
 
             <Form.Group controlId="formCupos">
                 <Form.Label>Cupos</Form.Label>
-                <Form.Control type="text" value = {cupos} placeholder="Cupos" onChange={handleCuposChange}/>
+                <Form.Control type="number" value = {cupos} placeholder="Cupos" onChange={handleCuposChange}/>
             </Form.Group>
 
             <Form.Group controlId="formlatitud">
                 <Form.Label>Latitud</Form.Label>
-                <Form.Control type="text" value= {latitud} placeholder="Latitud" onChange={handlelatitudChange} />
+                <Form.Control type="number" value= {latitud} placeholder="Latitud" onChange={handlelatitudChange} />
             </Form.Group>
 
             <Form.Group controlId="formLongitud">
                 <Form.Label>Longitud</Form.Label>
-                <Form.Control type="text" value= {longitud} placeholder="Longitud" onChange={handlelongitudChange} />
+                <Form.Control type="number" value= {longitud} placeholder="Longitud" onChange={handlelongitudChange} />
             </Form.Group>
             
 

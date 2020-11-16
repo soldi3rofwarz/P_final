@@ -1,27 +1,22 @@
-import React ,{useState,useEffect}from 'react';
+import React ,{useState,useContext,useEffect}from 'react';
 import './Detalle.css'
-<<<<<<< HEAD
 
-=======
->>>>>>> ed0d60e3bc38d883b2babc72e212b2b2424bd97b
 import Mapa from './../mapa/mapa'
 import { Container, Row} from 'react-bootstrap';
 import Col from 'react-bootstrap/Col'
 import Button from 'react-bootstrap/Button'
-import {
-    projectFirestore,
-} from '../../Firebase/config';
-import Head from '../header/Head'
+import {Contexto} from './../../contexto/Context'
 
-
-const Detalle = (item) => {
+const Detalle = () => {
+    const {listActividade} = useContext(Contexto)
+    const {getData} =useContext(Contexto)
+   
     
-    useEffect(()=>{
-        console.log(item);
-    })
     const [band,setband]= useState(false)
        
-    
+    const detalle = listActividade && listActividade.filter ((actividad,index)=>{
+        return actividad.id === index
+    })
    
     
         const[value, setValue]= useState(0)
@@ -34,11 +29,13 @@ const Detalle = (item) => {
                 setband(true)
             }
         }
-    
+   
     return (  
         <>
-
-        <Head/>
+        {
+        detalle&&detalle.map (item =>
+        (
+        <p key={item.id}>
         <Container>
             
             <Row className="h" cols="2"> 
@@ -76,7 +73,12 @@ const Detalle = (item) => {
             'No hay datos'
         
         </Container>
+        </p>
+        )
+        )
+        }
         </>
+       
     );
 }
  

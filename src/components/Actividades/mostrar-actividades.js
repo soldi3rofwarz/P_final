@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect,useContext } from 'react';
 import Card from 'react-bootstrap/Card';
 import Button from 'react-bootstrap/Button';
 import './card.css'
@@ -6,41 +6,43 @@ import {
     projectFirestore,
 } from '../../Firebase/config';
 import Head from './../../components/header/Head';
-import {Link}from 'react-router-dom'
+import {Link}from 'react-router-dom';
+import {Contexto} from './../../contexto/Context';
 
-export const Contexto = React.createElement()
+
 
 const Actividades = (props) => {
 
-    const [listActividades, setListActividades] = useState([]);
-    const [loading, setLoading] = useState(true);
+    const {listActividades} = useContext(Contexto)
+     const {loading} = useContext(Contexto)
+     const {getData} =useContext(Contexto)
 
-    const getData = () => {
-        projectFirestore
-        .collection('actividades')
-        .get()
-        .then(snapshot => {
-            const actividades = [];
-            snapshot.forEach(doc => actividades.push({
-                id: doc.id,
-                ...doc.data(),
-            }));
-            setListActividades(actividades);
-            setLoading(false);
-        })
-        .catch(error => console.log("Error: ", error));
-    };
-    
-    useEffect(() => {
-        if(loading) 
-        {
-            getData();
-        }
-    }, [loading]);
+    // const getData = () => {
+    //     projectFirestore
+    //     .collection('actividades')
+    //     .get()
+    //     .then(snapshot => {
+    //         const actividades = [];
+    //         snapshot.forEach(doc => actividades.push({
+    //             id: doc.id,
+    //             ...doc.data(),
+    //         }));
+    //         setListActividades(actividades);
+    //         setLoading(false);
+    //     })
+    //     .catch(error => console.log("Error: ", error));
+    // };
+  
+   useEffect(()=>{
+    if(loading) 
+    {
+        getData();
+       
+    }   
+   },[loading])
 
     const deleteAct = async(id)=>{
         await projectFirestore.collection("actividades").doc(id).delete();
-        setLoading(true);
     }
     
     return ( 
@@ -49,9 +51,9 @@ const Actividades = (props) => {
         
         {listActividades ?
         listActividades.map ((item) => 
+        
         <p key={item.id}>
-            <Contexto.provider value={item}>
-            {props.children}
+
             <Card className = "cards">
                 <Card.Body className = "body">
                     <Card.Title className='titulo' >{item.actividad}</Card.Title>
@@ -79,19 +81,17 @@ const Actividades = (props) => {
                         Eliminar
                     </Button>
 
-                    <Link to="/detalle">
-                        <Button>VER MÁS</Button>
-                    </Link>
+                    
                 </Card.Body>
                 
         </Card>
-        </Contexto.provider>
+       
         </p>)
         :
         'No hay datos'
         
     }
-    
+   
         </>
      );
 }

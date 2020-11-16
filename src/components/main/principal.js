@@ -2,6 +2,7 @@ import React ,{useEffect, useCallback}from 'react';
 import './main.css';
 import Pie from './../footer/foot';
 import Header from './../header/Head'
+import {Link} from 'react-router-dom'
 
 const Index = () => {
 
@@ -28,14 +29,14 @@ const Index = () => {
         onMouseMove={move}
     >
         
-       
-        
-        <img src={`${process.env.PUBLIC_URL}/res/bg.jpg`} alt=""  className="bg"/>
-        <img src={`${process.env.PUBLIC_URL}/res/bird.png`}  className="bird" alt="" />
+        <img src={`${process.env.PUBLIC_URL}/res/bg3.jpg`} alt=""  className="bg"/>
+        <img src={`${process.env.PUBLIC_URL}/res/bird2.png`}  className="bird" alt="" />
         <div className="content">
-            <h2><br/><span>Vagachontal</span></h2>
+            <h2><br/><span>VagaChontal</span></h2>
            
-            <a href="#!">Unite</a>
+           {/* <Link to = {'/login'}> */}
+            <button className="buton">UNITE</button>
+            {/* </Link> */}
         </div>
         <ul className="sci">
             <li><a href="#!"><img src={`${process.env.PUBLIC_URL}/res/facebook.png`} alt="" /></a></li>
