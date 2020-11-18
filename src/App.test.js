@@ -3,7 +3,7 @@ import React from 'react';
 //import App from './App';
 import { shallow, mount} from 'enzyme';
 
-import Form from './components/Actividades/form-actividades'
+import{ ActividadesPage } from './pages/actividades'
 
 
 
@@ -15,9 +15,7 @@ import Form from './components/Actividades/form-actividades'
 
 
 
-it('renders without crashing', (props) => {
-  const componentProps = {match: {params: {actividadId: 123}}};
-  shallow(<Form 
-    {...componentProps}
-  />);
+it('Levantar  actividades sin errores', () => {
+  shallow(<ActividadesPage/>);
+   
 });

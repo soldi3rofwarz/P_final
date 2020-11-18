@@ -29,16 +29,14 @@ const Index = () => {
         onMouseMove={move}
     >
         
-       
-        
-        <img src={`${process.env.PUBLIC_URL}/res/bg.jpg`} alt=""  className="bg"/>
-        <img src={`${process.env.PUBLIC_URL}/res/bird.png`}  className="bird" alt="" />
+        <img src={`${process.env.PUBLIC_URL}/res/bg3.jpg`} alt=""  className="bg"/>
+        <img src={`${process.env.PUBLIC_URL}/res/bird2.png`}  className="bird" alt="" />
         <div className="content">
             <h2><br/><span>VagaChontal</span></h2>
            
-           <Link to = {'/login'}>
-            <button>Unete</button>
-            </Link>
+           {/* <Link to = {'/login'}> */}
+            <button className="buton">UNITE</button>
+            {/* </Link> */}
         </div>
         <ul className="sci">
             <li><a href="#!"><img src={`${process.env.PUBLIC_URL}/res/facebook.png`} alt="" /></a></li>
@@ -52,5 +50,4 @@ const Index = () => {
     </>
 );
 }
- 
 export default Index;

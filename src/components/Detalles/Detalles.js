@@ -18,7 +18,7 @@ const Detalle = () => {
         return actividad.id === index
     })
    
-    
+        
         const[value, setValue]= useState(0)
 
         const Limite=()=>{

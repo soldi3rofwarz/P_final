@@ -3,6 +3,7 @@ import Card from 'react-bootstrap/Card';
 import Button from 'react-bootstrap/Button';
 import './list.styles.css';
 import {Link}from 'react-router-dom';
+import Detalle from './../../Detalles/componentes/detalles'
 
 export const List = (props) => {
 
@@ -16,41 +17,53 @@ export const List = (props) => {
             {listActividades ?
                 listActividades.map ((item) => 
                 
-                <p key={item.id}>
+                    <p key={item.id}>
 
-                    <Card className = "cards">
-                        <Card.Body className = "body">
-                            <Card.Title className='titulo' >{item.actividad}</Card.Title>
-                            <Card.Img className='imag' variant="top" src={item.fileUrl}/>
-                            <Card.Text className='texto'>organizacion:{item.organizacion}</Card.Text>
-                            <Card.Text className='texto'>Precio: {item.precio}</Card.Text>
+                        <Card className = "cards">
+                            <Card.Body className = "body">
+                                <Card.Title className='titulo' >{item.actividad}</Card.Title>
+                                <Card.Img className='imag' variant="top" src={item.fileUrl}/>
+                                <Card.Text className='texto'>organizacion:{item.organizacion}</Card.Text>
+                                <Card.Text className='texto'>Precio: {item.precio}</Card.Text>
 
-                            <Link to={`/detalle/${item.id}`}>
-                                <Button>VER MÁS</Button>
-                            </Link>
-                            
-                            
-                            <Link to ={`/form/${item.id}`}>
-                                <Button >
-                                    Actualizar
+                                <Link to={`/detalle/${item.id}`}>
+                                    <Button>VER MÁS</Button>
+                                </Link>
+                                
+                                
+                                <Link to ={`/form/${item.id}`}>
+                                    <Button >
+                                        Actualizar
+                                    </Button>
+                                </Link> 
+                                
+
+                                <Button
+                                    onClick={() => {
+                                        onDelete(item.id)
+                                    }}
+                                >
+                                    Eliminar
                                 </Button>
-                            </Link> 
-                            
 
-                            <Button
-                                onClick={() => {
-                                    onDelete(item.id)
-                                }}
-                            >
-                                Eliminar
-                            </Button>
-
+                                
+                            </Card.Body>
                             
-                        </Card.Body>
-                        
-                </Card>
-            
-                </p>)
+                        </Card>
+
+                        <Detalle
+                            salida={item.lugar}
+                            hora={item.hora}
+                            precio={item.precio}
+                            descripcion={item.descripcion}    
+                            titulo={item.titulo}
+                            cantidad={item.cantidad}  
+                        />
+                
+                    </p>
+                
+                
+            )
                 :
                 'No hay datos'
                 
