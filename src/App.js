@@ -17,24 +17,6 @@ import {
 }from 'react-router-dom'
 import ContextG from './contexto/Context'
 
-/*function App(){
-    return (  
-        <ContextG>
-        <Router>
-            <Switch>
-                <Route exact path="/" component={Principal} />
-                <Route exact path="/login" component={Login} />
-                <Route exact path="/actividades" component={Actividades} />
-                <Route  path="/detalle/actividadId:id" component={Detalle} />
-                <Route  exact path="/form" component={Form} /> 
-                <Route  path="/form/:actividadId" component={Form} />
-                <Route  path="/mapa" component={Mapa} />
-                <Route exact path="/detalle" component={Detalle} />
-            </Switch>
-        </Router>
-        </ContextG>
-    );
-}*/
 
 import {ClientsRoute} from './routes/clients';
 
