@@ -1,4 +1,4 @@
-import React,{useState,useCallback, useRef} from 'react'
+import React,{useState,useCallback, useRef,useEffect} from 'react'
 import "./mapa.css"
 import {
     GoogleMap,
@@ -73,10 +73,15 @@ const Mapa = () => {
                             origin: new window.google.maps.Point(0,0),
                             anchor: new window.google.maps.Point(15,15)
                         }}
-                        onClick={()=>{
-                            setSelect(marker)
-                        }}
+                        //onClick={()=>{
+                        //setSelect(marker)
+                        //}}
+                        
                     />
+                    useEffect(()=>{
+                        setSelect(marker)
+                    },[])
+
                 ))}
 
                 {select? (<InfoWindow position={{lat: select.lat, lng: select.lng}} onCloseClick={()=>{

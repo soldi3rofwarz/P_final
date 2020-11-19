@@ -8,12 +8,8 @@ const Detalles = (props) => {
     
 
     const {
-        salida,
-        hora,
-        precio,
-        descripcion,
         Limite,
-        titulo,
+        Agregado,
         band,
         value
     }=props
@@ -24,22 +20,34 @@ const Detalles = (props) => {
                 <Col className="mapa"> <Mapa/> </Col>
 
                 <Col className="det">
-                    <h2>{titulo}</h2>
+                    <h2>Hato grade</h2>
                     <h3>Lugar de salida</h3>
-                    <p>{salida}</p>
+                    <h4>Gasolinera Puma</h4>
+                    <h3>Fecha</h3>
+                    <h4>29/11/2020</h4>
                     <h3>hora de salida</h3>
-                    <p>{hora}</p>
+                    <h4>6 A.M</h4>
                     <h3>precio</h3>
-                    <p>{precio}</p>
+                    <h4>50 cordobas</h4>
                 </Col>
             </Row>
             <Row>
                 <Col>
                 <hr className="my-4"/>
                 <h2>Descripcion</h2>
-                <p>{descripcion}</p>
+                <p>
+                    pate perro Chontales te ofrece una exquisita excursion a la cima <br/>
+                    Hato Grade, en donde podras observas aves silvestres, riachuelos <br/>
+                    con agua que podras beber, cascadas , unas vistas impresionantes <br/>
+                    del lago Cocibolca, ademas recorreremos el lugar qeu dio origen <br/>
+                    a la famosa leyenda del lagarto de oro. participa y te llevaras <br/>
+                    una bonita experiencia que contar
+                </p>
 
-                {(band===true)? <p>cupos llenos</p>: <a className="btn btn-primary btn-lg" href="#!" role="button" onClick={Limite}>
+                {(band===true)? 
+                    <a className="btn btn-primary btn-lg" href="#!" role="button" onClick={}>
+                    Cancelar</a>
+                : <a className="btn btn-primary btn-lg" href="#!" role="button" onClick={Agregado}>
                     participar</a>}
                 
                 <Button variant="outline-success" >{value}</Button>{' '}

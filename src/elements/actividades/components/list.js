@@ -3,7 +3,7 @@ import Card from 'react-bootstrap/Card';
 import Button from 'react-bootstrap/Button';
 import './list.styles.css';
 import {Link}from 'react-router-dom';
-import Detalle from './../../Detalles/componentes/detalles'
+//import Detalle from './../../Detalles/componentes/detalles'
 
 export const List = (props) => {
 
@@ -26,7 +26,7 @@ export const List = (props) => {
                                 <Card.Text className='texto'>organizacion:{item.organizacion}</Card.Text>
                                 <Card.Text className='texto'>Precio: {item.precio}</Card.Text>
 
-                                <Link to={`/detalle/${item.id}`}>
+                                <Link to={`/detalle`}>
                                     <Button>VER MÁS</Button>
                                 </Link>
                                 
@@ -51,14 +51,14 @@ export const List = (props) => {
                             
                         </Card>
 
-                        <Detalle
+                       {/*  <Detalle
                             salida={item.lugar}
                             hora={item.hora}
                             precio={item.precio}
                             descripcion={item.descripcion}    
                             titulo={item.titulo}
                             cantidad={item.cantidad}  
-                        />
+                        /> */}
                 
                     </p>
                 

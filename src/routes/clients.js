@@ -14,7 +14,7 @@ export const ClientsRoute = () => {
             <Switch>
                 <Route exact path="/" component={Index}sx />
                 <Route exact path="/actividades" component={ActividadesPage}/>
-                <Route path="/Detalle/actividades:id" component={DetallePage}/>
+                <Route path="/detalle" component={DetallePage}/>
 
             </Switch>
         </Router>
