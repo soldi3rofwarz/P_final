@@ -76,11 +76,9 @@ const Mapa = () => {
                         //onClick={()=>{
                         //setSelect(marker)
                         //}}
-                        
+                        onLoad
                     />
-                    useEffect(()=>{
-                        setSelect(marker)
-                    },[])
+                   
 
                 ))}
 

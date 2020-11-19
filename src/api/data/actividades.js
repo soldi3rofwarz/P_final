@@ -1,4 +1,4 @@
-import {db, storage} from './firebase-config';
+import db from './firebase-config';
 
 export const COLLECTION_ACTIVIDADES_NAME = 'actividades';
 

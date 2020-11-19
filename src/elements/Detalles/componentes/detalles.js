@@ -11,7 +11,8 @@ const Detalles = (props) => {
         Limite,
         Agregado,
         band,
-        value
+        value,
+        Cancelar,
     }=props
 
     return ( 
@@ -45,7 +46,7 @@ const Detalles = (props) => {
                 </p>
 
                 {(band===true)? 
-                    <a className="btn btn-primary btn-lg" href="#!" role="button" onClick={}>
+                    <a className="btn btn-primary btn-lg" href="#!" role="button" onClick={Cancelar}>
                     Cancelar</a>
                 : <a className="btn btn-primary btn-lg" href="#!" role="button" onClick={Agregado}>
                     participar</a>}
