@@ -15,7 +15,7 @@ import{ ActividadesPage } from './pages/actividades'
 
 
 
-it('Levantar  actividades sin errores', () => {
+it('Levantar  actividades sin errores ', () => {
   shallow(<ActividadesPage/>);
    
 });
