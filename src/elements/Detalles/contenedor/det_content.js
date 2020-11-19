@@ -20,14 +20,16 @@ const Det_content = () => {
 
         const Agregado =()=>{
             setValue(value+1)
-            if (value === 1){
+            if (value === 0){
                 setband(true)
                 
             }
         }
         const Cancelar =()=>{
+            setband(true)
             if (value > 0){
             setValue(value-1)
+            setband(false)
             }
         }
 
