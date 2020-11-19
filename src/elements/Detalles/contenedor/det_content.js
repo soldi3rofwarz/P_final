@@ -21,7 +21,13 @@ const Det_content = () => {
         const Agregado =()=>{
             setValue(value+1)
             if (value === 1){
-                setBand(true)
+                setband(true)
+                
+            }
+        }
+        const Cancelar =()=>{
+            if (value > 0){
+            setValue(value-1)
             }
         }
 
@@ -31,6 +37,7 @@ const Det_content = () => {
         band={band}
         value={value}
         Agregado={Agregado}
+        Cancelar ={Cancelar}
         />
     );
 }
