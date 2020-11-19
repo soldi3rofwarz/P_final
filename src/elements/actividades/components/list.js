@@ -51,14 +51,6 @@ export const List = (props) => {
                             
                         </Card>
 
-                       {/*  <Detalle
-                            salida={item.lugar}
-                            hora={item.hora}
-                            precio={item.precio}
-                            descripcion={item.descripcion}    
-                            titulo={item.titulo}
-                            cantidad={item.cantidad}  
-                        /> */}
                 
                     </p>
                 

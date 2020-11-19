@@ -4,6 +4,7 @@ import React from 'react';
 import { shallow, mount} from 'enzyme';
 
 import{ ActividadesPage } from './pages/actividades'
+import Det_page from './pages/detallePage'
 
 
 
@@ -13,9 +14,35 @@ import{ ActividadesPage } from './pages/actividades'
 //     expect(linkElement).toBeInTheDocument();
 // });
 
+const value=0
+const setValue= value
+const Limite=()=>{
+  setValue(value + 1)
 
+  if(value === 20){
+      setValue(value===0)
+      
+  }
+}
 
-it('Levantar  actividades sin errores ', () => {
-  shallow(<ActividadesPage/>);
-   
-});
+describe('Actividades',()=>{
+  it('Levantar  actividades sin errores', () => {
+     shallow(<ActividadesPage/>);
+     
+  });
+})
+
+describe('Detalles',()=>{
+  it('provar existencia de mapa', () => {
+    const wrapper= shallow(<Det_page/>);
+    const mapa = wrapper.find('mapa')
+    expect(mapa) 
+  });
+})
+
+describe('prueba limites',()=>{
+  it('probar limite de participantes', ()=>{
+    const wrapper= shallow(<Det_page onClick={Limite}/>);
+
+  })
+})

@@ -97,7 +97,7 @@ const Formulario = (props) => {
                 />
                 { error && <div className="error">{ error }</div>}
                 { file && <div>{ file.name }</div> }    
-                { file && <ProgressBar file={file} setFile={setFile} setUrl={setFileUrl} /> }
+                {/* { file && <ProgressBar file={file} setFile={setFile} setUrl={setFileUrl} /> } */}
                 
             </Form.Group>
 

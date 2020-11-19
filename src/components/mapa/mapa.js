@@ -16,7 +16,7 @@ import {
   //****************************************************************************************************************** */
   const libraries= ["places"]
   const mapContainerStyle={
-    width: "400px",
+    width: "600px",
     height:"400px"
   }
   const center = { lat: 12.105900, lng: -85.365060 }
@@ -53,7 +53,7 @@ const Mapa = () => {
     return (
         <>
         <div className="princ">
-            <Search/>
+            {/* <Search/> */}
 
             <GoogleMap
                 mapContainerStyle={mapContainerStyle}
@@ -73,10 +73,10 @@ const Mapa = () => {
                             origin: new window.google.maps.Point(0,0),
                             anchor: new window.google.maps.Point(15,15)
                         }}
-                        //onClick={()=>{
-                        //setSelect(marker)
-                        //}}
-                        onLoad
+                        onLoad={()=>{
+                        setSelect(marker)
+                        }}
+                        
                     />
                    
 
