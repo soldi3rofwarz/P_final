@@ -16,6 +16,7 @@ import Det_page from './pages/detallePage'
 
 const value=0
 const setValue= value
+
 const Limite=()=>{
   setValue(value + 1)
 
