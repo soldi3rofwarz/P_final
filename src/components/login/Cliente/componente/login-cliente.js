@@ -11,6 +11,8 @@ import './cliente.css';
 import Snackbar from './../snackbar';
 import WarningIcon from '@material-ui/icons/Warning';
 import Header from './../../../header/Head';
+import LoginGoogle from './../../../login/loginGoogle'
+
 
 const useStyles = makeStyles((theme) => ({
     container: {
@@ -135,15 +137,10 @@ const Login = (props) => {
                             >
                                 Entrar
                             </Button>
-                            <Button
-                                variant="outlined"
-                                color='#7D9857'
-                                size="large"
-                                component={Link}
-                                to='/register'
-                            >
-                                Crear Cuenta
-                            </Button> 
+                            <Button className= 'buton'>
+                               <LoginGoogle/>
+                            </Button>
+                             
                         </div>
                     </Grid>
                 </Grid>

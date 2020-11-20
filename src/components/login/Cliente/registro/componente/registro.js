@@ -10,6 +10,7 @@ import { Link } from 'react-router-dom';
 import Snackbar from './../../snackbar';
 import WarningIcon from '@material-ui/icons/Warning';
 import Header from './../../../../header/Head';
+import LoginGoogle from './../../../loginGoogle'
 import { SportsRugbySharp } from '@material-ui/icons';
 
 const useStyles = makeStyles((theme) => ({
@@ -164,15 +165,16 @@ const Register = (props) => {
                         <div
                             className={classes.containerButtons}
                         >
-                            <Button
+                            {/* <Button
                                 variant="contained"
                                 color='#7D9857'
                                 size="large"
                                 onClick={onRegister}
                                 disabled={estado === 'cargando' ? true : false}                                
                             >
-                                Registrarme
-                            </Button>
+                                
+                            </Button> */}
+                            
                             <Button
                                 variant="outlined"
                                 color='#7D9857'
@@ -189,7 +191,6 @@ const Register = (props) => {
         </div>
         </>
     );
-
 };
 
 export default Register;

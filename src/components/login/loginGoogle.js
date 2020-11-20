@@ -5,7 +5,7 @@ class GoogleLogin extends Component{
 constructor(){
     super();
     this.state={
-        isLogIn:false,
+        isLogIn:false,band:false,
         name:"",
         photo:""
     }
@@ -49,23 +49,26 @@ firebase.auth().onAuthStateChanged(function(user){
     }
 });
 };
+
+    
     render(){
         return(
             
-            <div className="login-are card mx-auto mt-5">
+            <div className="login">
                 {this.state.isLogIn === false ?
-                    <div className = "card-body p-5">  
-                        <h5 className = "text-center mb-4">probando </h5>
-                        <button
-                            type="button"
-                            className="btn btn-primary text-white w-100"
-                            onClick={this.onSubmit}>
-                                Login with Google
-                        </button>
-                        <button type="button" className="btn btn-danger"
-                    onClick={this.onLogout}>
-                 Logout
-                </button>
+                    <div className = "p-5">  
+                     
+                       <button
+                        type="button"
+                        className="btn "
+                        onClick={this.onSubmit}>
+                            Login Google
+                    </button>
+                     <button type="button" className="btn "
+                        onClick={this.onLogout}>
+                            Logout
+                     </button>
+                        
                     </div>
                     : 
                 <>
