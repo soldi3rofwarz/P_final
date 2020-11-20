@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 
-import Register from './../componente/registro';
+import Register from './../../registro/componente/registro';
 
 import {
     addUser,
@@ -17,10 +17,8 @@ class RegisterContainer extends Component {
 
         this.state = {
             email: '',
-            phone: '',
             password: '',
             confirm: '',
-
             estado: '',
         };
     }
@@ -29,14 +27,11 @@ class RegisterContainer extends Component {
 
         const {
             email,
-            phone,
             password,
             confirm,
             estado,
-
             errorGeneral,
             errorEmail,
-            errorPhone,
             errorPassword,
             errorConfirm,
         } = this.state;
@@ -53,19 +48,14 @@ class RegisterContainer extends Component {
             <Register
                 email={email}
                 onChangeEmail={this.handleChangeEmail}
-                phone={phone}
-                onChangePhone={this.handleChangePhone}
                 password={password}
                 onChangePassword={this.handleChangePassword}
                 confirm={confirm}
                 onChangeConfirm={this.handleChangeConfirm}
                 estado={estado}
-
                 onRegister={this.handleRegister}
-
                 errorGeneral={errorGeneral}
                 errorEmail={errorEmail}
-                errorPhone={errorPhone}
                 errorPassword={errorPassword}
                 errorConfirm={errorConfirm}
                 messageClose={this.messageClose}
@@ -75,7 +65,6 @@ class RegisterContainer extends Component {
     }
 
     handleChangeEmail = (event) => this.setState({ email: event.target.value });
-    handleChangePhone = (event) => this.setState({ phone: event.target.value });
     handleChangePassword = (event) => this.setState({ password: event.target.value });
     handleChangeConfirm = (event) => this.setState({ confirm: event.target.value });
 
@@ -84,13 +73,11 @@ class RegisterContainer extends Component {
         if(validating) {
             const {
                 email,
-                phone,
                 password,
             } = this.state;
             this.loading();
             addUser({
                 email,
-                phone,
                 password,
             })
             .then(() => {
@@ -113,7 +100,6 @@ class RegisterContainer extends Component {
         this.setState({
             estado: 'registrado',
             email: '',
-            phone: '',
             password: '',
             confirm: '',
         });
@@ -121,17 +107,14 @@ class RegisterContainer extends Component {
 
     validate = () => {
         let errorEmail,
-            errorPhone,
             errorPassword,
             errorConfirm;
         const {
             email,
-            phone,
             password,
             confirm,
         } = this.state;
         if(!email) errorEmail = 'E-mail obligatorio';
-        if(!phone) errorPhone = 'Teléfono obligatorio';
         if(!password) {
             errorPassword = 'Contraseña obligatorio';
             if(!confirm) errorConfirm = 'Confirmación obligatorio';
@@ -142,11 +125,10 @@ class RegisterContainer extends Component {
         this.setState({
             estado: 'error',
             errorEmail,
-            errorPhone,
             errorPassword,
             errorConfirm,
         });
-        if(!errorEmail && !errorPhone && !errorPassword && !errorConfirm)
+        if(!errorEmail && !errorPassword && !errorConfirm)
             return true;
         else
             return false;
@@ -186,5 +168,5 @@ class RegisterContainer extends Component {
     };
 
 }
-
-export default RegisterWithContext;
+export default RegisterContainer;
+//export default RegisterWithContext;

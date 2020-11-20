@@ -3,10 +3,10 @@ import Mapa from '../../../components/mapa/mapa'
 import { Container, Row} from 'react-bootstrap';
 import Col from 'react-bootstrap/Col'
 import Button from 'react-bootstrap/Button'
+import Header from './../../../components/header/Head'
 
 const Detalles = (props) => {
     
-
     const {
         Limite,
         Agregado,
@@ -16,6 +16,8 @@ const Detalles = (props) => {
     }=props
 
     return ( 
+        <>
+        <Header/>
         <Container>
             <Row className="h" cols="2">
                 <Col className="mapa"> <Mapa/> </Col>
@@ -56,7 +58,7 @@ const Detalles = (props) => {
             </Row>
 
         </Container>
-
+        </>     
      );
 }
  

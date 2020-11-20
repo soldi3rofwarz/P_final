@@ -9,12 +9,14 @@ import Button from '@material-ui/core/Button';
 import { Link } from 'react-router-dom';
 import Snackbar from './../../snackbar';
 import WarningIcon from '@material-ui/icons/Warning';
+import Header from './../../../../header/Head';
+import { SportsRugbySharp } from '@material-ui/icons';
 
 const useStyles = makeStyles((theme) => ({
     container: {
         display: 'flex',
         flex: 1,
-        background: 'linear-gradient(45deg, #f44336 20%, #e91e63 90%)',
+        background: '#7D9857',
         minWidth: '100%',
         minHeight: '100vh',
         justifyContent: 'center',
@@ -35,6 +37,7 @@ const useStyles = makeStyles((theme) => ({
         justifyContent: 'space-between',
         marginTop: '12px',
         marginBottom: '12px',
+
     },
     textField: {
         width: '100%',
@@ -51,25 +54,23 @@ const Register = (props) => {
     const {
         email,
         onChangeEmail,
-        phone,
-        onChangePhone,
+   
         password,
         onChangePassword,
         confirm,
         onChangeConfirm,
         estado,
-
         onRegister,
-
         errorGeneral,
         errorEmail,
-        errorPhone,
         errorPassword,
         errorConfirm,
         messageClose,
     } = props;
 
     return (
+        <>
+        <Header/>
         <div
             className={classes.container}
         >
@@ -106,7 +107,7 @@ const Register = (props) => {
                             helperText={errorEmail}
                         />
                     </Grid>
-                    <Grid
+                    {/* <Grid
                         item
                         xs={12}
                     >
@@ -121,7 +122,7 @@ const Register = (props) => {
                             error={errorPhone ? true : false}
                             helperText={errorPhone}
                         />
-                    </Grid>
+                    </Grid> */}
                     <Grid
                         item
                         xs={12}
@@ -165,7 +166,7 @@ const Register = (props) => {
                         >
                             <Button
                                 variant="contained"
-                                color="secondary"
+                                color='#7D9857'
                                 size="large"
                                 onClick={onRegister}
                                 disabled={estado === 'cargando' ? true : false}                                
@@ -174,7 +175,7 @@ const Register = (props) => {
                             </Button>
                             <Button
                                 variant="outlined"
-                                color="secondary"
+                                color='#7D9857'
                                 size="large"
                                 component={Link}
                                 to='/login'
@@ -186,6 +187,7 @@ const Register = (props) => {
                 </Grid>
             </Paper>
         </div>
+        </>
     );
 
 };

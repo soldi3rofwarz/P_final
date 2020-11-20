@@ -10,7 +10,6 @@ import {Link}from 'react-router-dom';
 import {Contexto} from './../../contexto/Context';
 
 
-
 const Actividades = (props) => {
 
     const {listActividades} = useContext(Contexto)
@@ -89,9 +88,7 @@ const Actividades = (props) => {
         </p>)
         :
         'No hay datos'
-        
     }
-   
         </>
      );
 }

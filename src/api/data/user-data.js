@@ -4,8 +4,8 @@ import 'firebase/auth'
 
 const USER_KEY = 'users';
 
-const queryUser = () =>{
-    return db.collection(USER_KEY)
+const queryUser = () => {
+    return db.collection(USER_KEY);
 };
 
 export const selectUser = async(userId) => {
@@ -27,14 +27,13 @@ export const currentUser = () =>{
     if(user){
         return user;
     }
-    else {
+    else{
         return null;
     }
 };
 
 export const onAuthChanged = (response) =>{
     firebase.auth().onAuthStateChanged(response);
-
 };
 
 export const signout = async () => {
@@ -46,13 +45,10 @@ export const signin = async (email, password) => {
 };
 
 export const addUser = async (user) =>{
-
     const {email, password} = user;
     const result = await firebase.auth().createUserWithEmailAndPassword(email, password);
 
     await queryUser().doc(result.user.uid).set({
         email: email,
-    });
-
-
+    })
 };

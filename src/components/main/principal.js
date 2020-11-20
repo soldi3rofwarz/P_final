@@ -1,4 +1,4 @@
-import React ,{useEffect, useCallback}from 'react';
+import React ,{useEffect}from 'react';
 import './main.css';
 import Pie from './../footer/foot';
 import Header from './../header/Head'
@@ -34,9 +34,10 @@ const Index = () => {
         <div className="content">
             <h2><br/><span>VagaChontal</span></h2>
            
-           {/* <Link to = {'/login'}> */}
-            <button className="buton">UNITE</button>
-            {/* </Link> */}
+            <Link to = {'/LoginGoogle'}>
+                <button className="buton">UNITE</button>
+            </Link>
+
         </div>
         <ul className="sci">
             <li><a href="#!"><img src={`${process.env.PUBLIC_URL}/res/facebook.png`} alt="" /></a></li>

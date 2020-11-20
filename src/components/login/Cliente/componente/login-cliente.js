@@ -10,12 +10,13 @@ import { Link } from 'react-router-dom';
 import './cliente.css';
 import Snackbar from './../snackbar';
 import WarningIcon from '@material-ui/icons/Warning';
+import Header from './../../../header/Head';
 
 const useStyles = makeStyles((theme) => ({
     container: {
         display: 'flex',
         flex: 1,
-        background: 'linear-gradient(45deg, #f44336 20%, #e91e63 90%)',
+        background: '#7D9857',
         minWidth: '100%',
         minHeight: '100vh',
         justifyContent: 'center',
@@ -63,6 +64,8 @@ const Login = (props) => {
     } = props;
 
     return(
+        <>
+        <Header/>
         <div
             className={classes.container}
         >
@@ -125,7 +128,7 @@ const Login = (props) => {
                         >
                             <Button
                                 variant="contained"
-                                color="secondary"
+                                color='#7D9857'
                                 size="large"
                                 onClick={onSignin}
                                 disabled={estado === 'cargando' ? true : false}
@@ -134,7 +137,7 @@ const Login = (props) => {
                             </Button>
                             <Button
                                 variant="outlined"
-                                color="secondary"
+                                color='#7D9857'
                                 size="large"
                                 component={Link}
                                 to='/register'
@@ -146,6 +149,7 @@ const Login = (props) => {
                 </Grid>
             </Paper>
         </div>
+    </>
     );
 };
 export default Login;
