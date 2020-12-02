@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import firebase from './../../api/data/firebase-config'
+import {googleAuthProvider, auth} from './../../api/data/firebase-config'
 
 class GoogleLogin extends Component{
 constructor(){
@@ -12,8 +12,8 @@ constructor(){
 }
 
 onSubmit = () => {
-    var provider = new firebase.auth.GoogleAuthProvider();
-    firebase.auth().signInWithPopup(provider)
+    googleAuthProvider()
+    auth().signInWithPopup()
     .then(function(result){
 
         var token = result.credential.accessToken;
@@ -26,7 +26,7 @@ onSubmit = () => {
     });
 }
 onLogout = () => {
-    firebase.auth().signOut().then(function(){
+    auth().signOut().then(function(){
     }).catch(function(error){
         console.log(error);
     });
@@ -35,7 +35,7 @@ onLogout = () => {
     })
 }
 componentDidMount = () =>{
-firebase.auth.onAuthStateChanged(function(user){
+auth().onAuthStateChanged(function(user){
     if(user){
         console.log("user sign in")
         console.log(user.displayName + '\n' + user.email);

@@ -1,154 +1,123 @@
 import React from 'react';
-import Grid from '@material-ui/core/Grid';
-import Paper from '@material-ui/core/Paper';
-import {makeStyles} from '@material-ui/core/styles';
-import UserIcon from '@material-ui/icons/PermIdentity';
-import { red, blue } from '@material-ui/core/colors';
-import TextField from '@material-ui/core/TextField';
+import Avatar from '@material-ui/core/Avatar';
 import Button from '@material-ui/core/Button';
-import Send from '@material-ui/icons/Send';
-import {Link } from 'react-router-dom'
-import LoginGoogle from './../../../login/loginGoogle'
+import CssBaseline from '@material-ui/core/CssBaseline';
+import TextField from '@material-ui/core/TextField';
+import FormControlLabel from '@material-ui/core/FormControlLabel';
+import Checkbox from '@material-ui/core/Checkbox';
+import Link from '@material-ui/core/Link';
+import Grid from '@material-ui/core/Grid';
+import Box from '@material-ui/core/Box';
+import LockOutlinedIcon from '@material-ui/icons/LockOutlined';
+import Typography from '@material-ui/core/Typography';
+import { makeStyles } from '@material-ui/core/styles';
+import Container from '@material-ui/core/Container';
+
+function Copyright() {
+  return (
+    <Typography variant="body2" color="textSecondary" align="center">
+      {'Copyright © '}
+      <Link color="inherit" href="https://material-ui.com/">
+        Your Website
+      </Link>{' '}
+      {new Date().getFullYear()}
+      {'.'}
+    </Typography>
+  );
+}
 
 const useStyles = makeStyles((theme) => ({
-    root: {
-      marginTop: '3.2rem',
-      marginRight: '1rem',
-    },
-    section: {
-        marginBottom: '1rem',
-    },
-    profile: {
-        padding: '1rem',
-        textAlign: 'center',
-    },
-    photoSection: {
-        width: '100%',
-    },
-    bg: {
-        height: '150px',
-        objectFit: 'cover',
-        width: '100%',
-        borderRadius: '.25rem',
-    },
-    avatar: {
-        backgroundColor: red[100],
-        color: red[600],
-    },
-    name: {
-        fontSize: '1.2rem',
-    },
-    userPhotoSection: {
-        display: 'flex',
-        justifyContent: 'center',
-    },
-    bgPhotoAvatar: {
-        marginTop: '-48px',
-        backgroundColor: blue[100],
-        color: blue[600],
-        borderRadius: '.6rem',
-        border: '5px solid #fff',
-        width: '72px',
-        height: '72px',
-        display: 'flex',
-        justifyContent: 'center',
-        alignItems: 'center',
-    },
-    photoAvatar: {
-        fontSize: '2.7rem',
-    },
-  }));
+  paper: {
+    marginTop: theme.spacing(8),
+    display: 'flex',
+    flexDirection: 'column',
+    alignItems: 'center',
+  },
+  avatar: {
+    margin: theme.spacing(1),
+    backgroundColor: theme.palette.secondary.main,
+  },
+  form: {
+    width: '100%', // Fix IE 11 issue.
+    marginTop: theme.spacing(1),
+  },
+  submit: {
+    margin: theme.spacing(3, 0, 2),
+  },
+}));
 
-const Login = (props) => {
-
+export const Login=(props)=> {
+    const[email,onChangeEmail,password,onChangePassword,onSignIn]=props
     const classes = useStyles();
 
-    const {
-        email,
-        onChangeEmail,
-        password,
-        onChangePassword,
-        onSignin,
-        estado,
-        errorGeneral,
-        errorEmail,
-        errorPassword,
-        messageClose,
-    } = props;
-
-    return(
-        <>
-        <div>
-      <Grid container justify="center" spacing={3}>
-         <Grid item xs={10} sm={6} md={4} lg={4}>
-            <Paper>
-                <section className={classes.photoSection}>
-                    
-                    <section className={classes.userPhotoSection}>
-                        <div className={classes.bgPhotoAvatar}>
-                            <UserIcon className={classes.photoAvatar} />
-                        </div>
-                    </section>
-                </section>
-                <section className={classes.profile}>
-                    <h1 className={classes.name}>Login</h1>
-                </section>
-                <section>
-                  <Grid container justify="center" spacing={3}>
-                    <Grid item xs={10} sm={10} md={9} lg={9}>
-                        <TextField
-                            id="email"
-                            label="usuario"
-                            onChange={onChangeEmail}
-
-                            helperText="ej: Chontaluser03"
-                            style={{width: '100%'}}
-                        />
-                    </Grid>
-                    <Grid item xs={10} sm={10} md={9} lg={9}>
-                        <TextField
-                            id="password"
-                            label="Contraseña"
-                            type="password"
-                            onChange={onChangePassword}
-
-                            
-                            className="inputwidth"
-                            style={{width: '100%'}}
-                        />
-                    </Grid>
-
-                    <Grid style={{textAlign:'center'}} item xs={10} sm={10} md={9} lg={9}>
-                        <Button
-                            variant="contained"
-                            color="primary"
-                            className={classes.button}
-                            endIcon={<Send/>}
-                            onClick={onSignin}
-                        >
-                            
-                            Iniciar
-                        </Button>
-                        <Button
-                            variant="contained"
-                            color="primary"
-                            className={classes.button}
-                            endIcon={<Send/>}
-                        >
-                            
-                            <Link to="/logingoogle">login google</Link>
-                        </Button>
-                        
-                    </Grid>
-                    
-                  </Grid>
-                  
-                </section>
-            </Paper>
-        </Grid>
-      </Grid>
-    </div>
-    </>
-    );
-};
-export default Login;
+  return (
+    <Container component="main" maxWidth="xs">
+      <CssBaseline />
+      <div className={classes.paper}>
+        <Avatar className={classes.avatar}>
+          <LockOutlinedIcon />
+        </Avatar>
+        <Typography component="h1" variant="h5">
+          Sign in
+        </Typography>
+        <form className={classes.form} noValidate>
+          <TextField
+            variant="outlined"
+            margin="normal"
+            required
+            fullWidth
+            id="email"
+            label="Email Address"
+            name="email"
+            value={email}
+            autoComplete="email"
+            autoFocus
+            onChange={onChangeEmail}
+          />
+          <TextField
+            variant="outlined"
+            margin="normal"
+            required
+            fullWidth
+            name="password"
+            label="Password"
+            type="password"
+            id="password"
+            value={password}
+            autoComplete="current-password"
+            onChange={onChangePassword}
+          />
+          <FormControlLabel
+            control={<Checkbox value="remember" color="primary" />}
+            label="Remember me"
+          />
+          <Button
+            type="submit"
+            fullWidth
+            variant="contained"
+            color="primary"
+            className={classes.submit}
+            onClick={onSignIn}
+          >
+            Iniciar sesion
+          </Button>
+          <Grid container>
+            <Grid item xs>
+              <Link href="#" variant="body2">
+                Forgot password?
+              </Link>
+            </Grid>
+            <Grid item>
+              <Link href="#" variant="body2">
+                {"Don't have an account? Sign Up"}
+              </Link>
+            </Grid>
+          </Grid>
+        </form>
+      </div>
+      <Box mt={8}>
+        <Copyright />
+      </Box>
+    </Container>
+  );
+}

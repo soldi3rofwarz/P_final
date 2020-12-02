@@ -10,6 +10,7 @@ import DetallePage from './../pages/detallePage'
 //import Registro from './../components/login/Cliente/registro/componente/registro'
 import LoginGoogle from './../components/login/loginGoogle'
 import LoginPage from '../pages/login'
+import Form from '../components/Actividades/form-actividades'
 export const ClientsRoute = () => {
 
     return (
@@ -21,7 +22,8 @@ export const ClientsRoute = () => {
                 <Route path="/detalle" component={DetallePage}/>
                 <Route exact path ="/login" component ={LoginPage} />
                 <Route exact path ="/Logingoogle" component ={LoginGoogle} /> 
-                {/*<Route exact path ="/register" component ={Registro} /> 
+                <Route exact path ="/form" component ={Form} />
+                {/* 
                 
                 {/* <Route path ="/galeria" component ={Galeria} />
                 <Route path ="/form" component ={Form} /> */}

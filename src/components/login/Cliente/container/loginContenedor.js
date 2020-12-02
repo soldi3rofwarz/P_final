@@ -1,5 +1,5 @@
 import React,{useState,useEffect} from 'react'
-import Login from './../componente/login-cliente'
+import {Login} from './../componente/login-cliente'
 import {Link} from 'react-router-dom'
 import {
     signin,
@@ -10,7 +10,7 @@ export const LoginContenedor =()=>{
 
     const [email, setemail] = useState()
     const [password, setPassword]= useState()
-    const [estado, setestado] = useState()
+    const [estado, setestado] = useState('logueado')
 
     if(estado === 'logueado'){
         return(
@@ -90,15 +90,15 @@ export const LoginContenedor =()=>{
         }
     };
     
-    // useEffect(()=>{
-    //     onAuthChanged((user) => {
-    //         user? 
+    
+    //   onAuthChanged(user => {
+    //        if(user) {
     //             setestado(
     //                 estado= 'logueado',
     //             )
-    //         :null 
+    //        }
     //     })
-    // },[])
+    
     
 
         

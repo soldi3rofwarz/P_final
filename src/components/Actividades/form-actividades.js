@@ -3,9 +3,9 @@ import Form from 'react-bootstrap/Form'
 
 import ProgressBar from './../gallery/ProgressBar'
 import './card.css';
-import {
-    projectFirestore
-} from './../../Firebase/config';
+import 
+    {db}
+ from '../../api/data/firebase-config';
 import Head from '../header/Head';
 
 const AgregarActividades = (props) => {
@@ -78,7 +78,7 @@ const AgregarActividades = (props) => {
         e.preventDefault();
         //aquí irían las validaciones
         if(!actividadId) {
-            projectFirestore.collection('actividades').add({
+            db.collection('actividades').add({
                 actividad,
                 fecha,
                 organizacion,
@@ -97,7 +97,7 @@ const AgregarActividades = (props) => {
             });
         }
         else {
-            projectFirestore.collection('actividades').doc(actividadId).update({
+            db.collection('actividades').doc(actividadId).update({
                 actividad,
                 fecha,
                 organizacion,

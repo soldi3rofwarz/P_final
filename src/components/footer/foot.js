@@ -45,8 +45,8 @@ const Foot = () => {
 					<span>Acerca Vagachontal</span>
 				</p>
 				<div className="footer-icons">
-					<a href="#!"><i class="fa fa-facebook"></i></a>
-					<a href="#!"><i class="fa fa-instagram"></i></a>
+					<a href="#!"><i className="fa fa-facebook"></i></a>
+					<a href="#!"><i className="fa fa-instagram"></i></a>
 				</div>
 			</div>
 
