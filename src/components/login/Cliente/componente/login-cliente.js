@@ -1,52 +1,63 @@
 import React from 'react';
-import {
-    makeStyles,
-} from '@material-ui/core/styles';
-import Paper from '@material-ui/core/Paper';
-import TextField from '@material-ui/core/TextField';
 import Grid from '@material-ui/core/Grid';
+import Paper from '@material-ui/core/Paper';
+import {makeStyles} from '@material-ui/core/styles';
+import UserIcon from '@material-ui/icons/PermIdentity';
+import { red, blue } from '@material-ui/core/colors';
+import TextField from '@material-ui/core/TextField';
 import Button from '@material-ui/core/Button';
-import { Link } from 'react-router-dom';
-import './cliente.css';
-import Snackbar from './../snackbar';
-import WarningIcon from '@material-ui/icons/Warning';
-import Header from './../../../header/Head';
+import Send from '@material-ui/icons/Send';
+import {Link } from 'react-router-dom'
 import LoginGoogle from './../../../login/loginGoogle'
 
-
 const useStyles = makeStyles((theme) => ({
-    container: {
+    root: {
+      marginTop: '3.2rem',
+      marginRight: '1rem',
+    },
+    section: {
+        marginBottom: '1rem',
+    },
+    profile: {
+        padding: '1rem',
+        textAlign: 'center',
+    },
+    photoSection: {
+        width: '100%',
+    },
+    bg: {
+        height: '150px',
+        objectFit: 'cover',
+        width: '100%',
+        borderRadius: '.25rem',
+    },
+    avatar: {
+        backgroundColor: red[100],
+        color: red[600],
+    },
+    name: {
+        fontSize: '1.2rem',
+    },
+    userPhotoSection: {
         display: 'flex',
-        flex: 1,
-        background: '#7D9857',
-        minWidth: '100%',
-        minHeight: '100vh',
+        justifyContent: 'center',
+    },
+    bgPhotoAvatar: {
+        marginTop: '-48px',
+        backgroundColor: blue[100],
+        color: blue[600],
+        borderRadius: '.6rem',
+        border: '5px solid #fff',
+        width: '72px',
+        height: '72px',
+        display: 'flex',
         justifyContent: 'center',
         alignItems: 'center',
     },
-    containerForm: {
-        width: '290px',
-        minHeight: '150px',
-        padding: '8px 14px',
+    photoAvatar: {
+        fontSize: '2.7rem',
     },
-    containerLogo: {
-        width: '100%',
-        display: 'flex',
-        justifyContent: 'center',
-    },
-    containerButtons: {
-        display: 'flex',
-        justifyContent: 'space-between',
-        marginTop: '12px',
-        marginBottom: '12px',
-    },
-    textField: {
-        width: '100%',
-    },
-    error: {
-        backgroundColor: theme.palette.error.dark,
-    },
-}));
+  }));
 
 const Login = (props) => {
 
@@ -67,85 +78,76 @@ const Login = (props) => {
 
     return(
         <>
-        <Header/>
-        <div
-            className={classes.container}
-        >
-            {errorGeneral && (
-                <Snackbar
-                    open={errorGeneral ? true : false}
-                    messageClose={messageClose}
-                    message={errorGeneral}
-                    icon={<WarningIcon />}
-                    className={classes.error}
-                />
-            )}
-            <Paper
-                className={classes.containerForm}
-                elevation={5}
-            >
-                <h1>Iniciar Sesión</h1>
-                <Grid
-                    container
-                >
-                    <Grid
-                        item
-                        xs={12}
-                    >
-                        <TextField
-                            className={classes.textField}
-                            label="E-mail"
-                            margin="normal"
-                            variant="outlined"
-                            value={email}
-                            onChange={onChangeEmail}
-                            disabled={estado === 'cargando' ? true : false}
-                            error={ errorEmail ? true : false }
-                            helperText={ errorEmail }
-                        />
-                    </Grid>
-                    <Grid
-                        item
-                        xs={12}
-                    >
-                        <TextField
-                            className={classes.textField}
-                            type='password'
-                            label="Contraseña"
-                            margin="normal"
-                            variant="outlined"
-                            value={password}
-                            onChange={onChangePassword}
-                            disabled={estado === 'cargando' ? true : false}
-                            error={ errorPassword ? true : false }
-                            helperText={ errorPassword }
-                        />
-                    </Grid>
-                    <Grid
-                        item
-                        xs={12}
-                    >
-                        <div
-                            className={classes.containerButtons}
-                        >
-                            <Button
-                                variant="contained"
-                                color='#7D9857'
-                                size="large"
-                                onClick={onSignin}
-                                disabled={estado === 'cargando' ? true : false}
-                            >
-                                Entrar
-                            </Button>
-                            <Button className= 'buton'>
-                               <LoginGoogle/>
-                            </Button>
-                             
+        <div>
+      <Grid container justify="center" spacing={3}>
+         <Grid item xs={10} sm={6} md={4} lg={4}>
+            <Paper>
+                <section className={classes.photoSection}>
+                    
+                    <section className={classes.userPhotoSection}>
+                        <div className={classes.bgPhotoAvatar}>
+                            <UserIcon className={classes.photoAvatar} />
                         </div>
+                    </section>
+                </section>
+                <section className={classes.profile}>
+                    <h1 className={classes.name}>Login</h1>
+                </section>
+                <section>
+                  <Grid container justify="center" spacing={3}>
+                    <Grid item xs={10} sm={10} md={9} lg={9}>
+                        <TextField
+                            id="email"
+                            label="usuario"
+                            onChange={onChangeEmail}
+
+                            helperText="ej: Chontaluser03"
+                            style={{width: '100%'}}
+                        />
                     </Grid>
-                </Grid>
+                    <Grid item xs={10} sm={10} md={9} lg={9}>
+                        <TextField
+                            id="password"
+                            label="Contraseña"
+                            type="password"
+                            onChange={onChangePassword}
+
+                            
+                            className="inputwidth"
+                            style={{width: '100%'}}
+                        />
+                    </Grid>
+
+                    <Grid style={{textAlign:'center'}} item xs={10} sm={10} md={9} lg={9}>
+                        <Button
+                            variant="contained"
+                            color="primary"
+                            className={classes.button}
+                            endIcon={<Send/>}
+                            onClick={onSignin}
+                        >
+                            
+                            Iniciar
+                        </Button>
+                        <Button
+                            variant="contained"
+                            color="primary"
+                            className={classes.button}
+                            endIcon={<Send/>}
+                        >
+                            
+                            <Link to="/logingoogle">login google</Link>
+                        </Button>
+                        
+                    </Grid>
+                    
+                  </Grid>
+                  
+                </section>
             </Paper>
-        </div>
+        </Grid>
+      </Grid>
+    </div>
     </>
     );
 };
