@@ -32,10 +32,45 @@ export const Lugar1 = (props) => {
     
     return (
         <>
-        <Grid container className={classes.root} spacing={2}>
+        <Layout>
+          <div>
+            <Grid container className={classes.root} spacing={2}>
           <Grid item xs={12}>
-   
+            <Grid container justify="center" spacing={spacing}>
+              {[0, 1, 2].map((value) => (
+                <Grid key={value} item>
+                  <Paper className={classes.paper} />
+                </Grid>
+              ))}
+            </Grid>
           </Grid>
+          <Grid item xs={12}>
+            <Paper className={classes.control}>
+              <Grid container>
+                <Grid item>
+                  {/* <FormLabel>spacing</FormLabel>
+                  <RadioGroup
+                    name="spacing"
+                    aria-label="spacing"
+                    value={spacing.toString()}
+                    onChange={handleChange}
+                    row
+                  >
+                    {[0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10].map((value) => (
+                      <FormControlLabel
+                        key={value}
+                        value={value.toString()}
+                        control={<Radio />}
+                        label={value.toString()}
+                      />
+                    ))}
+                  </RadioGroup> */}
+                </Grid>
+              </Grid>
+            </Paper>
+          </Grid>
+        </Grid>
+    </div>
             <div class="row">
               <div/>
                 <h2>Reserva Natural Sierra Amerrique</h2>
@@ -86,7 +121,9 @@ export const Lugar1 = (props) => {
                         para acampar o pernoctar en la finca, debe llamar al menos un día antes.
                         </p>
                 </div>               
-            </Grid>
+          
+            </Layout>
         </>
     );
 }; 
+export default Lugar1;

@@ -6,7 +6,6 @@ import Modal from './modal';
 import './galeria.css';
 import Header from './../header/Head'
 
-
 const Galeria =()=>{
     const [selectedImg, setSelectedImg] = useState(null);
     return(

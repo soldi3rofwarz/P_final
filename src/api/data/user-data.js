@@ -1,5 +1,5 @@
-import firebase from './firebase-config';
-import db from './firebase-config'
+import firebase from './firebase-config'
+import { db } from './firebase-config'
 import 'firebase/auth'
 
 const USER_KEY = 'users';
