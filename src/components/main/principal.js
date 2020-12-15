@@ -32,12 +32,12 @@ const Index = () => {
         <img src={`${process.env.PUBLIC_URL}/res/bg3.jpg`} alt=""  className="bg"/>
         <img src={`${process.env.PUBLIC_URL}/res/bird2.png`}  className="bird" alt="" />
         <div className="content">
-            <h2><br/><span>VagaChontal</span></h2>
+            <h2>VagaChontal</h2>
            
-            <Link to = {'/login'}>
-                <button className="buton">UNITE</button>
-            </Link>
-
+            
+                <button className="buton"><Link to = {'/login'} >UNITE</Link></button>
+            
+ 
         </div>
         <ul className="sci">
             <li><a href="#!"><img src={`${process.env.PUBLIC_URL}/res/facebook.png`} alt="" /></a></li>

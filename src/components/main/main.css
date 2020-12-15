@@ -83,35 +83,15 @@ section header .toggle:active{
     position: absolute;
     left: 100px;
     max-width: 600px;
-    z-index: 10;
-    background: rgba(red, green, blue, alpha);
+    background: transparent
+   
 }
 .content h2{
     font-size: 3.5em;
-    color: #fff;
+   
     font-weight: 400;
     line-height: 2em;
-    background: rgba(red, green, rgb(45, 45, 100), alpha);
-}
-.content span{
-    font-weight: 800;
-    font-size: 1em;
-    letter-spacing: 5px;
-}
-.content p{
-    color: #fff;
-}
-
-.content a{
-    display: inline-block;
-    padding: 10px 20px;
-    background: #fff;
-    color: black;
-    text-decoration: none;
-    text-transform: uppercase;
-    margin-top: 20px;
-    font-weight: 600;
-    letter-spacing: 2px;
+   
 }
 
 .sci{
@@ -171,8 +151,9 @@ section header .toggle:active{
     background: rgba(85, 121, 51, 0.863);
     width: 30%;
     height: 50px;
-    color:rgba(255, 255, 255, 0.863);
+    
     transition: .5s;
     position: absolute;
     float: left;
+    text-decoration: none;
 }
