@@ -10,7 +10,7 @@ import DetallePage from './../pages/detallePage'
 //import Registro from './../components/login/Cliente/registro/componente/registro'
 // import LoginGoogle from './../components/login/loginGoogle'
 import LoginPage from '../pages/login'
-import Lugar1 from './../components/informacion/informacion-compo/lugar1'
+import Info from './../components/informacion/informacion-compo/info'
 import Galeria from './../components/gallery/galeria'
 import AgregarActividades from '../components/Actividades/form-actividades'
 
@@ -20,7 +20,7 @@ export const ClientsRoute = () => {
         
         <Router>
             <Switch>
-                <Route exact path="/" component={Index} />
+                <Route exact path="/info" component={Info} />
                 <Route exact path="/actividades" component={ActividadesPage}/>
                 <Route path="/detalle" component={DetallePage}/>
                 <Route path="/galeria" component={Galeria}/> 
