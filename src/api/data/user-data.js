@@ -1,5 +1,5 @@
-
-import {db,auth} from './firebase-config'
+import firebase from './firebase-config'
+import { db } from './firebase-config'
 import 'firebase/auth'
 
 const USER_KEY = 'users';
@@ -23,7 +23,7 @@ export const selectUser = async(userId) => {
     }
 };
 export const currentUser = () =>{
-    const user = auth().currentUser;
+    const user = firebase.auth().currentUser;
     if(user){
         return user;
     }
@@ -33,20 +33,20 @@ export const currentUser = () =>{
 };
 
 export const onAuthChanged = (response) =>{
-    auth().onAuthStateChanged(response);
+    firebase.auth().onAuthStateChanged(response);
 };
 
 export const signout = async () => {
-    await auth().signOut();
+    await firebase.auth().signOut();
 };
 
 export const signin = async (email, password) => {
-    await auth().signInWithEmailAndPassword(email, password);
+    await firebase.auth().signInWithEmailAndPassword(email, password);
 };
 
 export const addUser = async (user) =>{
     const {email, password} = user;
-    const result = await auth().createUserWithEmailAndPassword(email, password);
+    const result = await firebase.auth().createUserWithEmailAndPassword(email, password);
 
     await queryUser().doc(result.user.uid).set({
         email: email,

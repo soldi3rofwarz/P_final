@@ -8,9 +8,12 @@ import {ActividadesPage} from './../pages/actividades'
 import Index from './../components/main/principal';
 import DetallePage from './../pages/detallePage'
 //import Registro from './../components/login/Cliente/registro/componente/registro'
-import LoginGoogle from './../components/login/loginGoogle'
+// import LoginGoogle from './../components/login/loginGoogle'
 import LoginPage from '../pages/login'
-import Form from '../components/Actividades/form-actividades'
+import Lugar1 from './../components/informacion/informacion-compo/lugar1'
+import Galeria from './../components/gallery/galeria'
+import AgregarActividades from '../components/Actividades/form-actividades'
+
 export const ClientsRoute = () => {
 
     return (
@@ -20,10 +23,12 @@ export const ClientsRoute = () => {
                 <Route exact path="/" component={Index} />
                 <Route exact path="/actividades" component={ActividadesPage}/>
                 <Route path="/detalle" component={DetallePage}/>
+                <Route path="/galeria" component={Galeria}/> 
                 <Route exact path ="/login" component ={LoginPage} />
-                <Route exact path ="/Logingoogle" component ={LoginGoogle} /> 
-                <Route exact path ="/form" component ={Form} />
-                {/* 
+                <Route exact path ="/form" component ={AgregarActividades} />
+
+                {/* <Route exact path ="/Logingoogle" component ={LoginGoogle} />  */}
+                {/*<Route exact path ="/register" component ={Registro} /> 
                 
                 {/* <Route path ="/galeria" component ={Galeria} />
                 <Route path ="/form" component ={Form} /> */}

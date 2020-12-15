@@ -46,9 +46,15 @@ const useStyles = makeStyles((theme) => ({
   },
 }));
 
-export const Login=(props)=> {
-    const[email,onChangeEmail,password,onChangePassword,onSignIn]=props
-    const classes = useStyles();
+const Login=({
+  email,
+  onChangeEmail,
+  password,
+  onChangePassword,
+  onSignin
+})=> {
+  
+  const classes = useStyles();
 
   return (
     <Container component="main" maxWidth="xs">
@@ -58,9 +64,9 @@ export const Login=(props)=> {
           <LockOutlinedIcon />
         </Avatar>
         <Typography component="h1" variant="h5">
-          Sign in
+         Login
         </Typography>
-        <form className={classes.form} noValidate>
+        <Grid className={classes.form} noValidate>
           <TextField
             variant="outlined"
             margin="normal"
@@ -69,9 +75,9 @@ export const Login=(props)=> {
             id="email"
             label="Email Address"
             name="email"
-            value={email}
             autoComplete="email"
             autoFocus
+           
             onChange={onChangeEmail}
           />
           <TextField
@@ -83,8 +89,8 @@ export const Login=(props)=> {
             label="Password"
             type="password"
             id="password"
-            value={password}
             autoComplete="current-password"
+            
             onChange={onChangePassword}
           />
           <FormControlLabel
@@ -97,14 +103,14 @@ export const Login=(props)=> {
             variant="contained"
             color="primary"
             className={classes.submit}
-            onClick={onSignIn}
+            onClick={onSignin}
           >
-            Iniciar sesion
+            Sign In
           </Button>
           <Grid container>
             <Grid item xs>
               <Link href="#" variant="body2">
-                Forgot password?
+                Olvido su contraseña?
               </Link>
             </Grid>
             <Grid item>
@@ -113,7 +119,7 @@ export const Login=(props)=> {
               </Link>
             </Grid>
           </Grid>
-        </form>
+        </Grid>
       </div>
       <Box mt={8}>
         <Copyright />
@@ -121,3 +127,4 @@ export const Login=(props)=> {
     </Container>
   );
 }
+export default Login

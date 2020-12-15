@@ -1,5 +1,5 @@
 import { useState, useEffect } from 'react';
-import {storage,db,timestamp} from '../../api/data//firebase-config';
+import { storage, db, timestamp } from '../../api/data/firebase-config';
 
 
 
@@ -12,8 +12,11 @@ const useStorage = (file) => {
 
   useEffect(() => {
     // references
-    const storageRef = storage.ref(file.name);
-    const collectionRef = db.collection('images');
+
+    const storageRef = storage.storageRef(file.name);
+    const collectionRef = db.collectionRef('images');
+    // const storageRef = storage.ref(file.name);
+    // const collectionRef = db.collection('images');
     
     storageRef.put(file).on('state_changed', (snap) => {
       let percentage = (snap.bytesTransferred / snap.totalBytes) * 100;

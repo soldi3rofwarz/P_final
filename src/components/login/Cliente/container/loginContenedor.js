@@ -1,28 +1,21 @@
 import React,{useState,useEffect} from 'react'
-import {Login} from './../componente/login-cliente'
+import Login from './../componente/login-cliente'
 import {Link} from 'react-router-dom'
 import {
     signin,
     onAuthChanged,
 } from '../../../../api/data/user-data'
-
 export const LoginContenedor =()=>{
 
     const [email, setemail] = useState()
     const [password, setPassword]= useState()
-    const [estado, setestado] = useState('logueado')
+    const [estado, setestado] = useState('')
 
-    if(estado === 'logueado'){
-        return(
-            <Link
-                to='/' 
-            />
-        );
-    }
+    
 
    
-    const handleChangeEmail = (event) => setemail({ email: event.target.value });
-    const handleChangePassword = (event) => setPassword({ password: event.target.value });
+    const handleChangeEmail = (event) => setemail({ email: event.target.name });
+    const handleChangePassword = (event) => setPassword({ password: event.target.name });
 
 
     const Loading = () => {
@@ -79,11 +72,25 @@ export const LoginContenedor =()=>{
         }
         else {
             Loading();
-            const a = signin(email, password)
-            
+            signin(email, password)
+           
             .then(() => {
                 Reinitialize();
             })
+            onAuthChanged(user => {
+                if(user) {
+                     setestado(
+                       estado=== 'logueado',
+                     )
+                     if(estado === 'logueado'){
+                        return(
+                            <Link
+                                to='/' 
+                            />
+                        );
+                    }
+                }
+             })
             .catch((e) => {
                 Error(e);
             });
@@ -91,14 +98,10 @@ export const LoginContenedor =()=>{
     };
     
     
-    //   onAuthChanged(user => {
-    //        if(user) {
-    //             setestado(
-    //                 estado= 'logueado',
-    //             )
-    //        }
-    //     })
-    
+        
+   
+     
+    console.log("cargando login");
     
 
         
