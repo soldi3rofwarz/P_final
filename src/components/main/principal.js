@@ -4,6 +4,7 @@ import Pie from './../footer/foot';
 import Header from './../header/Head'
 import {Link} from 'react-router-dom'
 import Gallery from 'react-photo-gallery'
+import MediaCard from './cards'
 
 
 const PhotosSet= [
@@ -69,7 +70,7 @@ const Index = () => {
         </ul>
 
     </section>
-    <section style={{margin:0, padding:0,background: 'gray', height: '600px'}}>
+    <section style={{marginTop:'30px', padding:0, height: 'auto',  height: 'auto'}}>
         <div style={{ boxShadow: '5px 5px', margin: '10px', width: '48%', height: '250px',
                      textAlign: 'center', alignItems:'center', borderRadius: '2%'}} >
             <h2>acerca de</h2>
@@ -85,16 +86,26 @@ const Index = () => {
                 dcmdpkmclksmdcklmewfmwefmwemfwemf</p>
         </div>
     </section>
-    <section>
+    <section style={{height: 'auto'}}>
       <div style={{width: '100%'}}> <h2>Muestra de galeria</h2></div>
        <div style={{width: '100%'}}>
            <Gallery  photos = {PhotosSet}/> 
-           <Link to = {'/galeria'} style={{fontSize: '40px'}} >ver mas</Link>
+           <Link to = {'/actividades'} style={{fontSize: '40px'}} >ver mas</Link>
 
        </div> 
     </section>
-    <section>
-        <div><h2>Actividades recientes</h2></div>
+    <section style={{ height: 'auto'}}>
+        <div style={{display: 'inline', width:'80%', alignItems: 'center'}}><h2>Actividades recientes</h2>
+        <MediaCard/>
+        <Link to = {'/galeria'} style={{fontSize: '40px'}} >ver mas</Link>
+        </div>
+        <div style={{ height: '600px', boxShadow: '-5px 5px', maxWidth: '20%'}}>
+            <h2 background='lightblue'>Zoologico Thomas Belt</h2>
+            <img src={`${process.env.PUBLIC_URL}/res/zoo.jpg`} />
+            <div height='30px'></div>
+            <img src={`${process.env.PUBLIC_URL}/res/zoo1.jpg`} width='310px' />
+        </div>
+        
     </section>
     <Pie/>
     </>
