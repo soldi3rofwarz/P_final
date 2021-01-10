@@ -20,6 +20,7 @@ export const ClientsRoute = () => {
         
         <Router>
             <Switch>
+            <Route exact path="/" component={Index} />
                 <Route exact path="/info" component={Info} />
                 <Route exact path="/actividades" component={ActividadesPage}/>
                 <Route path="/detalle" component={DetallePage}/>

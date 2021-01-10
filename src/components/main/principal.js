@@ -3,6 +3,29 @@ import './main.css';
 import Pie from './../footer/foot';
 import Header from './../header/Head'
 import {Link} from 'react-router-dom'
+import Gallery from 'react-photo-gallery'
+
+
+const PhotosSet= [
+
+{
+	src: `${process.env.PUBLIC_URL}/res/bg3.jpg`,
+	width: 3,
+	height: 2
+},
+
+{
+	src: `${process.env.PUBLIC_URL}/res/bg3.jpg`,
+	width: 3,
+	height: 2
+},
+{
+	src: `${process.env.PUBLIC_URL}/res/bg3.jpg`,
+	width: 3,
+	height: 2
+},
+
+]
 
 const Index = () => {
 
@@ -46,7 +69,33 @@ const Index = () => {
         </ul>
 
     </section>
+    <section style={{margin:0, padding:0,background: 'gray', height: '600px'}}>
+        <div style={{ boxShadow: '5px 5px', margin: '10px', width: '48%', height: '250px',
+                     textAlign: 'center', alignItems:'center', borderRadius: '2%'}} >
+            <h2>acerca de</h2>
+            <p>es pagina que promueve el turismo al exponer al publico las 
+                diferentes actividades que realizan las distinas orgsnixaciones
+            </p>
+        </div>
+           
+        <div style={{ boxShadow: '5px 5px',height: '250px',width: '48%', textAlign: 'center',
+                      borderRadius: '2%',  }}>
+            <h2>mision</h2>
+            <p>lfmmamdwdopwqmdqwmdqwdmwqmdwqmdmqwdopmwqdomqwmdopqowqdqd
+                dcmdpkmclksmdcklmewfmwefmwemfwemf</p>
+        </div>
+    </section>
+    <section>
+      <div style={{width: '100%'}}> <h2>Muestra de galeria</h2></div>
+       <div style={{width: '100%'}}>
+           <Gallery  photos = {PhotosSet}/> 
+           <Link to = {'/galeria'} style={{fontSize: '40px'}} >ver mas</Link>
 
+       </div> 
+    </section>
+    <section>
+        <div><h2>Actividades recientes</h2></div>
+    </section>
     <Pie/>
     </>
 );
