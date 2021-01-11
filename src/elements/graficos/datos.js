@@ -34,6 +34,7 @@ const Datos=()=>{
 
     return(
         <div className='datos' style={{width: '100%', Height: '500px'}}>
+            <section style={{height:'50px'}}></section>
             <h1>Graficos</h1>
            <section style={{boxShadow: '5px 5px 5px'}}> <Bar data={Data} options={Opciones}/></section>
            <section style={{boxShadow: '5px 5px 5px'}}> <Bar data={Data1} options={Opciones}/></section>

@@ -71,39 +71,48 @@ const Index = () => {
 
     </section>
     <section style={{marginTop:'30px', padding:0, height: 'auto',  height: 'auto'}}>
-        <div style={{ boxShadow: '5px 5px', margin: '10px', width: '48%', height: '250px',
+        <div style={{ boxShadow: '5px 5px 5px ', margin: '10px', width: '48%', height: '250px',
                      textAlign: 'center', alignItems:'center', borderRadius: '2%'}} >
-            <h2>acerca de</h2>
+            <h2 style={{color: '#88F60A'}}>acerca de</h2>
             <p>es pagina que promueve el turismo al exponer al publico las 
                 diferentes actividades que realizan las distinas orgsnixaciones
             </p>
+            <img src={`${process.env.PUBLIC_URL}/res/about.png`} width='100px' />
+
         </div>
            
-        <div style={{ boxShadow: '5px 5px',height: '250px',width: '48%', textAlign: 'center',
+        <div style={{ boxShadow: '5px 5px 5px',height: '250px',width: '48%', textAlign: 'center',
                       borderRadius: '2%',  }}>
-            <h2>mision</h2>
+            <h2 style={{color: '#88F60A'}}>mision</h2>
             <p>lfmmamdwdopwqmdqwmdqwdmwqmdwqmdmqwdopmwqdomqwmdopqowqdqd
-                dcmdpkmclksmdcklmewfmwefmwemfwemf</p>
+                dcmdpkmclksmdcklmewfmwefmwemfwemf
+            </p>
+            <img src={`${process.env.PUBLIC_URL}/res/mision.png`} width='100px' />
+
         </div>
     </section>
     <section style={{height: 'auto'}}>
       <div style={{width: '100%'}}> <h2>Muestra de galeria</h2></div>
        <div style={{width: '100%'}}>
            <Gallery  photos = {PhotosSet}/> 
-           <Link to = {'/actividades'} style={{fontSize: '40px'}} >ver mas</Link>
+           <Link to = {'/galeria'} style={{fontSize: '40px'}} >ver mas</Link>
 
        </div> 
     </section>
-    <section style={{ height: 'auto'}}>
-        <div style={{display: 'inline', width:'80%', alignItems: 'center'}}><h2>Actividades recientes</h2>
-        <MediaCard/>
-        <Link to = {'/galeria'} style={{fontSize: '40px'}} >ver mas</Link>
+    <section style={{ height: 'auto', width: '100%', margin:'auto'}}>
+        <div style={{display: 'row', width:'100%'}}>
+            <h2>Actividades recientes</h2>
+            <MediaCard/>
+            <Link to = {'/actividades'} style={{fontSize: '40px'}} >ver mas</Link>
         </div>
-        <div style={{ height: '600px', boxShadow: '-5px 5px', maxWidth: '20%'}}>
+        <div style={{ height: '600px', boxShadow: '-5px 5px 5px', maxWidth: '30%', overflow:'hidden', backgroundColor: '#DBFADB', right:'0px'}}>
             <h2 background='lightblue'>Zoologico Thomas Belt</h2>
-            <img src={`${process.env.PUBLIC_URL}/res/zoo.jpg`} />
-            <div height='30px'></div>
-            <img src={`${process.env.PUBLIC_URL}/res/zoo1.jpg`} width='310px' />
+            <img style={{width:'250px', backgroundAttachment: 'fix'}} src={`${process.env.PUBLIC_URL}/res/zoo.jpg`} />
+            <hr/>
+            <img  style={{width:'250px', backgroundAttachment: 'fix'}} src={`${process.env.PUBLIC_URL}/res/zoo1.jpg`} width='310px' />
+            <h2>Visitenos</h2>
+            <h3>horario de atencion</h3>
+            <p>de martes a domingo <br/> de las 8:00 a.m a 5:00 p.m</p>
         </div>
         
     </section>

@@ -49,7 +49,7 @@ export default function RecipeReviewCard() {
 
   return (
       <>
-    <Card className={classes.root}>
+    <Card className={classes.root} style={{margin: '40px'}}>
       <CardHeader
        
         
@@ -83,7 +83,7 @@ export default function RecipeReviewCard() {
       
     </Card>
 
-    <Card className={classes.root}>
+    <Card className={classes.root} style={{margin: '40px'}}>
       <CardHeader
        
         
@@ -117,7 +117,7 @@ export default function RecipeReviewCard() {
       
     </Card>
 
-    <Card className={classes.root}>
+    <Card className={classes.root} style={{margin: '40px'}}>
       <CardHeader
        
         
