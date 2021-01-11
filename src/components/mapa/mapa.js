@@ -28,7 +28,7 @@ import {
 
 const Mapa = () => {
     const {isLoaded, loadError}= useLoadScript({
-        googleMapsApiKey: process.env.REACT_MAP_GOOGLE_MAPS_API_KEY= "AIzaSyBS7ep4NUFFXOgvazOhHuhMfIOysML2dos",
+        googleMapsApiKey: process.env.REACT_MAP_GOOGLE_MAPS_API_KEY= "AIzaSyApgMdX2rW6Wnno9ZV7XDNdw42DBZN18y8",
         libraries,
       })
 
@@ -73,7 +73,7 @@ const Mapa = () => {
                             origin: new window.google.maps.Point(0,0),
                             anchor: new window.google.maps.Point(15,15)
                         }}
-                        onLoad={()=>{
+                        onClick={()=>{
                         setSelect(marker)
                         }}
                         
