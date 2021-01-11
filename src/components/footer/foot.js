@@ -4,9 +4,9 @@ import './foot.css';
 const Foot = () => {
     return ( 
 
-        <section >
-            <footer>
-            <div className="footer-left">
+        <section  >
+            <footer >
+            <div className="footer-left" >
                 <img src="img/logo.png" alt=""/>
 				    <h3>Sobre<span>Vagachontal</span></h3>
 

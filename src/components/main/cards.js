@@ -87,13 +87,13 @@ export default function RecipeReviewCard() {
       <CardHeader
        
         
-        title="Piedra de Cuapa"
+        title="Puerto dias"
         subheader="15 de Marzo, 2021"
       />
       <CardMedia
         className={classes.media}
-        image={`${process.env.PUBLIC_URL}/res/bg3.jpg`}
-        title="Piedra de cuapa"
+        image={`${process.env.PUBLIC_URL}/res/pd.jpg`}
+        title="Puerto dias"
       />
       <CardContent>
         <Typography variant="body2" color="textSecondary" component="p">
@@ -121,13 +121,13 @@ export default function RecipeReviewCard() {
       <CardHeader
        
         
-        title="Piedra de Cuapa"
+        title="Amerrique"
         subheader="15 de Marzo, 2021"
       />
       <CardMedia
         className={classes.media}
-        image={`${process.env.PUBLIC_URL}/res/bg3.jpg`}
-        title="Piedra de cuapa"
+        image={`${process.env.PUBLIC_URL}/res/amerrique.jpg`}
+        title="amerrique"
       />
       <CardContent>
         <Typography variant="body2" color="textSecondary" component="p">

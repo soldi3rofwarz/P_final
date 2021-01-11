@@ -16,12 +16,12 @@ const PhotosSet= [
 },
 
 {
-	src: `${process.env.PUBLIC_URL}/res/bg3.jpg`,
+	src: `${process.env.PUBLIC_URL}/res/pd.jpg`,
 	width: 3,
 	height: 2
 },
 {
-	src: `${process.env.PUBLIC_URL}/res/bg3.jpg`,
+	src: `${process.env.PUBLIC_URL}/res/amerrique.jpg`,
 	width: 3,
 	height: 2
 },
