@@ -3,7 +3,6 @@ import './head.css';
 //import Nav from 'react-bootstrap/Nav'
 import {Link}from 'react-router-dom'
 
-
 const Header = () => {
 
     const Scroll2 = () => {
@@ -20,7 +19,7 @@ const Header = () => {
    
     return (     
     <>
-    <script src="https://code.jquery.com/jquery-3.5.1.js"></script>
+
     {/* <Nav className="justify-content-end" activeKey="/home" >
     <Nav.Item>
       <Nav.Link href="/home">Active</Nav.Link>
@@ -38,8 +37,6 @@ const Header = () => {
     </Nav.Item>
   </Nav> */}
         <nav onScroll = {Scroll2}>
-            
-
             {/* <div className="logo">
                 <img src='logo.png'/>
             </div> */}
@@ -52,10 +49,8 @@ const Header = () => {
                 <li><Link to="/login">Cliente </Link></li>
             </ul>
         </nav>
-
     </>
     );
-
 }
  
 export default Header;

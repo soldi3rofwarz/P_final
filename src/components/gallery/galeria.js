@@ -5,6 +5,7 @@ import ImageGrid from './ImageGrid';
 import Modal from './modal';
 import './galeria.css';
 import Header from './../header/Head'
+import Lugares from './lugares'
 
 const Galeria =()=>{
     const [selectedImg, setSelectedImg] = useState(null);
@@ -12,13 +13,15 @@ const Galeria =()=>{
       <>
       <Header/>
         <div className="App">
-      <Title/>
-      <UploadForm />
+          
+          <Title/> 
+          <Lugares/>
+          <UploadForm />
       <ImageGrid setSelectedImg={setSelectedImg} />
       { selectedImg && (
         <Modal selectedImg={selectedImg} setSelectedImg={setSelectedImg} />
       )}
-    </div>
+        </div>
     </>
     )
 }

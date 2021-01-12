@@ -7,18 +7,16 @@ import CardMedia from '@material-ui/core/CardMedia';
 import CardContent from '@material-ui/core/CardContent';
 import CardActions from '@material-ui/core/CardActions';
 import Collapse from '@material-ui/core/Collapse';
-import Avatar from '@material-ui/core/Avatar';
 import IconButton from '@material-ui/core/IconButton';
 import Typography from '@material-ui/core/Typography';
 import { red } from '@material-ui/core/colors';
-import FavoriteIcon from '@material-ui/icons/Favorite';
-import ShareIcon from '@material-ui/icons/Share';
 import ExpandMoreIcon from '@material-ui/icons/ExpandMore';
-import MoreVertIcon from '@material-ui/icons/MoreVert';
+
+
 
 const useStyles = makeStyles((theme) => ({
   root: {
-    maxWidth: 245,
+    maxWidth: 345,
   },
   media: {
     height: 0,
@@ -48,28 +46,26 @@ export default function RecipeReviewCard() {
   };
 
   return (
-      <>
-    <Card className={classes.root} style={{margin: '40px'}}>
+    <section>
+    <Card className={classes.root}>
       <CardHeader
-       
-        
-        title="Piedra de Cuapa"
-        subheader="15 de Marzo, 2021"
+        title="Puerto Díaz"
       />
       <CardMedia
         className={classes.media}
-        image={`${process.env.PUBLIC_URL}/res/bg3.jpg`}
-        title="Piedra de cuapa"
+        image={`${process.env.PUBLIC_URL}/res/puertodiaz.jpg`}
+        title="Paella dish"
       />
       <CardContent>
         <Typography variant="body2" color="textSecondary" component="p">
-          Pate perro organiza una grandiosa excurcion a la piedra de cuapa
+          Puerto Díaz, una opción turística más del Lago Cocibolca
         </Typography>
       </CardContent>
       <CardActions disableSpacing>
         <IconButton aria-label="add to favorites">
-          <FavoriteIcon />
+       
         </IconButton>
+      
         <IconButton
           className={clsx(classes.expand, {
             [classes.expandOpen]: expanded,
@@ -78,78 +74,23 @@ export default function RecipeReviewCard() {
           aria-expanded={expanded}
           aria-label="show more"
         >
+          <ExpandMoreIcon />
         </IconButton>
       </CardActions>
-      
+      <Collapse in={expanded} timeout="auto" unmountOnExit>
+        <CardContent>
+          <Typography paragraph>
+          La inmensidad de las aguas del lago Cocibolca o de Nicaragua, contienen muchos tesoros naturales que solo necesitan ser visitados para ser conocidos, uno de estos es Puerto Díaz, ubicado a tan solo 28 kilómetros del municipio de Juigalpa.
+          </Typography>
+          <Typography paragraph>
+          Desde este lugar se puede acceder desde la conocida gasolinera Puma en Juigalpa hacia el sur, hasta llegar a sus cristalinas aguas, que sirven de sustento comercial a las familias lugareñas, que ven en la pesca, su principal actividad económica y ahora apuntan al turismo.
+          </Typography>
+          <Typography paragraph>
+          En el trayecto para llegar a este rincón del inmenso lago, podrá conocer las principales haciendas ganaderas de Juigalpa, como la de Hato Grande, que según historiadores es ahí donde se origina la ganadería nicaragüense.
+          </Typography>
+        </CardContent>
+      </Collapse>
     </Card>
-
-    <Card className={classes.root} style={{margin: '40px'}}>
-      <CardHeader
-       
-        
-        title="Puerto dias"
-        subheader="15 de Marzo, 2021"
-      />
-      <CardMedia
-        className={classes.media}
-        image={`${process.env.PUBLIC_URL}/res/pd.jpg`}
-        title="Puerto dias"
-      />
-      <CardContent>
-        <Typography variant="body2" color="textSecondary" component="p">
-          Pate perro organiza una grandiosa excurcion a la piedra de cuapa
-        </Typography>
-      </CardContent>
-      <CardActions disableSpacing>
-        <IconButton aria-label="add to favorites">
-          <FavoriteIcon />
-        </IconButton>
-        <IconButton
-          className={clsx(classes.expand, {
-            [classes.expandOpen]: expanded,
-          })}
-          onClick={handleExpandClick}
-          aria-expanded={expanded}
-          aria-label="show more"
-        >
-        </IconButton>
-      </CardActions>
-      
-    </Card>
-
-    <Card className={classes.root} style={{margin: '40px'}}>
-      <CardHeader
-       
-        
-        title="Amerrique"
-        subheader="15 de Marzo, 2021"
-      />
-      <CardMedia
-        className={classes.media}
-        image={`${process.env.PUBLIC_URL}/res/amerrique.jpg`}
-        title="amerrique"
-      />
-      <CardContent>
-        <Typography variant="body2" color="textSecondary" component="p">
-          Pate perro organiza una grandiosa excurcion a la piedra de cuapa
-        </Typography>
-      </CardContent>
-      <CardActions disableSpacing>
-        <IconButton aria-label="add to favorites">
-          <FavoriteIcon />
-        </IconButton>
-        <IconButton
-          className={clsx(classes.expand, {
-            [classes.expandOpen]: expanded,
-          })}
-          onClick={handleExpandClick}
-          aria-expanded={expanded}
-          aria-label="show more"
-        >
-        </IconButton>
-      </CardActions>
-      
-    </Card>
-    </>
+    </section>
   );
 }

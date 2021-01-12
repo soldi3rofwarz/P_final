@@ -1,34 +1,35 @@
 import React from 'react';
-
+import Header from './../../header/Head'
 import './informacion.css'
 import Gallery from 'react-photo-gallery'
-
+import Lugares from './../../gallery/lugares'
 
 const PhotosSet= [
 
 {
-	src: '/imgl1/122.jpg',
+	src: '/res/elnancital.jpg',
 	width: 4,
 	height: 3
 },
 
 {
-	src: './imgl1/ad.jpg',
+	src: '/res/elnancital2.jpg',
 	width: 4,
 	height: 3
 },
 
 
 ]
-
-
 const Lugar1 = () => {
-
-    
     return (
-      	<div>
-            <div class="row">
-                <h2>El Nancital</h2>
+		<>
+		
+      	<div style={{top:'100px'}}>
+		  
+		  <div className="row" >
+		  <Lugares/>
+                <h2 >El Nancital</h2>
+				
                     <h4>
                     	El Nancital un paraíso natural frente a Acoyapa
                     </h4>
@@ -52,6 +53,7 @@ const Lugar1 = () => {
 		</div>
 		               
   	</div>
+	  </>
     );
 };
 export default Lugar1

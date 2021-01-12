@@ -15,6 +15,10 @@ import Galeria from './../components/gallery/galeria'
 import AgregarActividades from '../components/Actividades/form-actividades'
 import Datospage from './../pages/Graficospage'
 import Mapa from './../components/mapa/mapa'
+import Lugar1 from './../pages/page1'
+import Lugar2 from './../components/informacion/informacion-compo/lugar2'
+import Lugar3 from './../components/informacion/informacion-compo/lugar3'
+
 export const ClientsRoute = () => {
 
     return (
@@ -30,6 +34,9 @@ export const ClientsRoute = () => {
                 <Route exact path ="/form" component ={AgregarActividades} />
                 <Route exact path ="/datos" component ={Datospage} />
                 <Route exact path ="/mapa" component ={Mapa} />
+                <Route exact path ="/lugar1" component ={Lugar1} />
+                <Route exact path ="/lugar2" component ={Lugar2} />
+                <Route exact path ="/lugar3" component ={Lugar3} />
                 {/* <Route exact path ="/Logingoogle" component ={LoginGoogle} />  */}
                 {/*<Route exact path ="/register" component ={Registro} /> 
                 
