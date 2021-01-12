@@ -16,8 +16,8 @@ import AgregarActividades from '../components/Actividades/form-actividades'
 import Datospage from './../pages/Graficospage'
 import Mapa from './../components/mapa/mapa'
 import Lugar1 from './../pages/page1'
-import Lugar2 from './../components/informacion/informacion-compo/lugar2'
-import Lugar3 from './../components/informacion/informacion-compo/lugar3'
+import Lugar2 from './../pages/page2'
+import Lugar3 from './../pages/page3'
 
 export const ClientsRoute = () => {
 

@@ -38,7 +38,7 @@ const Detalle = () => {
         <p key={item.id}>
         <Container>
             
-            <Row className="h" cols="2"> 
+            <section className="h" cols="2"> 
                 <Col  className="mapa">
                     
                     <Mapa/>
@@ -55,7 +55,7 @@ const Detalle = () => {
 
                     
                 </Col>
-            </Row>  
+            </section>  
             <Row>
              <Col>
                 <hr className="my-4"/>

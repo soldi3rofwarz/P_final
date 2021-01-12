@@ -21,8 +21,9 @@ const PhotosSet= [
 const Lugar3 = () => {
     return (
 		<>
-		<Header/>
+	    <div style={{height:'80px'}}></div >
         <Lugares/>
+        <div style={{height:'40px'}}></div >
       	<div >
             <div className="row"style={{margin:'auto'}}>
                 <h2 >Piedras Pintadas</h2>
