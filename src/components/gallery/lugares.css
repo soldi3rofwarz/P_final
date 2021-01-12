@@ -1,0 +1,74 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@300&display=swap');
+.nav
+{
+    position: absolute;
+    left: 0;
+    width: 100%;
+    padding: 10px 100px;
+    box-sizing: border-box;
+    /* background-color: rgba(6, 15, 10, 0.863); */
+    transition: .5s;
+    z-index: 10;
+    height: 30px;
+    text-align: center;
+    background: rgba(red, green, blue, alpha);
+}
+.nav.black
+{
+    background: rgba(0, 0, 0, 0.671);
+    height: 80px;
+    padding: 10px 50px;
+}
+
+.nav .logo
+{
+    float: left;
+}
+.nav .logo img
+{
+    height: 30px;
+    transition: .5s;
+}
+.nav.black .logo img
+{
+    height: 60px;
+}
+
+.nav ul
+{
+    float: right;
+    margin: 0;
+    padding: 0;
+    display: flex;
+}
+.nav ul li
+{
+    list-style: none;
+}
+.nav ul li a
+{
+    list-style: 80px;
+    color: #262626;
+    padding: 5px 20px;
+    font-family: 'Roboto', sans-serif;
+    text-decoration: none;
+    text-transform: uppercase;
+    transition: .5s;
+}
+.nav.black ul li a
+{
+    color: rgb(151, 38, 38);
+    line-height: 60px;
+}
+
+.nav ul li a.active,
+.nav ul li a:hover
+{
+    color:rgba(255, 255, 255, 0.863);
+    background: #216441;
+}
+section .sec1
+{
+    width:100%;
+    height: 100vh;
+}
