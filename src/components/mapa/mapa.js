@@ -28,7 +28,7 @@ import {
 
 const Mapa = () => {
     const {isLoaded, loadError}= useLoadScript({
-        googleMapsApiKey: process.env.REACT_MAP_GOOGLE_MAPS_API_KEY= "AIzaSyApgMdX2rW6Wnno9ZV7XDNdw42DBZN18y8",
+        googleMapsApiKey: process.env.REACT_MAP_GOOGLE_MAPS_API_KEY= "AIzaSyDPS_Nh65oXA-UoZ3l-qCDuEbmlCxBwcWM",
         libraries,
       })
 
@@ -63,24 +63,24 @@ const Mapa = () => {
                 onClick={onMapClick}
                 onLoad={onMapLoad}
             >
-                {markers.map((marker)=>(
+                {/* {markers.map((marker)=>( */}
                     <Marker
-                        key={marker.time.toISOString()}
-                        position={{lat: marker.lat, lng: marker.lng}}
+                        //key={marker.time.toISOString()}
+                        position={center}
                         icon={{
                             url: "/res/littlegirl.svg",
                             scaledSize: new window.google.maps.Size(30, 30),
                             origin: new window.google.maps.Point(0,0),
                             anchor: new window.google.maps.Point(15,15)
                         }}
-                        onClick={()=>{
-                        setSelect(marker)
-                        }}
+                        // onClick={()=>{
+                        // setSelect(marker)
+                        // }}
                         
                     />
                    
 
-                ))}
+                {/* ))} */}
 
                 {select? (<InfoWindow position={{lat: select.lat, lng: select.lng}} onCloseClick={()=>{
                     setSelect(null)
