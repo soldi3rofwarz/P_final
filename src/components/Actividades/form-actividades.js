@@ -34,10 +34,10 @@ const AgregarActividades = (props) => {
     const handleCuposChange = (e) => setCupos(parseInt(e.target.value));
 
     const [latitud, setLatitud] = useState('');
-    const handlelatitudChange = (e) => setLatitud(parseInt(e.target.value));
+    const handlelatitudChange = (e) => setLatitud(e.target.value);
 
     const [longitud, setLongitud] = useState('');
-    const handlelongitudChange = (e) => setLongitud(parseInt(e.target.value));
+    const handlelongitudChange = (e) => setLongitud(e.target.value);
 
     const [descripcion, setDescripcion] = useState('');
     const handleDescripcionChange = (e) => setDescripcion(e.target.value);
@@ -161,12 +161,12 @@ const AgregarActividades = (props) => {
 
             <Form.Group controlId="formlatitud">
                 <Form.Label>Latitud</Form.Label>
-                <Form.Control type="number" value= {latitud} placeholder="Latitud" onChange={handlelatitudChange} />
+                <Form.Control type="text" value= {latitud} placeholder="Latitud" onChange={handlelatitudChange} />
             </Form.Group>
 
             <Form.Group controlId="formLongitud">
                 <Form.Label>Longitud</Form.Label>
-                <Form.Control type="number" value= {longitud} placeholder="Longitud" onChange={handlelongitudChange} />
+                <Form.Control type="text" value= {longitud} placeholder="Longitud" onChange={handlelongitudChange} />
             </Form.Group>
             
 
