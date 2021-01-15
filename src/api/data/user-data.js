@@ -1,54 +1,153 @@
+import React,{useState, useEffect} from 'react'
 import firebase from './firebase-config'
 import { db } from './firebase-config'
 import 'firebase/auth'
+import Login from './../../components/login/Cliente/loginCliente'
+import Header from './../../elements/theme/components/header'
 
-const USER_KEY = 'users';
 
-const queryUser = () => {
-    return db.collection(USER_KEY);
-};
+ const Userd=()=>{
 
-export const selectUser = async(userId) => {
-    const document = await queryUser().doc(userId).get();
+    const [user, setuser] = useState('')
+    const[email, setemail]= useState('')
+    const[pass, setpass]= useState('')
+    const[emailerror, setemailerror]= useState('')
+    const[passerror, setpasserror]= useState('')
+    const[cuenta, setcuenta]= useState('')
 
-    if(document.exist){
-        const user = {
-            id:document.id,
-            ...document.data(),
-        };
-        return user;
+    const clearInputs=()=>{
+        setemail('')
+        setpass('')
     }
-    else {
-        return null;
+    const clearErrors=()=>{
+        setemailerror('')
+        setpasserror('')
     }
-};
-export const currentUser = () =>{
-    const user = firebase.auth().currentUser;
-    if(user){
-        return user;
+
+    const handleLogin=()=>{
+        clearErrors()
+        firebase
+        .out()
+        .signInWithEmailAndPassword(email, pass)
+        .catch((err)=> {
+            switch(err.code){
+            case "email invalido":
+            case "usuario desabilitado":
+            case "usuario no encontrado":   
+              setemailerror(err.message) 
+                break 
+            case "mala contraseña":
+            setpasserror(err.message)
+                break
+            }
+        })
     }
-    else{
-        return null;
+
+    const handleSignup=()=>{
+        clearErrors()
+        firebase
+        .out()
+        .signInWithEmailAndPassword(email, pass)
+        .catch((err)=> {
+            switch(err.code){
+            case "email ya en uso":
+            case "usuario invalido":   
+              setemailerror(err.message) 
+                break 
+            case "contraseña muy debil":
+            setpasserror(err.message)
+                break
+            }
+        })
     }
-};
 
-export const onAuthChanged = (response) =>{
-    firebase.auth().onAuthStateChanged(response);
-};
+    const signout = async () => {
+        await firebase.auth().signOut();
+    };
 
-export const signout = async () => {
-    await firebase.auth().signOut();
-};
+    const Listener=()=>{
+        //posible error cambiar el onAth.. por onAuthStateChanged
+        firebase.auth().onAuthStateChanged((user)=>{
+            if(user){
+                clearInputs()
+                setuser(user)
+            }
+            else {
+                setuser("")
+            }
+        })
+    }
 
-export const signin = async (email, password) => {
-    await firebase.auth().signInWithEmailAndPassword(email, password);
-};
+    useEffect(()=>{
+        Listener()
+    },[]);
 
-export const addUser = async (user) =>{
-    const {email, password} = user;
-    const result = await firebase.auth().createUserWithEmailAndPassword(email, password);
+     return(
+         <>
+         {user? 
+         (<Header signout={signout}/>):
+         (
+             <Login
+             email ={email}
+             setemail={setemail}
+             pass={pass}
+             setpass={setpass}
+             handleLogin={handleLogin}
+             handleSignup={handleSignup}
+             cuenta={cuenta}
+             setcuenta={setcuenta}
+             emailerror={emailerror}
+             passerror={passerror}
+         />
+         )}
+        
+        </>
+     )
 
-    await queryUser().doc(result.user.uid).set({
-        email: email,
-    })
-};
+ }
+
+ export default Userd;
+
+
+// export const selectUser = async(userId) => {
+//     const document = await queryUser().doc(userId).get();
+
+//     if(document.exist){
+//         const user = {
+//             id:document.id,
+//             ...document.data(),
+//         };
+//         return user;
+//     }
+//     else {
+//         return null;
+//     }
+// };
+// export const currentUser = () =>{
+//     const user = firebase.auth().currentUser;
+//     if(user){
+//         return user;
+//     }
+//     else{
+//         return null;
+//     }
+// };
+
+// export const onAuthChanged = (response) =>{
+//     firebase.auth().onAuthStateChanged(response);
+// };
+
+
+
+// export const signin = async (email, password) => {
+//     await firebase.auth().signInWithEmailAndPassword(email, password);
+// };
+
+// export const addUser = async (user) =>{
+//     const {email, password} = user;
+//     const result = await firebase.auth().createUserWithEmailAndPassword(email, password);
+
+//     await queryUser().doc(result.user.uid).set({
+//         email: email,
+//     })
+// };

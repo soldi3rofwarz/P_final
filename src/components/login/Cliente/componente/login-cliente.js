@@ -48,10 +48,15 @@ const useStyles = makeStyles((theme) => ({
 
 const Login=({
   email,
-  onChangeEmail,
-  password,
-  onChangePassword,
-  onSignin
+  setemail,
+  pass,
+  setpass,
+ handleLogin,
+ handleSignup,
+ cuenta,
+ setcuenta,
+ emailerror,
+ passerror
 })=> {
   
   const classes = useStyles();
@@ -71,19 +76,22 @@ const Login=({
             variant="outlined"
             margin="normal"
             required
+            value ={email}
             fullWidth
             id="email"
-            label="Email Address"
+            label="Email"
             name="email"
             autoComplete="email"
             autoFocus
            
-            onChange={onChangeEmail}
+            onChange={(e)=>setemail(e.target.value)}
           />
+          <p>{emailerror}</p>
           <TextField
             variant="outlined"
             margin="normal"
             required
+            value ={pass}
             fullWidth
             name="password"
             label="Password"
@@ -91,19 +99,20 @@ const Login=({
             id="password"
             autoComplete="current-password"
             
-            onChange={onChangePassword}
+            onChange={(e)=>setpass(e.target.value)}
           />
+            <p>{passerror}</p>
           <FormControlLabel
             control={<Checkbox value="remember" color="primary" />}
             label="Remember me"
           />
           <Button
-            type="submit"
+            type="button"
             fullWidth
             variant="contained"
             color="primary"
             className={classes.submit}
-            onClick={onSignin}
+            onClick={handleLogin}
           >
             Sign In
           </Button>

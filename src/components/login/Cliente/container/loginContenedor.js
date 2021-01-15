@@ -1,4 +1,4 @@
-import React,{useState,useEffect} from 'react'
+/* import React,{useState,useEffect} from 'react'
 import Login from './../componente/login-cliente'
 import {Link} from 'react-router-dom'
 import {
@@ -7,7 +7,7 @@ import {
 } from '../../../../api/data/user-data'
 export const LoginContenedor =()=>{
 
-    const [email, setemail] = useState()
+    const [email, setemail] = useState('')
     const [password, setPassword]= useState()
     const [estado, setestado] = useState('')
 
@@ -91,9 +91,7 @@ export const LoginContenedor =()=>{
                     }
                 }
              })
-            .catch((e) => {
-                Error(e);
-            });
+            
         }
     };
     
@@ -104,7 +102,9 @@ export const LoginContenedor =()=>{
     console.log("cargando login");
     
 
-        
+    useEffect(()=>{
+        handleSignin()
+    },[])
        
     
     return (
@@ -121,4 +121,4 @@ export const LoginContenedor =()=>{
                 // messageClose={messageClose}
             />
     )
-}
+} */
