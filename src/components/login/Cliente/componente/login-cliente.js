@@ -46,18 +46,17 @@ const useStyles = makeStyles((theme) => ({
   },
 }));
 
-const Login=({
-  email,
-  setemail,
-  pass,
-  setpass,
- handleLogin,
- handleSignup,
- cuenta,
- setcuenta,
- emailerror,
- passerror
-})=> {
+const Login=(props)=> {
+  const [  email,
+    setemail,
+    pass,
+    setpass,
+   handleLogin,
+   handleSignup,
+   cuenta,
+   setcuenta,
+   emailerror,
+   passerror]= props
   
   const classes = useStyles();
 

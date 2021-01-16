@@ -1,4 +1,4 @@
-import React,{useState, useEffect} from 'react'
+import React, {useState, useEffect} from 'react'
 import firebase from './firebase-config'
 import { db } from './firebase-config'
 import 'firebase/auth'
@@ -13,7 +13,7 @@ import Header from './../../elements/theme/components/header'
     const[pass, setpass]= useState('')
     const[emailerror, setemailerror]= useState('')
     const[passerror, setpasserror]= useState('')
-    const[cuenta, setcuenta]= useState('')
+    const[cuenta, setcuenta]= useState(false)
 
     const clearInputs=()=>{
         setemail('')
@@ -45,8 +45,7 @@ import Header from './../../elements/theme/components/header'
 
     const handleSignup=()=>{
         clearErrors()
-        firebase
-        .out()
+        firebase.out()
         .signInWithEmailAndPassword(email, pass)
         .catch((err)=> {
             switch(err.code){
@@ -85,9 +84,9 @@ import Header from './../../elements/theme/components/header'
      return(
          <>
          {user? 
-         (<Header signout={signout}/>):
-         (
-             <Login
+         <Header signout={signout}/>:
+         
+             <Login 
              email ={email}
              setemail={setemail}
              pass={pass}
@@ -99,7 +98,7 @@ import Header from './../../elements/theme/components/header'
              emailerror={emailerror}
              passerror={passerror}
          />
-         )}
+         }
         
         </>
      )
