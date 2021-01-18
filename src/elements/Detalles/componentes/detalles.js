@@ -53,12 +53,12 @@ const Detalles = (props) => {
                 </p>
 
                 {(band===true)? 
-                    <a className="btn btn-primary btn-lg" href="#!" role="button" onClick={Cancelar}>
+                    <a className="btn btn-warning btn-lg" id="dd" href="#!" role="button" onClick={Cancelar}>
                     Cancelar</a>
-                : <a className="btn btn-primary btn-lg" href="#!" role="button" onClick={Agregado}>
+                :<a className="btn btn-warning btn-lg" id="d" href="#!" role="button" onClick={Agregado}>
                     Participar</a>}
                 
-                <Button variant="outline-success" className = "p" >{value}</Button>{' '}
+                <Button variant="outline-success" className = "p" id="p">{value}</Button>{' '}
                 </Col>
             </Row>
         </Container>

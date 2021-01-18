@@ -2,7 +2,7 @@ import { db } from './firebase-config';
 
 export const COLLECTION_ACTIVIDADES_NAME = 'actividades';
 
-const actividadesQuery = () => {
+export const actividadesQuery = () => {
     return db.collection(COLLECTION_ACTIVIDADES_NAME);
 };
 

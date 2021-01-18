@@ -1,14 +1,17 @@
 import React from 'react';
 //import { render } from '@testing-library/react';
-//import App from './App';
-import { shallow, mount} from 'enzyme';
 
+import { shallow, mount} from 'enzyme';
+import {db} from './api/data/firebase-config'
 import{ ActividadesPage } from './pages/actividades'
-import Det_page from './pages/detallePage'
+import Detalles from './elements/Detalles/componentes/detalles'
 import LoginPage from './pages/login'
 import Lugar1 from './components/informacion/informacion-compo/lugar1'
 import Galeria from './components/gallery/galeria'
 import Header from './elements/theme/components/header'
+import AgregarActividades from './components/Actividades/form-actividades'
+import {GetData, actividadesQuery} from './api/data/actividades'
+
 
 
 //test('renders learn react link', () => {
@@ -27,31 +30,59 @@ const Limite=()=>{
       setValue(value===0)
       
  }
-}
+}*/
 
-describe('prueba limites',()=>{
-  it('001. probar limite de participantes', ()=>{
+/* describe('Detalles',()=>{
+   it('001. probar limite de participantes', ()=>{
     const wrapper= shallow(<Det_page onClick={Limite}/>);
 
+  }) 
+  it('008. Inscripcion de participantes',()=>{
+    const click = jest.fn()
+    const wrapper= shallow(<Detalles />);
+    
+    expect(wrapper.find('#p').text().includes('')).toBe(true)
+    wrapper.find('#dd').text().includes("Participar").simulate(click)
   })
-})*/
+}) */
+
 
 /*describe('Detalles',()=>{
   it('002. provar existencia de mapa', () => {
     const wrapper= shallow(<Det_page/>);
-    const mapa = wrapper.find('mapa')
+    consdt mapa = wrapper.find('mapa')
     expect(mapa) 
   });
 })*/
 
-/*describe('Actividades',()=>{
+const datos =[{
+  actividad: 'senderismo',
+  fecha: '10-04-2021',
+  organizacion,
+  precio,
+  salida,
+  hora,
+  cupos,
+  latitud,
+  longitud,
+  descripcion,
+}]
+
+ describe('Actividades',()=>{
   it('003. Levantar  actividades sin errores', () => {
      shallow(<ActividadesPage/>);
      
   });
-})*/
+  it('003. Levantar  actividades sin errores', () => {
+  const  wrapper = mount(GetData);
+  const miMock = jest.fn();
+  miMock.mockReturnValueOnce(actividades)
+  
+ });
+}) 
 
-/*describe('Actividades',()=>{
+
+/*describe('Login',()=>{
   it('004. Levantar  login sin errores', () => {
      shallow(<LoginPage/>);
      

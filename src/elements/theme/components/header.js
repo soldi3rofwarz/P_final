@@ -50,7 +50,7 @@ const Header = ({signout}) => {
                 <li><Link to="/datos">Estadísticas </Link></li>
                 <li><Link to="/form">Formulario </Link></li>
                 <li><Link to="/login">Cliente </Link></li>
-                <li onClick={signout}>LogOut</li>
+                <li onClick={signout}>cerrar sesion</li>
 
             </ul>
         </nav>
