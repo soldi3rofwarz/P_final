@@ -19,8 +19,8 @@ import Lugar1 from './../pages/page1'
 import Lugar2 from './../pages/page2'
 import Lugar3 from './../pages/page3'
 import Lugar4 from './../pages/page4'
-
-
+import Lugar5 from './../pages/page5'
+import Lugar6 from './../pages/page6'
 export const ClientsRoute = () => {
 
     return (
@@ -40,6 +40,8 @@ export const ClientsRoute = () => {
                 <Route exact path ="/lugar2" component ={Lugar2} />
                 <Route exact path ="/lugar3" component ={Lugar3} />
                 <Route exact path ="/lugar4" component ={Lugar4} />
+                <Route exact path ="/lugar5" component ={Lugar5} />
+                <Route exact path ="/lugar6" component ={Lugar6} />
                 <Route exact path ="/loginGoogle" component ={loginGoogle} />  
                 {/*<Route exact path ="/register" component ={Registro} /> 
                 

@@ -32,14 +32,14 @@ const Lugares = () => {
                 textColor="primary"
                 centered
             >
-
             <Link to="/galeria"><Tab label="Inicio"> </Tab></Link>
             <Link to="/lugar1"><Tab label="El Nancital"> </Tab></Link>
             <Link to="/lugar2"><Tab label="Amerrique"> </Tab></Link>
             <Link to="/lugar3"><Tab label="Piedras Pintadas"> </Tab></Link>
             <Link to="/lugar4"><Tab label="Piedra de Cuapa"> </Tab></Link>
+            <Link to="/lugar5"><Tab label="El Corozo"> </Tab></Link>
+            <Link to="/lugar6"><Tab label="Garrobo Grande"> </Tab></Link>
             </Tabs>
-
         </Paper>
     {/* <div style={{height:'30px'}}></div>
             <ul className="nav">

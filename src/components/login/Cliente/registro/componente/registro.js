@@ -10,7 +10,6 @@ import { Link } from 'react-router-dom';
 import Snackbar from './../../snackbar';
 import WarningIcon from '@material-ui/icons/Warning';
 import Header from './../../../../header/Head';
-import LoginGoogle from './../../../loginGoogle'
 import { SportsRugbySharp } from '@material-ui/icons';
 
 const useStyles = makeStyles((theme) => ({
