@@ -10,18 +10,18 @@ import MediaCard from './cards'
 const PhotosSet= [
 
 {
-	src: `${process.env.PUBLIC_URL}/res/bg3.jpg`,
+	src: `${process.env.PUBLIC_URL}/res/puertodiaz.jpg`,
 	width: 3,
 	height: 2
 },
 
 {
-	src: `${process.env.PUBLIC_URL}/res/pd.jpg`,
+	src: `${process.env.PUBLIC_URL}/res/cuapa2.jpg`,
 	width: 3,
 	height: 2
 },
 {
-	src: `${process.env.PUBLIC_URL}/res/amerrique.jpg`,
+	src: `${process.env.PUBLIC_URL}/res/elnancital2.jpg`,
 	width: 3,
 	height: 2
 },
@@ -36,7 +36,6 @@ const Index = () => {
         const content = document.querySelector('.content');
         bg.style.width = 100+e.pageX/100+ '%';
         bg.style.height = 100+e.pageX/100+ '%';
-    
         bird.style.right = 100+e.pageX/2+ 'px';
         content.style.left = 100+e.pageX/2+ 'px';
     }
@@ -59,7 +58,7 @@ const Index = () => {
             <h2>VagaChontal</h2>
            
             
-                <button className="buton"><Link to = {'/login'} >UNITE</Link></button>
+                <button className="buton"><Link to = {'/loginGoogle'} >UNITE</Link></button>
             
  
         </div>
@@ -73,9 +72,9 @@ const Index = () => {
     <section style={{marginTop:'30px', padding:0, height: 'auto',  height: 'auto'}}>
         <div style={{ boxShadow: '5px 5px 5px ', margin: '10px', width: '48%', height: '250px',
                      textAlign: 'center', alignItems:'center', borderRadius: '2%'}} >
-            <h2 style={{color: '#88F60A'}}>acerca de</h2>
-            <p>es pagina que promueve el turismo al exponer al publico las 
-                diferentes actividades que realizan las distinas orgsnixaciones
+            <h2 style={{color: '#black'}}>Misión </h2>
+            <p>Dar a conocer el turismo chontaleño, al exponer al público las 
+                diferentes actividades que realizan las distinas organizaciones.
             </p>
             <img src={`${process.env.PUBLIC_URL}/res/about.png`} width='100px' />
 
@@ -83,19 +82,18 @@ const Index = () => {
            
         <div style={{ boxShadow: '5px 5px 5px',height: '250px',width: '48%', textAlign: 'center',
                       borderRadius: '2%',  }}>
-            <h2 style={{color: '#88F60A'}}>mision</h2>
-            <p>lfmmamdwdopwqmdqwmdqwdmwqmdwqmdmqwdopmwqdomqwmdopqowqdqd
-                dcmdpkmclksmdcklmewfmwefmwemfwemf
+            <h2 style={{color: '#black'}}>Visión</h2>
+            <p>Ser conocidos a nivel internacional 
             </p>
             <img src={`${process.env.PUBLIC_URL}/res/mision.png`} width='100px' />
 
         </div>
     </section>
     <section style={{height: 'auto'}}>
-      <div style={{width: '100%'}}> <h2>Muestra de galeria</h2></div>
+      <div style={{width: '100%'}}> <h2>Muestra de galería</h2></div>
        <div style={{width: '100%'}}>
            <Gallery  photos = {PhotosSet}/> 
-           <Link to = {'/galeria'} style={{fontSize: '40px'}} >ver mas</Link>
+           <Link to = {'/galeria'} style={{fontSize: '40px'}} >Ver más</Link>
 
        </div> 
     </section>
@@ -114,6 +112,7 @@ const Index = () => {
             <h3>horario de atencion</h3>
             <p>de martes a domingo <br/> de las 8:00 a.m a 5:00 p.m</p>
         </div>
+        
         
     </section>
     <Pie/>

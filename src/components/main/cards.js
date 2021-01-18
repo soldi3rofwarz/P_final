@@ -47,6 +47,7 @@ export default function RecipeReviewCard() {
 
   return (
     <section>
+
     <Card className={classes.root}>
       <CardHeader
         title="Puerto Díaz"
@@ -58,7 +59,7 @@ export default function RecipeReviewCard() {
       />
       <CardContent>
         <Typography variant="body2" color="textSecondary" component="p">
-          Puerto Díaz, una opción turística más del Lago Cocibolca
+          Visita a las costas de Puerto Díaz
         </Typography>
       </CardContent>
       <CardActions disableSpacing>
@@ -80,17 +81,65 @@ export default function RecipeReviewCard() {
       <Collapse in={expanded} timeout="auto" unmountOnExit>
         <CardContent>
           <Typography paragraph>
-          La inmensidad de las aguas del lago Cocibolca o de Nicaragua, contienen muchos tesoros naturales que solo necesitan ser visitados para ser conocidos, uno de estos es Puerto Díaz, ubicado a tan solo 28 kilómetros del municipio de Juigalpa.
+          Fecha: 16/01/2021
           </Typography>
           <Typography paragraph>
-          Desde este lugar se puede acceder desde la conocida gasolinera Puma en Juigalpa hacia el sur, hasta llegar a sus cristalinas aguas, que sirven de sustento comercial a las familias lugareñas, que ven en la pesca, su principal actividad económica y ahora apuntan al turismo.
+          Precio: C$200
           </Typography>
           <Typography paragraph>
-          En el trayecto para llegar a este rincón del inmenso lago, podrá conocer las principales haciendas ganaderas de Juigalpa, como la de Hato Grande, que según historiadores es ahí donde se origina la ganadería nicaragüense.
+          Organizador: INTUR
           </Typography>
+         
         </CardContent>
       </Collapse>
     </Card>
+
+    <Card className={classes.root}>
+      <CardHeader
+        title="Puerto Díaz"
+      />
+      <CardMedia
+        className={classes.media}
+        image={`${process.env.PUBLIC_URL}/res/puertodiaz.jpg`}
+        title="Paella dish"
+      />
+      <CardContent>
+        <Typography variant="body2" color="textSecondary" component="p">
+          Visita a las costas de Puerto Díaz
+        </Typography>
+      </CardContent>
+      <CardActions disableSpacing>
+        <IconButton aria-label="add to favorites">
+       
+        </IconButton>
+      
+        <IconButton
+          className={clsx(classes.expand, {
+            [classes.expandOpen]: expanded,
+          })}
+          onClick={handleExpandClick}
+          aria-expanded={expanded}
+          aria-label="show more"
+        >
+          <ExpandMoreIcon />
+        </IconButton>
+      </CardActions>
+      <Collapse in={expanded} timeout="auto" unmountOnExit>
+        <CardContent>
+          <Typography paragraph>
+          Fecha: 16/01/2021
+          </Typography>
+          <Typography paragraph>
+          Precio: C$200
+          </Typography>
+          <Typography paragraph>
+          Organizador: INTUR
+          </Typography>
+         
+        </CardContent>
+      </Collapse>
+    </Card>
+
     </section>
   );
 }
