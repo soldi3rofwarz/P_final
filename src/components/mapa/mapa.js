@@ -1,4 +1,4 @@
-import React,{useState,useCallback, useRef,useEffect} from 'react'
+import React,{useState,useCallback, useRef} from 'react'
 import "./mapa.css"
 import {
     GoogleMap,
@@ -28,7 +28,7 @@ import {
 
 const Mapa = () => {
     const {isLoaded, loadError}= useLoadScript({
-        googleMapsApiKey: process.env.REACT_MAP_GOOGLE_MAPS_API_KEY= "AIzaSyDPS_Nh65oXA-UoZ3l-qCDuEbmlCxBwcWM",
+        googleMapsApiKey: process.env.REACT_MAP_GOOGLE_MAPS_API_KEY= "AIzaSyDsqHKYTtzOe17Z94JPh7fznLveiQVFTAk",
         libraries,
       })
 

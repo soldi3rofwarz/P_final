@@ -4,7 +4,7 @@ import './head.styles.css';
 import {Link}from 'react-router-dom'
 
 
-const Header = () => {
+const Header = ({signout}) => {
 
     const Scroll2 = () => {
         (window).on('scroll', function(){
@@ -50,6 +50,8 @@ const Header = () => {
                 <li><Link to="/datos">Estadísticas </Link></li>
                 <li><Link to="/form">Formulario </Link></li>
                 <li><Link to="/login">Cliente </Link></li>
+                <li onClick={signout}>LogOut</li>
+
             </ul>
         </nav>
 

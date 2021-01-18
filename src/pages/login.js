@@ -1,11 +1,11 @@
 import React from 'react';
 import {Layout} from './../elements/theme/components/layout'
-import {LoginContenedor} from './../components/login/Cliente/container/loginContenedor'
+import Userd from './../api/data/user-data'
 
 const LoginPage = () => {
     return (  
         <Layout>
-            <LoginContenedor/> 
+            <Userd/> 
         </Layout>
     );
 }
