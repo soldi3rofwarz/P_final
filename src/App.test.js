@@ -31,19 +31,20 @@ const Limite=()=>{
  }
 }*/
 
- /* describe('Detalles',()=>{
-   /* it('001. probar limite de participantes', ()=>{
+/*   describe('Detalles',()=>{
+    it('001. probar limite de participantes', ()=>{
     const wrapper= shallow(<Det_page onClick={Limite}/>);
 
-  })  
+  })
   it('  . Inscripcion de participantes',()=>{
     const click = jest.fn()
     const wrapper= shallow(<Detalles />);
     
     expect(wrapper.find('#p').text().includes('')).toBe(true)
-    wrapper.find('#dd')
+    wrapper.find('#dd').simulate(click)
   })
-})  */
+}) */
+ 
 
 /* 
 describe('Detalles',()=>{
@@ -56,68 +57,92 @@ describe('Detalles',()=>{
 
 
 
- /*describe('Actividades',()=>{
-  it('003. Levantar  actividades sin errores', () => {
+/*  describe('Actividades',()=>{
+  it('004. Cargar actividades sin errores', () => {
      shallow(<ActividadesPage/>);
      
   });
-  it('003. Levantar  actividades sin errores', () => {
-  const  wrapper = mount(GetData);
-  const miMock = jest.fn();
-  miMock.mockReturnValueOnce(actividades)
-  
- });
-})  */
+})   */
 
 
 
 
- describe('Login',()=>{
-  /* it('004. Levantar  login sin errores', () => {
-     shallow(<LoginPage/>);
-     
-  }); */
-/* 
-  test('005. probar existencia de usuario', ()=>{
+  /* describe('Login',()=>{
+ 
+ 
+   test('005. probar existencia de usuario', ()=>{
     const wrapper = shallow(<Login/>)
     wrapper.find('input[type="text"]')
     .simulate('change', {target:{name:'email', value:'hola@gmail.com'}})
     expect(wrapper.state('email')).toEqual('hola@gmail.com')
-  }) */
-  it('005.1. probar contraseña', ()=>{
+  }) 
+  it('005. probar contraseña', ()=>{
     const wrapper = shallow(<Login/>)
-   
-  })
-}) 
+   .simulate('change', {target:{name:'password', value:'123456'}})
+    expect(wrapper.state('password')).toEqual('123456')
+  }) 
 
-/*describe('campo contraseña ',()=>{
-  it('005. verificar si la contraseña esta oculta', () => {
+  it('006. Levantar  login sin errores', () => {
+    shallow(<LoginPage/>);
+    
+ });  
+})   */
+
+ describe('campo contraseña ',()=>{
+  it('007. Validar campo contraseña ingresada se convierta a asterisco', () => {
     const wrapper= shallow(<LoginPage/>);
     const pass = wrapper.find("password")
     expect(pass.type== "password")
      
   });
-})*/
+}) 
 
 
-/*describe('Informacion de galeria',()=>{
-  it('006. verificar si el titulo  de la vista es igual al titulo solicitado', () => {
+/* describe('Informacion de galeria',()=>{
+  it('009. Comprobar vistas de informcion de lugares turisticos', () => {
     const wrapper= shallow(<Lugar1/>);
     const h2 = wrapper.find('h2')
     expect(h2.text()).toEqual("El Nancital")
      
   });
-})*/
+}) */
 
-/*describe('Galeria de imagenes ',()=>{
-  it('007. Levantar vista sin errores', () => {
+ /* describe('Galeria de imagenes',()=>{
+  it('010. Comprobar carga de de imagenes en la vista de galeria', () => {
      shallow(<Galeria/>);
   });
-})*/
+})  */
 
-/*describe('Navbar',()=>{
-  it('008. probar si existe enrutamiento con el componente Link', () => {
+/* describe('Navbar',()=>{
+  it('011. probar si existe enrutamiento con el componente Link', () => {
      const Wrapper = shallow(<Header/>);
-
+     const Link =Wrapper.find('Link')
+     expect(Link).toBeTruthy()
   });
-})*/
+}) */
+
+
+
+/* describe ("formulario", ()=>{
+  it("003. Agregar una actividad", ()=>{
+    const wrapper = shallow(<AgregarActividades/>)
+    wrapper.find('input[type="text"]')
+    .simulate('change', {target:{name:'actividad', value:'Actividad de prueba'}})
+    expect(wrapper.state('actividad')).toEqual('Actividad de prueba')
+  })
+
+  it("003. Agregar una fecha", ()=>{
+    const wrapper = shallow(<AgregarActividades/>)
+    wrapper.find('input[type="date"]')
+    .simulate('change', {target:{name:'fecha', value:'09/02/2021'}})
+    expect(wrapper.state('fecha')).toEqual('09/02/2021')
+  })
+
+  it("003. Agregar un precio", ()=>{
+    const wrapper = shallow(<AgregarActividades/>)
+    wrapper.find('input[type="number"]')
+    .simulate('change', {target:{name:'precio', value:45}})
+    expect(wrapper.state('precio')).toEqual(45)
+  })
+}) */
+

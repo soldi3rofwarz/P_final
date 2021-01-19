@@ -4,7 +4,12 @@ import './head.styles.css';
 import {Link}from 'react-router-dom'
 
 
-const Header = ({signout}) => {
+const Header = ({signout, onLogout}) => {
+
+    const Cerrar = () => {
+        signout()
+        onLogout()
+    }
 
     
    
@@ -23,7 +28,7 @@ const Header = ({signout}) => {
                 <li><Link to="/datos">Estadísticas </Link></li>
                 <li><Link to="/form">Formulario </Link></li>
                 <li><Link to="/login">Cliente </Link></li>
-                <li onClick={signout}><Link to ="/loginGoogle">cerrar sesion</Link></li>
+                <li onClick={Cerrar}><Link to ="/loginGoogle">cerrar sesion</Link></li>
 
             </ul>
         </nav>

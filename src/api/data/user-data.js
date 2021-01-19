@@ -42,6 +42,7 @@ import Head from './../../components/header/Head'
                 break
             }
         })
+       
     }
 
     const handleSignup=()=>{
@@ -59,6 +60,7 @@ import Head from './../../components/header/Head'
                 break
             }
         })
+    
     }
 
     const signout = async () => {
