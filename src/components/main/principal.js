@@ -47,7 +47,7 @@ const Index = () => {
 
     return ( 
         <>
-        <Header/>
+        
     <section id="main" className="main"
         onMouseMove={move}
     >
