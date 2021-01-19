@@ -11,8 +11,7 @@ import Galeria from './components/gallery/galeria'
 import Header from './elements/theme/components/header'
 import AgregarActividades from './components/Actividades/form-actividades'
 import {GetData, actividadesQuery} from './api/data/actividades'
-
-
+import Login from './components/login/Cliente/componente/login-cliente'
 
 //test('renders learn react link', () => {
 //     const { getByText } = render(<App />);
@@ -32,43 +31,32 @@ const Limite=()=>{
  }
 }*/
 
-/* describe('Detalles',()=>{
-   it('001. probar limite de participantes', ()=>{
+ /* describe('Detalles',()=>{
+   /* it('001. probar limite de participantes', ()=>{
     const wrapper= shallow(<Det_page onClick={Limite}/>);
 
-  }) 
-  it('008. Inscripcion de participantes',()=>{
+  })  
+  it('  . Inscripcion de participantes',()=>{
     const click = jest.fn()
     const wrapper= shallow(<Detalles />);
     
     expect(wrapper.find('#p').text().includes('')).toBe(true)
-    wrapper.find('#dd').text().includes("Participar").simulate(click)
+    wrapper.find('#dd')
   })
+})  */
+
+/* 
+describe('Detalles',()=>{
+  it('002. probar existencia de mapa', () => {
+    const wrapper= shallow(<Detalles/>);
+    const mapa = wrapper.find('mapa')
+    expect(mapa) 
+  });
 }) */
 
 
-/*describe('Detalles',()=>{
-  it('002. provar existencia de mapa', () => {
-    const wrapper= shallow(<Det_page/>);
-    consdt mapa = wrapper.find('mapa')
-    expect(mapa) 
-  });
-})*/
 
-const datos =[{
-  actividad: 'senderismo',
-  fecha: '10-04-2021',
-  organizacion,
-  precio,
-  salida,
-  hora,
-  cupos,
-  latitud,
-  longitud,
-  descripcion,
-}]
-
- describe('Actividades',()=>{
+ /*describe('Actividades',()=>{
   it('003. Levantar  actividades sin errores', () => {
      shallow(<ActividadesPage/>);
      
@@ -79,15 +67,28 @@ const datos =[{
   miMock.mockReturnValueOnce(actividades)
   
  });
-}) 
+})  */
 
 
-/*describe('Login',()=>{
-  it('004. Levantar  login sin errores', () => {
+
+
+ describe('Login',()=>{
+  /* it('004. Levantar  login sin errores', () => {
      shallow(<LoginPage/>);
      
-  });
-})*/
+  }); */
+/* 
+  test('005. probar existencia de usuario', ()=>{
+    const wrapper = shallow(<Login/>)
+    wrapper.find('input[type="text"]')
+    .simulate('change', {target:{name:'email', value:'hola@gmail.com'}})
+    expect(wrapper.state('email')).toEqual('hola@gmail.com')
+  }) */
+  it('005.1. probar contraseña', ()=>{
+    const wrapper = shallow(<Login/>)
+   
+  })
+}) 
 
 /*describe('campo contraseña ',()=>{
   it('005. verificar si la contraseña esta oculta', () => {
