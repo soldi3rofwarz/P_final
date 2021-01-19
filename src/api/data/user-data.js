@@ -2,8 +2,9 @@ import React, {useState, useEffect} from 'react'
 import firebase from './firebase-config'
 import { db } from './firebase-config'
 import 'firebase/auth'
-import Login from './../../components/login/Cliente/loginCliente'
+import Login from './../../components/login/Cliente/componente/login-cliente'
 import Header from './../../elements/theme/components/header'
+import Head from './../../components/header/Head'
 
 
  const Userd=()=>{
@@ -27,7 +28,7 @@ import Header from './../../elements/theme/components/header'
     const handleLogin=()=>{
         clearErrors()
         firebase
-        .out()
+        .auth()
         .signInWithEmailAndPassword(email, pass)
         .catch((err)=> {
             switch(err.code){
@@ -83,22 +84,22 @@ import Header from './../../elements/theme/components/header'
 
      return(
          <>
-         {user? 
-         <Header signout={signout}/>:
-         
-             <Login 
-             email ={email}
-             setemail={setemail}
-             pass={pass}
-             setpass={setpass}
-             handleLogin={handleLogin}
-             handleSignup={handleSignup}
-             cuenta={cuenta}
-             setcuenta={setcuenta}
-             emailerror={emailerror}
-             passerror={passerror}
-         />
-         }
+         {user?
+                <Header signout={signout}/>
+                :
+                <Login 
+                    email ={email}
+                    setemail={setemail}
+                    pass={pass}
+                    setpass={setpass}
+                    handleLogin={handleLogin}
+                    handleSignup={handleSignup}
+                    cuenta={cuenta}
+                    setcuenta={setcuenta}
+                    emailerror={emailerror}
+                    passerror={passerror}
+                />
+            }
         
         </>
      )

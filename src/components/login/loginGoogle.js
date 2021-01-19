@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import firebase from './../../api/data/firebase-config'
 import { Link } from 'react-router-dom';
+import Header from './../../elements/theme/components/header'
 
 class GoogleLogin extends Component{
 constructor(){

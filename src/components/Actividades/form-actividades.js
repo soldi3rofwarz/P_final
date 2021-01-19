@@ -10,7 +10,9 @@ import Head from '../header/Head';
 
 const AgregarActividades = (props) => {
 
-    const actividadId = props.match.params.actividadId;
+    let actividadId = '';
+
+    if(props.match) actividadId = props.match.params.actividadId;
 
     const [actividad, setActividad] = useState('');
     const handleActividadChange = (e) => setActividad(e.target.value);

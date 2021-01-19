@@ -47,16 +47,17 @@ const useStyles = makeStyles((theme) => ({
 }));
 
 const Login=(props)=> {
-  const [  email,
-    setemail,
-    pass,
-    setpass,
-   handleLogin,
-   handleSignup,
-   cuenta,
-   setcuenta,
-   emailerror,
-   passerror]= props
+  const {
+  email,
+  setemail,
+  pass,
+  setpass,
+  handleLogin,
+  handleSignup,
+  cuenta,
+  setcuenta,
+  emailerror,
+  passerror}= props 
   
   const classes = useStyles();
 
@@ -112,6 +113,8 @@ const Login=(props)=> {
             color="primary"
             className={classes.submit}
             onClick={handleLogin}
+            component={Link}
+            to ={"/"}
           >
             Sign In
           </Button>
