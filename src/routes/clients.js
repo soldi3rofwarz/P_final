@@ -20,7 +20,7 @@ import Lugar3 from './../pages/page3'
 import Lugar4 from './../pages/page4'
 import Lugar5 from './../pages/page5'
 import Lugar6 from './../pages/page6'
-import LandingPage from './../pages/landing'
+import Home from './../components/main/principal'
 
 
 export const ClientsRoute = () => {
@@ -29,7 +29,7 @@ export const ClientsRoute = () => {
         
         <Router>
             <Switch>
-            <Route exact path="/" component={LandingPage} />
+            <Route exact path="/" component={Home} />
                 <Route exact path="/info" component={Info} />
                 <Route exact path="/actividades" component={ActividadesPage}/>
                 <Route path="/detalle" component={DetallePage}/>

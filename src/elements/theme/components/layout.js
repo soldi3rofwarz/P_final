@@ -8,8 +8,6 @@ export const Layout = (props) => {
     } = props;
 
     return (<>
-        <Header />
-        {children}
-        <Footer/>
+
     </>);
 };
