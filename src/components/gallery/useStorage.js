@@ -13,8 +13,8 @@ const useStorage = (file) => {
   useEffect(() => {
     // references
 
-    const storageRef = storage.storageRef(file.name);
-    const collectionRef = db.collectionRef('images');
+    const storageRef = storage.ref(file.name);
+    const collectionRef = db.collection('images');
     // const storageRef = storage.ref(file.name);
     // const collectionRef = db.collection('images');
     
@@ -27,7 +27,7 @@ const useStorage = (file) => {
     }, async () => {
       const url = await storageRef.getDownloadURL();
       const createdAt = timestamp();
-      await collectionRef.add({ url, createdAt });
+      await collectionRef.add({ url, createdAt }); // <--- 
       setUrl(url);
     });
   }, [file]);
