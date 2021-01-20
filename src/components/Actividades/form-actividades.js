@@ -6,7 +6,7 @@ import './card.css';
 import 
     {db}
  from '../../api/data/firebase-config';
-import Head from '../header/Head';
+import {Link} from 'react-router-dom'
 
 const AgregarActividades = (props) => {
 
@@ -122,10 +122,10 @@ const AgregarActividades = (props) => {
     return ( 
         
     <>
-    <header><Head/></header>
+        <div style={{height: '70px'}}></div>
     
         <Form className="g"
-            onSubmit={Validar}
+            onSubmit={Validar} style={{width: '500px' }}
         >
             {error? alert("debe ser numero"): null}
             
@@ -193,7 +193,9 @@ const AgregarActividades = (props) => {
             <button
                 onClick={handleAgregarClick}
             >
-                Agregar actividad
+                <Link to ='/' style={{textDecoration: 'none'}}>
+                    Agregar actividad
+                </Link>
             </button>
         </Form>
     </>

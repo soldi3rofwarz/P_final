@@ -9,8 +9,6 @@ import Tab from '@material-ui/core/Tab';
 import Typography from '@material-ui/core/Typography';
 import Zoom from '@material-ui/core/Zoom';
 import Fab from '@material-ui/core/Fab';
-import AddIcon from '@material-ui/icons/Add';
-import EditIcon from '@material-ui/icons/Edit';
 import UpIcon from '@material-ui/icons/KeyboardArrowUp';
 import { green } from '@material-ui/core/colors';
 import Box from '@material-ui/core/Box';
