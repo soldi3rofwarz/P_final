@@ -87,7 +87,7 @@ import Head from './../../components/header/Head'
      return(
          <>
          {user?
-                <Header signout={signout}/>
+                <Header signout={signout} user={user}/>
                 :
                 <Login 
                     email ={email}

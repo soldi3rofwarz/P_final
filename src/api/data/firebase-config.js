@@ -22,7 +22,7 @@ const firebaseConfig = {
     export const storage = firebase.storage();
     export const db = firebase.firestore();
     export const auth = firebase.auth();
-    export const timestamp = firebase.firestore.FieldValue.serverTimestampd;
+    export const timestamp = firebase.firestore.FieldValue.serverTimestamp;
     
 
 

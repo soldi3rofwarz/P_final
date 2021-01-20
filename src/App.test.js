@@ -88,14 +88,14 @@ describe('Detalles',()=>{
  });  
 })   */
 
- describe('campo contraseña ',()=>{
+/*  describe('campo contraseña ',()=>{
   it('007. Validar campo contraseña ingresada se convierta a asterisco', () => {
     const wrapper= shallow(<LoginPage/>);
     const pass = wrapper.find("password")
     expect(pass.type== "password")
      
   });
-}) 
+})  */
 
 
 /* describe('Informacion de galeria',()=>{

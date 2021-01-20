@@ -7,7 +7,7 @@ import {
 import {ActividadesPage} from './../pages/actividades' 
 import DetallePage from './../pages/detallePage'
 //import Registro from './../components/login/Cliente/registro/componente/registro'
-import loginGoogle from './../components/login/loginGoogle'
+import {GooglePage} from './../pages/google'
 import LoginPage from '../pages/login'
 import Info from './../components/informacion/informacion-compo/info'
 import {GalleryPage} from './../pages/galeria'
@@ -44,7 +44,7 @@ export const ClientsRoute = () => {
                 <Route exact path ="/lugar4" component ={Lugar4} />
                 <Route exact path ="/lugar5" component ={Lugar5} />
                 <Route exact path ="/lugar6" component ={Lugar6} />
-                <Route exact path ="/loginGoogle" component ={loginGoogle} />  
+                <Route exact path ="/loginGoogle" component ={GooglePage} />  
                 {/*<Route exact path ="/register" component ={Registro} /> 
                 
                 {/* <Route path ="/galeria" component ={Galeria} />

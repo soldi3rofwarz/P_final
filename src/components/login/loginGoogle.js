@@ -4,8 +4,9 @@ import { Link } from 'react-router-dom';
 import Header from './../../elements/theme/components/header'
 
 class GoogleLogin extends Component{
-constructor(){
-    super();
+    /** @param {Record<string, any>} props */
+constructor(props){
+    super(props)
     this.state={
         isLogIn:false,
         name:"",
@@ -36,12 +37,14 @@ onSubmit = () => {
     })
 }
 componentDidMount = () =>{
+    let currentComponent = this;
+
 
     firebase.auth().onAuthStateChanged(function(user){
         if(user){
             console.log("user sign in")
             console.log(user.displayName + '\n' + user.email);
-            this.setState = {
+            currentComponent.setState = {
                 isLogIn: true,
                 name: user.displayName,
                 photo: user.photoURL
@@ -60,7 +63,7 @@ componentDidMount = () =>{
                 {this.state.isLogIn === false ?
                     <div className = "p-5" style={{
                         background: 'linear-gradient(#f8f8f8, #6EEDFA )', alignItems: 'center',justifyContent:'center', height: '400px',
-                        boxShadow:'16px 16px 16px', borderRadius: '15px', maxWidth: '500px', marginLeft: '300px', minWidth: '400px'
+                        boxShadow:'16px 16px 16px', borderRadius: '15px', maxWidth: '500px', marginLeft: '400px', minWidth: '400px'
                         }}>  
                         <img src={`${process.env.PUBLIC_URL}/res/login.jpg`} style={{width: '200px', display: 'flex', flex: '2', marginLeft: '50px'}} />
                        <button
@@ -76,7 +79,7 @@ componentDidMount = () =>{
                     </button>
                         <h4>¿Eres Promotor? entra <Link to='/login' style={{textDecoration:'none'}}>Aqui</Link></h4>
                     
-                        <Header onLogout={this.onLogout}/>
+                        
 
                      
                      
