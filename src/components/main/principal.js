@@ -47,7 +47,7 @@ const Index = () => {
 
     return ( 
         <>
-        
+       
     <section id="main" className="main"
         onMouseMove={move}
     >
@@ -115,7 +115,7 @@ const Index = () => {
         
         
     </section>
-    <Pie/>
+    
     </>
 );
 }

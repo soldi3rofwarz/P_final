@@ -113,10 +113,9 @@ const Login=(props)=> {
             color="primary"
             className={classes.submit}
             onClick={handleLogin}
-            component={Link}
-            to ={"/"}
-          >
+          ><Link to ='/' style={{textDecoration: 'none'}}>
             Sign In
+            </Link>
           </Button>
           <Grid container>
             <Grid item xs>
