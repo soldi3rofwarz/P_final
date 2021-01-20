@@ -4,8 +4,9 @@ import { Link } from 'react-router-dom';
 import Header from './../../elements/theme/components/header'
 
 class GoogleLogin extends Component{
-constructor(){
-    super();
+    /** @param {Record<string, any>} props */
+constructor(props){
+    super(props)
     this.state={
         isLogIn:false,
         name:"",
@@ -36,12 +37,14 @@ onSubmit = () => {
     })
 }
 componentDidMount = () =>{
+    let currentComponent = this;
+
 
     firebase.auth().onAuthStateChanged(function(user){
         if(user){
             console.log("user sign in")
             console.log(user.displayName + '\n' + user.email);
-            this.setState = {
+            currentComponent.setState = {
                 isLogIn: true,
                 name: user.displayName,
                 photo: user.photoURL
@@ -76,7 +79,7 @@ componentDidMount = () =>{
                     </button>
                         <h4>¿Eres Promotor? entra <Link to='/login' style={{textDecoration:'none'}}>Aqui</Link></h4>
                     
-                        <Header onLogout={this.onLogout}/>
+                        
 
                      
                      
