@@ -65,7 +65,7 @@ componentDidMount = () =>{
                         background: 'linear-gradient(#f8f8f8, #6EEDFA )', alignItems: 'center',justifyContent:'center', height: '400px',
                         boxShadow:'16px 16px 16px', borderRadius: '15px', maxWidth: '500px', marginLeft: '400px', minWidth: '400px'
                         }}>  
-                        <img src={`${process.env.PUBLIC_URL}/res/login.jpg`} style={{width: '200px', display: 'flex', flex: '2', marginLeft: '50px'}} />
+                        <img src={`${process.env.PUBLIC_URL}/res/login.png`} style={{width: '200px', display: 'flex', flex: '2', marginLeft: '50px'}} />
                        <button
                         type="button"
                         className="btn "

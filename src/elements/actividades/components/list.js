@@ -57,6 +57,7 @@ export const List = (props) => {
     const {
         listActividades,
         onDelete,
+        onEdit
     } = props;
 
     const classes = useStyles();
