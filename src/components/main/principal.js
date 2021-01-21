@@ -98,7 +98,7 @@ const Index = () => {
     <section style={{ height: 'auto', width: '100%', margin:'auto'}}>
         <div style={{display: 'row', width:'100%'}}>
             <h2>Actividades recientes</h2>
-            <MediaCard/>
+           
             <Link to = {'/actividades'} style={{fontSize: '40px'}} >ver mas</Link>
         </div>
         <div style={{ height: '600px', boxShadow: '-5px 5px 5px', maxWidth: '30%', overflow:'hidden', backgroundColor: '#DBFADB', right:'0px'}}>

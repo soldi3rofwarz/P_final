@@ -100,10 +100,11 @@ export const List = (props) => {
                             </Typography>
                             </CardContent>
                             <CardActions disableSpacing>
-                         
+                            <Link to={`/form/${item.id}`}>
                             <IconButton aria-label="editar">
-                                <EditIcon />
+                                <EditIcon  />
                             </IconButton>
+                            </Link>
                             <IconButton aria-label="eliminar">
 
                                 <DeleteIcon onClick = {()=> {onDelete(item.id)}}/>
