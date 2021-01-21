@@ -113,7 +113,7 @@ const Login=(props)=> {
             color="primary"
             className={classes.submit}
             onClick={handleLogin}
-          ><Link to ='/' style={{textDecoration: 'none'}}>
+          ><Link to ='/' style={{textDecoration: 'none', color: 'white'}}>
             Sign In
             </Link>
           </Button>

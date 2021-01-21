@@ -1,7 +1,15 @@
-import React from 'react '
+import React from 'react'
+import {Link} from 'react-router-dom'
 
-export default Hero =({signout})=>{
+ const Hero =({signout, user})=>{
+     console.log(user)
     return(
-        <li onClick={signout}><Link to ="/loginGoogle">cerrar sesion</Link></li>
+        
+        <>
+        
+         <li onClick={signout}><Link to ="/loginGoogle">cerrar sesion</Link></li>
+       
+        </>
     )
 }
+export default Hero

@@ -1,11 +1,11 @@
-import React, {useState, useEffect} from 'react'
+import React, {useState, useEffect, createContext} from 'react'
 import firebase from './firebase-config'
 import { db } from './firebase-config'
 import 'firebase/auth'
 import Login from './../../components/login/Cliente/componente/login-cliente'
-import Header from './../../elements/theme/components/header'
-import Head from './../../components/header/Head'
+import Hero from './../../elements/theme/components/hero'
 
+export const UserContext = createContext()
 
  const Userd=()=>{
 
@@ -15,7 +15,7 @@ import Head from './../../components/header/Head'
     const[emailerror, setemailerror]= useState('')
     const[passerror, setpasserror]= useState('')
     const[cuenta, setcuenta]= useState(false)
-
+    console.log(email)
     const clearInputs=()=>{
         setemail('')
         setpass('')
@@ -25,7 +25,7 @@ import Head from './../../components/header/Head'
         setpasserror('')
     }
 
-    const handleLogin=()=>{
+    const handleLogin=async()=>{
         clearErrors()
         firebase
         .auth()
@@ -47,7 +47,7 @@ import Head from './../../components/header/Head'
 
     const handleSignup=()=>{
         clearErrors()
-        firebase.out()
+        firebase.auth()
         .signInWithEmailAndPassword(email, pass)
         .catch((err)=> {
             switch(err.code){
@@ -60,11 +60,12 @@ import Head from './../../components/header/Head'
                 break
             }
         })
-    
+        console.log(firebase)
     }
 
     const signout = async () => {
         await firebase.auth().signOut();
+        console.log('cerro sesion')
     };
 
     const Listener=()=>{
@@ -81,15 +82,19 @@ import Head from './../../components/header/Head'
     }
 
     useEffect(()=>{
-        Listener()
+        Listener(user)
     },[]);
 
      return(
          <>
-         {user?
-                <Header signout={signout} user={user}/>
-                :
-                <Login 
+        <UserContext.Provider value={email}>
+         {user?<>
+                <Hero signout={signout} user={user}/>
+                <h2>{email}</h2>
+               
+                </>
+                :<>
+                 <Login 
                     email ={email}
                     setemail={setemail}
                     pass={pass}
@@ -100,9 +105,9 @@ import Head from './../../components/header/Head'
                     setcuenta={setcuenta}
                     emailerror={emailerror}
                     passerror={passerror}
-                />
+                /></>
             }
-        
+        </UserContext.Provider>
         </>
      )
 

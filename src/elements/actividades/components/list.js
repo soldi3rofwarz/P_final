@@ -26,7 +26,7 @@ export const List = (props) => {
                                 <Card.Text className='texto'>organizacion:{item.organizacion}</Card.Text>
                                 <Card.Text className='texto'>Precio: {item.precio}</Card.Text>
 
-                                <Link to={`/detalle`}>
+                                <Link to={`/detalle/${item.id}`}>
                                     <Button>VER MÁS</Button>
                                 </Link>
                                 

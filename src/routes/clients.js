@@ -32,10 +32,11 @@ export const ClientsRoute = () => {
             <Route exact path="/" component={LandingPage} />
                 <Route exact path="/info" component={Info} />
                 <Route exact path="/actividades" component={ActividadesPage}/>
-                <Route path="/detalle" component={DetallePage}/>
+                <Route path="/detalle/:actividadId" component={DetallePage}/>
                 <Route path="/galeria" component={GalleryPage}/>
                 <Route exact path ="/login" component ={LoginPage} />
                 <Route exact path ="/form" component ={Form} />
+                <Route exact path ="/form/:actividadId" component ={Form} />
                 <Route exact path ="/datos" component ={Datospage} />s
                 <Route exact path ="/mapa" component ={Mapa} />
                 <Route exact path ="/lugar1" component ={Lugar1} />

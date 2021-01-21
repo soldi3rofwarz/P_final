@@ -14,6 +14,9 @@ const Detalles = (props) => {
         band,
         value,
         Cancelar,
+        actividad,
+        fecha,
+        precio
     }=props
 
     return ( 
@@ -24,19 +27,19 @@ const Detalles = (props) => {
                 <Col className="mapa"> <Mapa/> </Col>
 
                 <Col className="det">
-                    <h2>Hato grade</h2>
+                    <h2>{actividad}</h2>
                     <br/>
                     <h3>Lugar de salida</h3>
                     <h4>Gasolinera Puma</h4>
                     <br/>
                     <h3>Fecha</h3>
-                    <h4>29/11/2020</h4>
+                    <h4>{fecha}</h4>
                     <br/>
                     <h3>Hora de salida</h3>
                     <h4>6 A.M.</h4>
                     <br/>
                     <h3>Precio</h3>
-                    <h4>50 cordobas</h4>
+                    <h4>{precio}</h4>
                 </Col>
             </Row>
             <Row>

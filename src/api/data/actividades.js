@@ -21,6 +21,16 @@ export const GetData = async () => {
 export const Add = async (actividadData) => {
     await actividadesQuery().add(actividadData);
 }
+export const Select= async (actividadId) => {
+    const querySnapshot = await db.collection(COLLECTION_ACTIVIDADES_NAME).doc(actividadId).get();
+    let actividad = {};
+    if(querySnapshot.exists) {
+        actividad = {
+            ...querySnapshot.data()
+        };
+    }
+    return actividad;
+}
 
 export const Edit = async(actividadId, actividadData) => {
     await actividadesQuery().doc(actividadId).update({
