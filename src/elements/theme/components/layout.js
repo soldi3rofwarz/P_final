@@ -7,7 +7,10 @@ export const Layout = (props) => {
         children,
     } = props;
 
-    return (<>
-
+    return (
+    <>
+        <Header />
+        {children}
+        <Footer/>
     </>);
 };

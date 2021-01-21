@@ -1,343 +1,121 @@
-import React from 'react';
-import clsx from 'clsx';
-import { makeStyles, useTheme } from '@material-ui/core/styles';
-import Drawer from '@material-ui/core/Drawer';
-import CssBaseline from '@material-ui/core/CssBaseline';
-import AppBar from '@material-ui/core/AppBar';
-import Toolbar from '@material-ui/core/Toolbar';
-import List from '@material-ui/core/List';
-import Typography from '@material-ui/core/Typography';
-import Divider from '@material-ui/core/Divider';
-import IconButton from '@material-ui/core/IconButton';
-import MenuIcon from '@material-ui/icons/Menu';
-import ChevronLeftIcon from '@material-ui/icons/ChevronLeft';
-import ChevronRightIcon from '@material-ui/icons/ChevronRight';
-import ListItem from '@material-ui/core/ListItem';
-import ListItemIcon from '@material-ui/core/ListItemIcon';
-import ListItemText from '@material-ui/core/ListItemText';
-import AccountCircle from '@material-ui/icons/AccountCircle';
-import Badge from '@material-ui/core/Badge';
-import NotificationsIcon from '@material-ui/icons/Notifications';
-import { Parallax } from 'react-parallax';
-import Button from '@material-ui/core/Button';
-import Paper from '@material-ui/core/Paper';
-import Grid from '@material-ui/core/Grid';
-import Card from '@material-ui/core/Card';
-import CardActionArea from '@material-ui/core/CardActionArea';
-import CardContent from '@material-ui/core/CardContent';
-import CardMedia from '@material-ui/core/CardMedia';
-import HomeIcon from '@material-ui/icons/Home';
-import PollIcon from '@material-ui/icons/Poll';
-import PicturesIcon from '@material-ui/icons/Collections';
-import EventAvailableIcon from '@material-ui/icons/EventAvailable';
-import UserIcon from '@material-ui/icons/AccountCircle';
-import ListIcon from '@material-ui/icons/ListAlt';
-import CardHeader from '@material-ui/core/CardHeader';
-import Avatar from '@material-ui/core/Avatar';
-import MoreVertIcon from '@material-ui/icons/MoreVert';
-import CardActions from '@material-ui/core/CardActions';
-import FavoriteIcon from '@material-ui/icons/Favorite';
-import ShareIcon from '@material-ui/icons/Share';
-import ExpandMoreIcon from '@material-ui/icons/ExpandMore';
-import Collapse from '@material-ui/core/Collapse';
-import { red } from '@material-ui/core/colors';
-import SimpleReactFooter from "simple-react-footer";
-import {Link} from 'react-router-dom';
+import React ,{useEffect}from 'react';
+import './main.css';
+import Pie from './../footer/foot';
+import Header from './../header/Head'
+import {Link} from 'react-router-dom'
+import Gallery from 'react-photo-gallery'
+import MediaCard from './cards'
 
 
-const drawerWidth = 240;
+const PhotosSet= [
 
-const useStyles = makeStyles((theme) => ({
-  root: {
-    display: 'flex',
-  },
-  title: {
-    flexGrow: 1,
-  },
-  appBar: {
-    transition: theme.transitions.create(['margin', 'width'], {
-      easing: theme.transitions.easing.sharp,
-      duration: theme.transitions.duration.leavingScreen,
-    }),
-  },
-  appBarShift: {
-    width: `calc(100% - ${drawerWidth}px)`,
-    marginLeft: drawerWidth,
-    transition: theme.transitions.create(['margin', 'width'], {
-      easing: theme.transitions.easing.easeOut,
-      duration: theme.transitions.duration.enteringScreen,
-    }),
-  },
-  menuButton: {
-    marginRight: theme.spacing(2),
-  },
-  hide: {
-    display: 'none',
-  },
-  drawer: {
-    width: drawerWidth,
-    flexShrink: 0,
-  },
-  drawerPaper: {
-    width: drawerWidth,
-  },
-  drawerHeader: {
-    display: 'flex',
-    alignItems: 'center',
-    padding: theme.spacing(0, 1),
-    ...theme.mixins.toolbar,
-    justifyContent: 'flex-end',
-  },
-  content: {
-    flexGrow: 1,
-    transition: theme.transitions.create('margin', {
-      easing: theme.transitions.easing.sharp,
-      duration: theme.transitions.duration.leavingScreen,
-    }),
-    marginLeft: -drawerWidth,
-  },
-  contentShift: {
-    transition: theme.transitions.create('margin', {
-      easing: theme.transitions.easing.easeOut,
-      duration: theme.transitions.duration.enteringScreen,
-    }),
-    marginLeft: 0,
-  },
-  insideStyles: {
-    color: 'white',
-    backgroundColor: "rgba(0,0,0,.3)",
-    borderRadius: 8,
-    padding: 40,
-    position: "absolute",
-    top: "50%",
-    left: "50%",
-    transform: "translate(-50%,-50%)",
-    textAlign: 'center'
-  },
-  rootGrid: {
-    flexGrow: 1,
-    margin: theme.spacing(2),
-  },
-  paper: {
-    padding: theme.spacing(2),
-    textAlign: 'center',
-    color: theme.palette.text.secondary,
-  },
-  rootCard: {
-    width: '100%',
-  },
-  media: {
-    height: 140,
-  },
-  rootC: {
-    width: '100%',
-  },
-  mediaC: {
-    height: 0,
-    paddingTop: '56.25%'
-  },
-  expand: {
-    transform: 'rotate(0deg)',
-    marginLeft: 'auto',
-    transition: theme.transitions.create('transform', {
-      duration: theme.transitions.duration.shortest,
-    }),
-  },
-  expandOpen: {
-    transform: 'rotate(180deg)',
-  },
-  avatar: {
-    backgroundColor: red[500],
-  },
-  textoInicio: {
-    textAlign: 'center',
-    marginBottom: 20,
-  },
-}));
+{
+	src: `${process.env.PUBLIC_URL}/res/puertodiaz.jpg`,
+	width: 3,
+	height: 2
+},
 
-const Home = () => {
+{
+	src: `${process.env.PUBLIC_URL}/res/cuapa2.jpg`,
+	width: 3,
+	height: 2
+},
+{
+	src: `${process.env.PUBLIC_URL}/res/elnancital2.jpg`,
+	width: 3,
+	height: 2
+},
 
-    const classes = useStyles();
+]
 
-    const theme = useTheme();
-    const [open, setOpen] = React.useState(false);
-  
-    const handleDrawerOpen = () => {
-      setOpen(true);
-    };
-  
-    const handleDrawerClose = () => {
-      setOpen(false);
-    };
+const Index = () => {
 
-    const [expanded, setExpanded] = React.useState(false);
+    const move = function(e) {
+        const bg = document.querySelector('.bg')
+        const bird =document.querySelector('.bird')
+        const content = document.querySelector('.content');
+        bg.style.width = 100+e.pageX/100+ '%';
+        bg.style.height = 100+e.pageX/100+ '%';
+        bird.style.right = 100+e.pageX/2+ 'px';
+        content.style.left = 100+e.pageX/2+ 'px';
+    }
 
-    const handleExpandClick = () => {
-      setExpanded(!expanded);
-    };
+    useEffect(()=>{
+        document.getElementById('main').addEventListener("mousemove", move);
+        return () => document.getElementById('main').removeEventListener('mousemove', move);
+    },[]);
+    return(
+      <>
+      <section id="main" className="main"
+        onMouseMove={move}
+    >
 
-    const [expanded1, setExpanded1] = React.useState(false);
+        <img src={`${process.env.PUBLIC_URL}/res/bg3.jpg`} alt=""  className="bg"/>
+        <img src={`${process.env.PUBLIC_URL}/res/bird2.png`}  className="bird" alt="" />
+        <div className="content">
+            <h2>VagaChontal</h2>
 
-    const handleExpandClick1 = () => {
-      setExpanded1(!expanded1);
-    };
 
-    const [expanded2, setExpanded2] = React.useState(false);
+                <button className="buton"><Link to = {'/loginGoogle'} >UNITE</Link></button>
 
-    const handleExpandClick2 = () => {
-      setExpanded2(!expanded2);
-    };
 
-    const description = "¡Aventura y emoción! Nuestra plataforma está empeñada en informar a los amantes de los viajes, sobre los diversos destinos naturales, turísticos, históricos y culturales del departamento de Chontales.";
-    const title = "Acerca de nosotros";
-    const columns = [
-        {
-            title: "Recursos",
-            resources: [
-                {
-                    name: "Acerca",
-                    link: "/"
-                },
-                {
-                    name: "Administración",
-                    link: "/"
-                },
-                {
-                    name: "Contactos",
-                    link: "/"
-                },
-                {
-                    name: "Correos",
-                    link: "/"
-                }
-            ]
-        },
-        {
-            title: "Legal",
-            resources: [
-                {
-                    name: "Privacidad",
-                    link: "/privacy"
-                },
-                {
-                    name: "Términos y Condiciones",
-                    link: "/terms"
-                }
-            ]
-        },
-        {
-            title: "Consulte",
-            resources: [
-                {
-                    name: "Destinos",
-                    link: "/"
-                },
-                {
-                    name: "Restaurantes",
-                    link: "/"
-                },
-                {
-                  name: "Alojamientos",
-                  link: "/"
-                },
-                {
-                  name: "Ofertas",
-                  link: "/"
-                },
-            ]
-        }
-    ];
+        </div>
+        <ul className="sci">
+            <li><a href="#!"><img src={`${process.env.PUBLIC_URL}/res/facebook.png`} alt="" /></a></li>
+            <li><a href="#!"><img src={`${process.env.PUBLIC_URL}/res/twitter.png`} alt="" /></a></li>
+            <li><a href="#!"><img src={`${process.env.PUBLIC_URL}/res/instagram.png`} alt="" /></a></li>
+        </ul>
 
-    return ( 
-        <>
-          <div className={classes.root}>
-            <CssBaseline />
-            <AppBar
-              position="fixed"
-              className={clsx(classes.appBar, {
-                [classes.appBarShift]: open,
-              })}
-            >
-              <Toolbar>
-                <IconButton
-                  color="inherit"
-                  aria-label="open drawer"
-                  onClick={handleDrawerOpen}
-                  edge="start"
-                  className={clsx(classes.menuButton, open && classes.hide)}
-                >
-                  <MenuIcon />
-                </IconButton>
-                <Typography variant="h6" className={classes.title} noWrap>
-                  VagaChontal
-                </Typography>
-                <IconButton color="inherit">
-                    <AccountCircle/>
-                </IconButton>
-              </Toolbar>
-            </AppBar>
-            <Drawer
-              className={classes.drawer}
-              variant="persistent"
-              anchor="left"
-              open={open}
-              classes={{
-                paper: classes.drawerPaper,
-              }}
-            >
-              <div className={classes.drawerHeader}>
-                <IconButton onClick={handleDrawerClose}>
-                  {theme.direction === 'ltr' ? <ChevronLeftIcon /> : <ChevronRightIcon />}
-                </IconButton>
-              </div>
-              <Divider />
-              <List>
-                  <ListItem button>
-                    <ListItemIcon><HomeIcon/></ListItemIcon>
-                    <ListItemText primary={'Inicio'} />
-                    
-                  </ListItem>
-                  <Divider />
-                  <ListItem button>
-                  <ListItemIcon><PicturesIcon/></ListItemIcon>
-                    <Link to = '/galeria'>
-                        <ListItemText primary={'Galería'} />
-                    </Link>
-                  </ListItem>
-                  <Divider />
-                  <ListItem button>
-                    <ListItemIcon><EventAvailableIcon/></ListItemIcon>
-                    <ListItemText primary={'Actividades'} />
-                  </ListItem>
-                  <Divider />
-                  <ListItem button>
-                    <ListItemIcon><PollIcon/></ListItemIcon>
-                    <ListItemText primary={'Estadísticas'} />
-                  </ListItem>
-                  <Divider />
-                  <ListItem button>
-                    <ListItemIcon><ListIcon/></ListItemIcon>
-                    <ListItemText primary={'Formulario'} />
-                  </ListItem>
-                  <Divider />
-                  <ListItem button>
-                    <ListItemIcon><UserIcon/></ListItemIcon>
-                    <ListItemText primary={'Cliente'} />
-                  </ListItem>
-                  <Divider />
-              </List>
+    </section>
+    <section style={{marginTop:'30px', padding:0, height: 'auto',  height: 'auto'}}>
+        <div style={{ boxShadow: '5px 5px 5px ', margin: '10px', width: '48%', height: '250px',
+                     textAlign: 'center', alignItems:'center', borderRadius: '2%'}} >
+            <h2 style={{color: '#black'}}>Misión </h2>
+            <p>Dar a conocer el turismo chontaleño, al exponer al público las 
+                diferentes actividades que realizan las distinas organizaciones.
+            </p>
+            <img src={`${process.env.PUBLIC_URL}/res/about.png`} width='100px' />
 
-            </Drawer>
-            <main
-              className={clsx(classes.content, {
-                [classes.contentShift]: open,
-              })}
-            >
-             
-            </main>
-          </div>
-      </>
+        </div>
 
-    );
+        <div style={{ boxShadow: '5px 5px 5px',height: '250px',width: '48%', textAlign: 'center',
+                      borderRadius: '2%',  }}>
+            <h2 style={{color: '#black'}}>Visión</h2>
+            <p>Ser conocidos a nivel internacional 
+            </p>
+            <img src={`${process.env.PUBLIC_URL}/res/mision.png`} width='100px' />
+
+        </div>
+    </section>
+    <section style={{height: 'auto'}}>
+      <div style={{width: '100%'}}> <h2>Muestra de galería</h2></div>
+       <div style={{width: '100%'}}>
+           <Gallery  photos = {PhotosSet}/> 
+           <Link to = {'/galeria'} style={{fontSize: '40px'}} >Ver más</Link>
+
+       </div> 
+    </section>
+    <section style={{ height: 'auto', width: '100%', margin:'auto'}}>
+        <div style={{display: 'row', width:'100%'}}>
+            <h2>Actividades recientes</h2>
+            <MediaCard/>
+            <Link to = {'/actividades'} style={{fontSize: '40px'}} >ver mas</Link>
+        </div>
+        <div style={{ height: '600px', boxShadow: '-5px 5px 5px', maxWidth: '30%', overflow:'hidden', backgroundColor: '#DBFADB', right:'0px'}}>
+            <h2 background='lightblue'>Zoologico Thomas Belt</h2>
+            <img style={{width:'250px', backgroundAttachment: 'fix'}} src={`${process.env.PUBLIC_URL}/res/zoo.jpg`} />
+            <hr/>
+            <img  style={{width:'250px', backgroundAttachment: 'fix'}} src={`${process.env.PUBLIC_URL}/res/zoo1.jpg`} width='310px' />
+            <h2>Visitenos</h2>
+            <h3>horario de atencion</h3>
+            <p>de martes a domingo <br/> de las 8:00 a.m a 5:00 p.m</p>
+        </div>
+
+
+    </section>
+
+    </>
+);
+    
 }
-export default Home;
+export default Index

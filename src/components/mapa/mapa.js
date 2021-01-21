@@ -1,11 +1,11 @@
 import React from "react";
-import GoogleMaps from "@react-google-maps/api";
+import {GoogleMap} from "@react-google-maps/api";
 
-export default  Mapa=()=>  {
+  const Mapa=()=>  {
 
     return (
       <div className="container">
-        <GoogleMaps
+        <GoogleMap
           apiKey={"AIzaSyDsqHKYTtzOe17Z94JPh7fznLveiQVFTAk"}
           style={{ height: "400px", width: "300px" }}
           zoom={12}
@@ -23,3 +23,4 @@ export default  Mapa=()=>  {
     );
   
 }
+export default Mapa
