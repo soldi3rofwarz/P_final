@@ -22,7 +22,7 @@ export const Add = async (actividadData) => {
     await actividadesQuery().add(actividadData);
 }
 export const Select= async (actividadId) => {
-    const querySnapshot = await db.collection(COLLECTION_ACTIVIDADES_NAME).doc(actividadId).get();
+    const querySnapshot = await actividadesQuery.doc(actividadId).get();
     let actividad = {};
     if(querySnapshot.exists) {
         actividad = {
