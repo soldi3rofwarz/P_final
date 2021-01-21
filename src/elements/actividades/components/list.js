@@ -10,6 +10,7 @@ export const List = (props) => {
     const {
         listActividades,
         onDelete,
+        onEdit
     } = props;
 
     return (

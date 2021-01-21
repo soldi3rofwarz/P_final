@@ -6,6 +6,7 @@ import './card.css';
 import 
     {db}
  from '../../api/data/firebase-config';
+ import {Edit} from '../../api/data/actividades'
 import {Link} from 'react-router-dom'
 
 const AgregarActividades = (props) => {

@@ -1,5 +1,5 @@
 import React, {useState, useEffect,} from 'react';
-import {Delete,GetData,} from './../../../api/data/actividades';
+import {Delete,GetData,Edit} from './../../../api/data/actividades';
 import {List} from './../components/list';
 
 
@@ -18,6 +18,7 @@ export const ListContainer = () => {
         <List
             listActividades={actividades}
             onDelete={(actividadId) => Delete(actividadId)}
+            onEdit={(actividadId)=> Edit(actividadId)}
         />
         </>
     );
