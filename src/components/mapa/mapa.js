@@ -70,15 +70,10 @@ const Mapa=()=> {
 
   return (
     <div>
-      <h1>
-        Bears{" "}
-        <span role="img" aria-label="tent">
-          ⛺️
-        </span>
-      </h1>
+      
 
-      <Locate panTo={panTo} />
-      <Search panTo={panTo} />
+     
+     
 
       <GoogleMap
         id="map"

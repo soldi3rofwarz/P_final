@@ -11,7 +11,24 @@ const Det_content = (props) => {
     const [band,setband]= useState(false)
     const[value, setValue]= useState(0)
 
+    var user=[]
+    
+    function agregaruser(email){
+        let newuser={
+            email:'lunarbaulla@gmail.com'
+        }
+        user.push(newuser)
+        localstorageuser(user)
+    }
+    function getuser(){
+        var storageuser= localStorage.getItem('localuser')
+        if (storageuser==null){user=[]}else{user=JSON.parse(storageuser)}
+        return user
+    }
 
+    function localstorageuser(puser){
+        localStorage.setItem('localuser',JSON.stringify(puser))
+    }
         const Limite=()=>{
             setValue(value + 1)
 
@@ -27,6 +44,10 @@ const Det_content = (props) => {
                 setband(true)
                 
             }
+
+            agregaruser('lunarbaulla@gmail.com');
+
+            Limite()
         }
         const Cancelar =()=>{
             setband(true)
@@ -36,17 +57,14 @@ const Det_content = (props) => {
             }
         }
 
-        const Decision =()=>{
-            
-            Agregado()
-            Cancelar()
-        }
+       
         
     return ( 
         <Detalles 
         Limite ={Limite}
         value={value}
-        Decicion={Decision}
+       Cancelar={Cancelar}
+       Agregado={Agregado}
         band={band}
         actividad={actividad}
         fecha={fecha}
@@ -57,6 +75,7 @@ const Det_content = (props) => {
         latitud={latitud}
         longitud={longitud}
         descripcion={descripcion}
+        getUser={getuser}
         />
     );
 }

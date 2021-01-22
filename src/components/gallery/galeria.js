@@ -14,12 +14,18 @@ const Galeria =()=>{
           
           <Title/> 
           <Lugares/>
+          
           <UploadForm />
       <ImageGrid setSelectedImg={setSelectedImg} />
       { selectedImg && (
         <Modal selectedImg={selectedImg} setSelectedImg={setSelectedImg} />
       )}
         </div>
+        <div style={{marginLeft: '85%', border:'1px solid black'}}>
+            <h6>Publicidad</h6>
+            <img src={`${process.env.PUBLIC_URL}/res/pub1.jpg`} width='200px'/>
+            <img src={`${process.env.PUBLIC_URL}/res/pub2.jpg`} width='200px'/>
+          </div>
     </>
     )
 }

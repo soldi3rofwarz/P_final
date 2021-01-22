@@ -6,9 +6,9 @@ import {Link}from 'react-router-dom'
 import {UserContext} from './../../../api/data/user-data'
 
 
-const Header = ({signout}) => {
+const Header = ({signout}, props) => {
    const email = useContext(UserContext)
-   console.log(email)
+   
     return (     
     <>
         <nav>
@@ -22,7 +22,7 @@ const Header = ({signout}) => {
                 <li><Link to="/actividades">Actividades</Link></li>
                 <li><Link to="/galeria">Galería</Link></li>
                 <li><Link to="/datos">Estadísticas </Link></li>
-                {email==="hola@gmail.com"?<li><Link to="/form">Formulario </Link></li>:null}
+                <li><Link to="/form">Formulario </Link></li>
                 <li><Link to="/loginGoogle">Cliente </Link></li>
                 <li onClick={signout}><Link to ="/loginGoogle" style={{textDecoration:'none'}}>cerrar sesion</Link></li>
 

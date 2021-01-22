@@ -17,7 +17,7 @@ h1{
     border: solid 1px white;
 }
 .det{
-    border-left: 1px solid rgb(27, 26, 26);
+    border-left: 5px solid rgb(27, 26, 26);
     text-align: center;
     margin-left: 10px;
 }

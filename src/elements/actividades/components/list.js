@@ -127,6 +127,11 @@ export const List = (props) => {
                 'No hay datos'
                 
             }
+            <div style={{marginLeft: '85%', border:'1px solid black'}}>
+            <h6>Publicidad</h6>
+            <img src={`${process.env.PUBLIC_URL}/res/pub4.jpg`} width='200px'/>
+            <img src={`${process.env.PUBLIC_URL}/res/pub3.jpg`} width='200px'/>
+          </div>
         </>
     );
 };

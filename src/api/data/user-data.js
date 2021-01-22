@@ -7,7 +7,11 @@ import Header from './../../elements/theme/components/header'
 
 export const UserContext = createContext()
 
- const Userd=()=>{
+ const Userd=(props)=>{
+    
+    const {
+     children,
+ } = props;
 
     const [user, setuser] = useState('')
     const[email, setemail]= useState('')
@@ -15,7 +19,7 @@ export const UserContext = createContext()
     const[emailerror, setemailerror]= useState('')
     const[passerror, setpasserror]= useState('')
     const[cuenta, setcuenta]= useState(false)
-    console.log(email)
+    
     const clearInputs=()=>{
         setemail('')
         setpass('')
@@ -42,7 +46,7 @@ export const UserContext = createContext()
                 break
             }
         })
-       
+        console.log(email)
     }
 
     const handleSignup=()=>{
@@ -74,6 +78,7 @@ export const UserContext = createContext()
             if(user){
                 clearInputs()
                 setuser(user)
+                
             }
             else {
                 setuser("")
@@ -87,11 +92,11 @@ export const UserContext = createContext()
 
      return(
          <>
-        <UserContext.Provider value={email}>
+        
          {user?<>
                 
                 <h2>{email}</h2>
-               <Header signout={signout} user={user}/>
+               <Header signout={signout} email={email}/>
                 </>
                 :<>
                  <Login 
@@ -108,7 +113,9 @@ export const UserContext = createContext()
                     
                 /></>
             }
-        </UserContext.Provider>
+            <UserContext.Provider value={email}>
+                {children}
+            </UserContext.Provider>
         </>
      )
 
