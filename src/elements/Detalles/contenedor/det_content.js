@@ -1,19 +1,11 @@
 import React ,{useState,useEffect}from 'react';
-import {Select} from '../../../api/data/actividades'
+
 
 import Detalles from './../componentes/detalles'
 
 const Det_content = (props) => {
 
-    const [actividad, setActividad] = useState('');
-    const [fecha, setFecha]  = useState('');
-    const [precio, setPrecio] = useState('');
-    const [salida, setSalida] = useState('');
-    const [hora, setHora] = useState('');
-    const [cupos, setCupos] = useState('');
-    const [latitud, setLatitud] = useState('');
-    const [longitud, setLongitud] = useState('');
-    const [descripcion, setDescripcion] = useState('');
+    const{actividad,fecha,precio, salida,hora,cupos,latitud,longitud,descripcion}= props
 
 
     const [band,setband]= useState(false)
@@ -23,7 +15,7 @@ const Det_content = (props) => {
         const Limite=()=>{
             setValue(value + 1)
 
-            if(value === 20){
+            if(value === cupos){
                 setValue(value===0)
                 setband(true)
             }
@@ -43,40 +35,28 @@ const Det_content = (props) => {
             setband(false)
             }
         }
-        useEffect(()=>{
-            let actividadId = '';
-            if(props.match) actividadId = props.match.params.actividadId;
-            console.log(`Producto Id: ${actividadId}`);
-            const producto = Select(actividadId)
-               
-               
-           
-            const {actividad,
-                fecha,
-                precio,
-                salida,
-                hora,
-                cupos,
-                latitud,
-                longitud,
-                descripcion}= producto;
-                    console.log(producto)
-                setActividad(producto.actividad)
-                setFecha(producto.fecha)
-                setPrecio(producto.precio)
-        },[])
 
+        const Decision =()=>{
+            
+            Agregado()
+            Cancelar()
+        }
+        
     return ( 
         <Detalles 
         Limite ={Limite}
-        band={band}
         value={value}
-        Agregado={Agregado}
-        Cancelar ={Cancelar}
-
+        Decicion={Decision}
+        band={band}
         actividad={actividad}
         fecha={fecha}
         precio={precio}
+        salida={salida}
+        hora={hora}
+        cupos={cupos}
+        latitud={latitud}
+        longitud={longitud}
+        descripcion={descripcion}
         />
     );
 }

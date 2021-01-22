@@ -22,14 +22,20 @@ export const Add = async (actividadData) => {
     await actividadesQuery().add(actividadData);
 }
 export const Select= async (actividadId) => {
-    const querySnapshot = await actividadesQuery.doc(actividadId).get();
-    let actividad = {};
-    if(querySnapshot.exists) {
-        actividad = {
-            ...querySnapshot.data()
-        };
+    if(actividadId) {
+        const querySnapshot = await db.collection(COLLECTION_ACTIVIDADES_NAME).doc(actividadId).get();
+        console.log("apalasrtuka", querySnapshot)
+        let actividad = {};
+        if(querySnapshot.exists) {
+            actividad = {
+                ...querySnapshot.data()
+            };
+        }
+        return actividad;
     }
-    return actividad;
+    else {
+        return null;
+    }
 }
 
 export const Edit = async(actividadId, actividadData) => {

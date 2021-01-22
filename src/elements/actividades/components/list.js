@@ -110,9 +110,11 @@ export const List = (props) => {
 
                                 <DeleteIcon onClick = {()=> {onDelete(item.id)}}/>
                             </IconButton>
+                            <Link to={`/detalle/${item.id}`}>
                             <IconButton aria-label="ver">
                                 <EyeIcon />
                             </IconButton>
+                            </Link>
                             </CardActions>
                             </Card>
                         </Grid>

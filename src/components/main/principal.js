@@ -56,7 +56,7 @@ const Index = () => {
             <h2>VagaChontal</h2>
 
 
-                <button className="buton"><Link to = {'/loginGoogle'} >UNITE</Link></button>
+                <button className="buton"><Link to = {'/loginGoogle'} style={{textDecoration:'none', color:'white'}}>UNITE</Link></button>
 
 
         </div>

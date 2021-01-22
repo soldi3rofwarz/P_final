@@ -3,7 +3,7 @@ import firebase from './firebase-config'
 import { db } from './firebase-config'
 import 'firebase/auth'
 import Login from './../../components/login/Cliente/componente/login-cliente'
-import Hero from './../../elements/theme/components/hero'
+import Header from './../../elements/theme/components/header'
 
 export const UserContext = createContext()
 
@@ -89,9 +89,9 @@ export const UserContext = createContext()
          <>
         <UserContext.Provider value={email}>
          {user?<>
-                <Hero signout={signout} user={user}/>
+                
                 <h2>{email}</h2>
-               
+               <Header signout={signout} user={user}/>
                 </>
                 :<>
                  <Login 
@@ -105,6 +105,7 @@ export const UserContext = createContext()
                     setcuenta={setcuenta}
                     emailerror={emailerror}
                     passerror={passerror}
+                    
                 /></>
             }
         </UserContext.Provider>

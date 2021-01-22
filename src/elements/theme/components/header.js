@@ -2,11 +2,11 @@ import React,{useContext} from 'react';
 import './head.styles.css';
 //import Nav from 'react-bootstrap/Nav'
 import {Link}from 'react-router-dom'
-import Hero from './hero'
+
 import {UserContext} from './../../../api/data/user-data'
 
 
-const Header = () => {
+const Header = ({signout}) => {
    const email = useContext(UserContext)
    console.log(email)
     return (     
@@ -23,9 +23,8 @@ const Header = () => {
                 <li><Link to="/galeria">Galería</Link></li>
                 <li><Link to="/datos">Estadísticas </Link></li>
                 {email==="hola@gmail.com"?<li><Link to="/form">Formulario </Link></li>:null}
-                
                 <li><Link to="/loginGoogle">Cliente </Link></li>
-                <Hero/>
+                <li onClick={signout}><Link to ="/loginGoogle" style={{textDecoration:'none'}}>cerrar sesion</Link></li>
 
             </ul>
         </nav>

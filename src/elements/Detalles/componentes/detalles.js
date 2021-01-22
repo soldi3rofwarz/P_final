@@ -8,63 +8,61 @@ import './Detalle.css'
 
 const Detalles = (props) => {
     
-    const {
+    const{actividad,fecha,precio, salida,hora,latitud,longitud,descripcion,
         Limite,
-        Agregado,
-        band,
-        value,
-        Cancelar,
-        actividad,
-        fecha,
-        precio
-    }=props
+        Decision,
+        value,  
+        band
+       }= props
 
     return ( 
         <>
-     
-        <Container>
-            <Row className="h" cols="2">
-                <Col className="mapa"> <Mapa/> </Col>
+            <div style={{height: '40px'}}></div>
+        <section style={{height:'auto', background: 'blue', }}>
+            <div className="h" style={{display:'flex', flex:'2'}} >
+                <div className="mapa"> 
+                <Mapa
+                    latitud={latitud}
+                    longitud={longitud}
+                /> 
+                </div>
 
-                <Col className="det">
+                <div className="det">
                     <h2>{actividad}</h2>
                     <br/>
                     <h3>Lugar de salida</h3>
-                    <h4>Gasolinera Puma</h4>
+                    <h4>{salida}</h4>
                     <br/>
                     <h3>Fecha</h3>
                     <h4>{fecha}</h4>
                     <br/>
                     <h3>Hora de salida</h3>
-                    <h4>6 A.M.</h4>
+                    <h4>{hora}</h4>
                     <br/>
                     <h3>Precio</h3>
                     <h4>{precio}</h4>
-                </Col>
-            </Row>
-            <Row>
-                <Col className= "texto">
+                </div>
+            </div>
+            
+        </section>
+        <div>
+                <div className= "texto">
                 <hr className="my-4"/>
                 <h2>Descripcion</h2>
                 <p>
-                    Pate Perro Chontales, te ofrece una exquisita excursion a la cima <br/>
-                    Hato Grade, en donde podrás observar aves silvestres, riachuelos <br/>
-                    con agua que podrás beber, cascadas , unas vistas impresionantes <br/>
-                    del lago Cocibolca, además recorreremos el lugar qeu dio origen <br/>
-                    a la famosa leyenda del lagarto de oro. Participa y te llevarás <br/>
-                    una bonita experiencia que contar
+                   {descripcion}
                 </p>
 
-                {(band===true)? 
-                    <a className="btn btn-warning btn-lg" id="dd" href="#!" role="button" onClick={Cancelar}>
-                    Cancelar</a>
-                :<a className="btn btn-warning btn-lg" id="d" href="#!" role="button" onClick={Agregado}>
-                    Participar</a>}
+                 {band?(
+                <a className="btn btn-warning btn-lg" id="dd" href="#!" role="button" onClick={Decision}>
+                    Cancelar</a>)
+               :
+               (<a className="btn btn-warning btn-lg" id="dd" href="#!" role="button" onClick={Decision}>
+               Agregar</a>)}
                 
                 <Button variant="outline-success" className = "p" id="p">{value}</Button>{' '}
-                </Col>
-            </Row>
-        </Container>
+                </div>
+            </div>
         </>     
      );
 }
