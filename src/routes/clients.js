@@ -13,7 +13,7 @@ import Info from './../components/informacion/informacion-compo/info'
 import {GalleryPage} from './../pages/galeria'
 import Form from '../pages/form'
 import Datospage from './../pages/Graficospage'
-import Mapa from './../components/mapa/mapa'
+import MapView from './../components/mapa/leaflet/mapview'
 import Lugar1 from './../pages/page1'
 import Lugar2 from './../pages/page2'
 import Lugar3 from './../pages/page3'
@@ -38,7 +38,7 @@ export const ClientsRoute = () => {
                 <Route exact path ="/form" component ={Form} />
                 <Route exact path ="/form/:actividadId" component ={Form} />
                 <Route exact path ="/datos" component ={Datospage} />s
-                <Route exact path ="/mapa" component ={Mapa} />
+                <Route exact path ="/mapa" component ={MapView} />
                 <Route exact path ="/lugar1" component ={Lugar1} />
                 <Route exact path ="/lugar2" component ={Lugar2} />
                 <Route exact path ="/lugar3" component ={Lugar3} />

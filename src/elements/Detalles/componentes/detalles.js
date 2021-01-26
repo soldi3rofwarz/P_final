@@ -1,5 +1,5 @@
 import React, {useState} from 'react';
-import Mapa from '../../../components/mapa/mapa'
+import MapView from '../../../components/mapa/leaflet/mapview'
 
 import Col from 'react-bootstrap/Col'
 import Button from 'react-bootstrap/Button'
@@ -23,7 +23,7 @@ const Detalles = (props) => {
         <section style={{height:'auto' }}>
             <div className="h" style={{display:'flex', flex:'2', borderRadius:'15px',boxShadow:'8px 8px 8px', border:'8px solid green'}} >
                 <div className="mapa" > 
-                <Mapa
+                <MapView
                     latitud={latitud}
                     longitud={longitud}
                 /> 
