@@ -1,7 +1,7 @@
 import React from 'react';
 import {Marker, Popup } from 'react-leaflet'
 import {IconLocation} from './icon'
-import L from "leaflet";
+
 import "leaflet-routing-machine";
 
 
@@ -13,8 +13,8 @@ const Marcador = ({latitud, longitud}) => {
             lng: longitud}
    }else{
         center = {
-            lat: 12.099375,
-            lng: -85.369108,
+            lat: 0,
+            lng: 0,
       };
    }
    

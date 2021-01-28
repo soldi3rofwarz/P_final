@@ -5,11 +5,13 @@ import ImageGrid from './ImageGrid';
 import Modal from './modal';
 import './galeria.css';
 import Lugares from './lugares'
+import SwipeableTextMobileStepper from '../../stepper'
 
 const Galeria =()=>{
     const [selectedImg, setSelectedImg] = useState(null);
     return(
       <>
+      <SwipeableTextMobileStepper/>
         <div className="App">
           
           <Title/> 

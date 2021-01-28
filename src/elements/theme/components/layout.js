@@ -11,6 +11,6 @@ export const Layout = (props) => {
     <>
         <Header />
         {children}
-        <Footer/>
+       {/**<Footer/>**/}
     </>);
 };

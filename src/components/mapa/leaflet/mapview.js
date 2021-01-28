@@ -4,6 +4,8 @@ import 'leaflet/dist/leaflet.css'
 import { MapContainer, TileLayer, Popup } from 'react-leaflet'
 import Marcador from './Marker'
 import Routing from './Rutas'
+import L from "leaflet";
+import "leaflet-routing-machine";
 
 const MapView = ({latitud, longitud}) => {
     var geo={}
@@ -29,7 +31,14 @@ const MapView = ({latitud, longitud}) => {
                 attribution='&copy; <a href="http://osm.org/copyright">OpenStreetMap</a> contributors'
                 url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"
             />
-             <Marcador latitud={latitud} longitud={longitud}/> 
+
+             {L.Routing.control({
+                waypoints: [
+                L.latLng('12.099375','-85.369108'),
+                L.latLng('11.977867', '-85.486695')
+             ]
+            })}
+              <Marcador latitud={latitud} longitud={longitud}/>
             {/* <Routing latitud={latitud} longitud={longitud}/> */}
         </MapContainer> 
         
