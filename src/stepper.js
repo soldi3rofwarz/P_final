@@ -53,6 +53,7 @@ const useStyles = makeStyles((theme) => ({
     backgroundColor: theme.palette.success.light,
     color: 'white',
     fontZise: '60px'
+    
   },
   img: {
     height: '100vh',
@@ -105,7 +106,7 @@ function SwipeableTextMobileStepper() {
                         position:'absolute', top:'55.8%'
                         }}>
                     <Typography 
-                    style={{ top:'70%',fontSize: '90px',color:'white' ,
+                    style={{ top:'70%',fontSize: '90px',color:'white' , fontWeight:'bold'
                     }}>Chontales</Typography></div>
               </div>
             ) : null}

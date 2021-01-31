@@ -1,8 +1,10 @@
 import React from 'react'
 import L from "leaflet";
 import "leaflet-routing-machine";
+import "lrm-google";
 
-const Routing =({latitud, longitud})=>{
+const Routing =({latitud, longitud, map})=>{ 
+
   var center={}
   if(latitud&&longitud){
       center={
@@ -15,29 +17,42 @@ const Routing =({latitud, longitud})=>{
     };
  }
  
-  return(
-    
-    L.Routing.control({
-      waypoints: [
-        L.latLng(12.099375,-85.369108),
-        L.latLng(11.977867, -85.486695)
-      ]
-    })
-   
-  )
+
+ let leafletElement = L.Routing.control({
+  waypoints: [
+    L.latLng(12.099375,-85.369108),
+    L.latLng(11.099379, -85.369110),
+  ],
+   router: new L.Routing.Google(),
+  lineOptions: {
+    styles: [
+      {
+        color: "green",
+        opacity: 0.6,
+        weight: 4
+      }
+    ]
+  },
+  addWaypoints: false,
+  draggableWaypoints: false,
+  fitSelectedRoutes: false,
+  showAlternatives: false
+}).addWaypoints(map.leafletElement);
+return leafletElement.getPlan();
 }
+ 
 
 export default Routing
 
 
 
 /*   
-import { MapLayer } from "react-leaflet";
+;
 import L from "leaflet";
 import "leaflet-routing-machine";
 import { withLeaflet } from "react-leaflet";
 
-class Routing extends MapLayer {
+class Routing {
   createLeafletElement({latitud, longitud}) {
     const { map } = this.props;
     let leafletElement = L.Routing.control({
